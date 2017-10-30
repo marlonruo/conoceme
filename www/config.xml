@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "Conoceme"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>ConoceME!</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Somos una aplicacin creadas por latinos, para latinos, con las cuales vas a poder conocer gente para chatear y hacer videollamadas.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="conoceme.vip" email="marlonruo@gmail.com">
+        Nospun
     </author>
 
     <!--
@@ -41,6 +41,9 @@
         Define a specific version of PhoneGap to build into your app.
         <preference name="phonegap-version"       value="3.5.0" />
     -->
+    
+    <preference name='phonegap-version' value='cli-7.0.1' />
+	<preference name='pgb-builder-version' value='1' />
 
     <!-- Plugins -->
 
