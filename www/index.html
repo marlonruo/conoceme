@@ -39,6 +39,72 @@
 <title>ConoceME!</title>
 </head>
 <body onLoad="inicio()">
+<div id="fb-root"></div>
+
+
+<script>
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+	
+	
+window.fbAsyncInit = function() {
+FB.init({
+appId : '1951120801820331',
+cookie : true, // enable cookies to allow the server to access the session
+xfbml : true, // parse social plugins on this page
+version : 'v2.10' // use version 2.1
+});
+ 
+// Now that we've initialized the JavaScript SDK, we call FB.getLoginStatus().
+// This function gets the state of the person visiting this page.
+FB.getLoginStatus(function(response) {
+statusChangeCallback(response);
+});
+};	
+	
+	
+	
+function statusChangeCallback(response) {
+	if (response.status === 'connected') {
+
+		FB.api('/me', {fields: 'name,email,first_name,last_name,locale,picture{url},gender,age_range,cover'}, function(response) {
+			document.getElementById('correo').value =response.email;
+			document.getElementById('nombre').value =response.first_name;
+			document.getElementById('apellido').value =response.last_name;
+			document.getElementById('nickname').value =response.first_name + response.last_name;
+			if(response.gender=="male"){
+									soy = "Male"
+									$('#pal1a').show()
+									$('#pal1b').hide()
+									document.getElementById('genero').value="Male"
+			}else{
+									soy = "Woman"
+									$('#pal1b').show()
+									$('#pal1a').hide()
+									document.getElementById('genero').value="Woman"
+			}
+
+		});
+	} else if (response.status === 'not_authorized') {
+		document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+	} else {
+		document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+	}
+}	
+	
+	
+function checkLoginState() {
+FB.getLoginStatus(function(response) {
+statusChangeCallback(response);
+});
+}
+</script>
+
 <div class="app"><!--/////////inicio app-->
   
   
