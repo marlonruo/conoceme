@@ -52,13 +52,13 @@
 						<div class="campo1 textos_c" style="bottom: 2%; left: 20px; text-align: right; position: absolute;"><b id="terms" style="cursor: pointer">Términos y Condiciones</b> y <b id="privacy" style="cursor: pointer">Aviso de Privacidad.</b></div>
 
 						<img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
-						<div id="texto1" class="centrar_h textos_exg" style="top: 40%; text-align: left; font-weight: bold; width: 70%; font-size: 14px">Ya eres Usuario, ingresa:</div>
+						<div id="texto1" class="centrar_h textos_m" style="top: 40%; text-align: left; font-weight: bold; width: 70%">Ya eres Usuario, ingresa:</div>
 
 						<form id="forma_login" name="forma_login" method="post">
-							<input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px; font-size: 13px" value="Email" onFocus="if(this.value=='Email'){this.value=''}" onBlur="if(this.value==''){this.value='Email'};">
-							<input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px; font-size: 13px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
+							<input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}" onBlur="if(this.value==''){this.value='Email'};">
+							<input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
 
-							<input class="campo1a centrar_h" type="submit" style="top: 61%; height: 6%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2; font-size: 16px" value="LOG IN">
+							<input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 6%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="LOG IN">
 
 							<div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 82%; width:70%"></div>
 
@@ -73,10 +73,10 @@
 
 
 					  <div id="registro" class="campo1a centrar_h textos_c" style="top: 75%; height: 6%; background:#312C32; border: none; cursor:pointer; width:calc(70% + 15px)">
-							<div class="centrar" style="color:#DCD3C2; font-size: 16px">RegistrarME!</div>
+							<div class="centrar textos_m" style="color:#DCD3C2">RegistrarME!</div>
 						</div>
 
-						<div id="te3" class="campo1 centrar_h" style="top: 71%; padding-right: 16px; text-align: left; cursor: pointer; width: 70%; font-size: 13px">¿Todavía no eres Usuario?</div>
+						<div id="te3" class="campo1 centrar_h textos_c" style="top: 71%; padding-right: 16px; text-align: left; cursor: pointer; width: 70%">¿Todavía no eres Usuario?</div>
 					</div>
 
 
@@ -362,7 +362,7 @@
   ACEPTO MI CONFORMIDAD CON LOS TÉRMINOS Y CONDICIONES DE ESTE SITIO.</p>
 			</div>
 			<div id="agree" class="redondear" style="top: 88%; height: 4%; width: 180px; background:#312C32; color:#DCD3C2; border: none;  font-family: ariBold; position: absolute; right:calc(13% - 4px); cursor: pointer">
-				<div class="centrar" style="font-size: 14px">DE ACUERDO</div>
+				<div class="centrar textos_m">DE ACUERDO</div>
 			</div>
 			
 			<!--<div id="cancel" class="redondear" style="top: 88%; height: 4%; width: 140px; background:#312C32; color:#DCD3C2; border: none; font-family: ariBold; position: absolute; right:calc(13% + 154px); cursor: pointer">
@@ -493,10 +493,9 @@
 <p align="right">                    <br>
   Fecha de publicación: 28 de septiembre del  2017 </p>
 Fecha de Última Actualización: 28 de  septiembre del 2017
-				
 			</div>
 			<div id="agree2" class="redondear" style="top: 88%; height: 4%; width: 180px; background:#312C32; color:#DCD3C2; border: none;  font-family: ariBold; position: absolute; right:calc(13% - 4px); cursor: pointer">
-				<div class="centrar" style="font-size: 14px">DE ACUERDO</div>
+				<div class="centrar textos_m">DE ACUERDO</div>
 			</div>
 			
 			<!--<div id="cancel2" class="redondear" style="top: 88%; height: 4%; width: 140px; background:#312C32; color:#DCD3C2; border: none; font-family: ariBold; position: absolute; right:calc(13% + 154px); cursor: pointer">
@@ -522,6 +521,21 @@ Fecha de Última Actualización: 28 de  septiembre del 2017
 			$('#agree, #agree2').click(function(){
 				$('#terminos, #aviso').fadeOut(500)
 			})
+			
+	
+		function inicio(){
+				var $window = $(window);
+				width = $window.width();
+				height = $window.height();
+				
+				$('.textos_exg').css('font-size', height/15+'px')
+				$('.textos_ex').css('font-size', height/22+'px')
+				$('.textos_g').css('font-size', height/32+'px')
+				$('.textos_m').css('font-size', height/45+'px')
+				$('.textos_c').css('font-size', height/55+'px')	
+				$('.textos_cx').css('font-size', height/70+'px')
+				
+	  	}
 		</script>
         
         <script type="text/javascript" src="cordova.js"></script>
