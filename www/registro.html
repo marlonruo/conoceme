@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8" />
+<head>
+
+		<meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
@@ -29,126 +10,307 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="js/jquery.form.js"></script>
-        
+  
+              
 <style>
 	.redondear {
 		 -moz-border-radius: 4px;
 		 -webkit-border-radius: 4px;
 		 border-radius: 4px;
 	}
-</style>
-       
-        <title>ConoceME!</title>
-    </head>
-    <body onLoad="inicio()">
-        
-        <div class="app"><!--/////////inicio app-->
+
+	.noUi-horizontal .noUi-handle {
+	  width: 20px;
+	  height: 20px;
+	  left: -17px;
+	  top: -10px;
+	  background-image:url(img/bolita.png);
+	  background-repeat:no-repeat;
+	  background-size:100% 100%;
+	  cursor:pointer;
+	  text-decoration:none
+	}
+</style> 
+    	            
+</head>
+
+<body onLoad="inicio()" style="position: absolute; overflow-y: auto">
+<div id="fb-root"></div>
+
+   
+<script>
+	setInterval("validar_email(document.getElementById('correo').value)", 1500)
+	
+	function validar_email(email) {
+			if(document.getElementById('correo').value!="" && document.getElementById('correo').value!="name@example.com")
+			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+			
+			if(filtro.test(email)) {
+				$('#revisa_correo').load('https://conoceme.vip/phps/checar_correo.php?correo='+document.getElementById('correo').value)
+			}else{
+				$('#existe').html('')
+			}	
+	}
+	
+	
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+	
+	
+window.fbAsyncInit = function() {
+FB.init({
+appId : '1951120801820331',
+cookie : true, // enable cookies to allow the server to access the session
+xfbml : true, // parse social plugins on this page
+version : 'v2.10' // use version 2.1
+});
+ 
+// Now that we've initialized the JavaScript SDK, we call FB.getLoginStatus().
+// This function gets the state of the person visiting this page.
+FB.getLoginStatus(function(response) {
+statusChangeCallback(response);
+});
+};	
+	
+	
+	
+function statusChangeCallback(response) {
+	if (response.status === 'connected') {
+
+		FB.api('/me', {fields: 'name,email,first_name,last_name,locale,picture{url},gender,age_range,cover'}, function(response) {
+			document.getElementById('correo').value =response.email;
+			document.getElementById('nombre').value =response.first_name;
+			document.getElementById('apellido').value =response.last_name;
+			document.getElementById('nickname').value =response.first_name + response.last_name;
+			if(response.gender=="male"){
+									soy = "Male"
+									$('#pal1a').show()
+									$('#pal1b').hide()
+									document.getElementById('genero').value="Male"
+			}else{
+									soy = "Woman"
+									$('#pal1b').show()
+									$('#pal1a').hide()
+									document.getElementById('genero').value="Woman"
+			}
+
+		});
+	} else if (response.status === 'not_authorized') {
+		document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+	} else {
+		document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+	}
+}	
+	
+	
+function checkLoginState() {
+FB.getLoginStatus(function(response) {
+statusChangeCallback(response);
+});
+}
+	
+	
+</script>   
+   
+	<div id="revisa_correo" style="position: absolute"></div>    
+
+    <div style="position: absolute; width: 100%; height: 100%; background:#FCDA3E; color:#312C32;">
+		
+		
+
+		<div id="registro" style="position: absolute; width: 100%; height:92%; top:8%;">
+			<form id="forma_registro" name="forma_registro" method="post" action="https://conoceme.vip/v/phps/enviar_perfil_v.php">
+			<div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 7%">
+				<div class="textos_m"><b>ENTRAR DE MANERA SEGURA CON:</b></div>
+
+                      
+                            	<fb:login-button class="fb-login-button" scope="public_profile" data-width="200" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false"  onlogin="checkLoginState();" style="position:absolute; top:8%"></fb:login-button>
             
-            
-            
-				<div style="position: absolute; width: 100%; height: 100%;">
-					<div id="login" style="position: absolute; width: 100%; height: 100%">
-						<!--<div id="idioma" class="campo1 textos_m" style="top: 5%; right: 30px; text-align: right;30px; position: absolute; cursor: pointer"><b>ENG</b>/SPA</div>-->
-						<div class="campo1 textos_c" style="bottom: 2%; left: 20px; text-align: right; position: absolute;"><b id="terms" style="cursor: pointer">Términos y Condiciones</b> y <b id="privacy" style="cursor: pointer">Aviso de Privacidad.</b></div>
+                            
+                           
+                            
+							<div class="textos_m" style="top: 20%"><b>CREAR CUENTA</b></div>
+							
+							<div class="textos_c" style="top: 27%"><font color="DF9230">*</font> CORREO ELECTRÓNICO</div>
+							
+                            
+                            
+                            
+                            
+                            <input id="ver_hombre" name="ver_hombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+                            
+                            <input id="ver_mujer" name="ver_mujer" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+                            
+                            <input id="rango_abajo" name="rango_abajo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+                            
+                            <input id="rango_arriba" name="rango_arriba" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+                            
+                            <input id="correo" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 31%; padding-left: 20px; color:#312C32" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}" onBlur="if(this.value==''){this.value='name@example.com'};" onChange="validar_email(document.getElementById('correo').value)">
+							<div id="existe" class="textos_c" style="position: absolute; top:37%; right:0px"></div>
+							
+							
+							<div class="textos_c" style="top: 39%"><font color="DF9230">*</font> CONTRASEÑA</div>
+							<input id="pass" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 43%; padding-left: 20px; color:#312C32" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
+							
+							<div class="textos_c" style="top: 51%"><font color="DF9230">*</font> NOMBRE</div>
+							<input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#312C32" value="John" onFocus="if(this.value=='John'){this.value=''}" onBlur="if(this.value==''){this.value='John'};">
+							
+							<div class="textos_c" style="top: 51%; left: 52%"><font color="DF9230">*</font> APELLIDO</div>
+							<input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}" onBlur="if(this.value==''){this.value='Doe'};">
+							
+							<div class="textos_c" style="top: 63%"><font color="DF9230">*</font> NOMBRE DE USUARIO</div>
+							<input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 67%; padding-left: 20px; color:#312C32" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}" onBlur="if(this.value==''){this.value='JohnDoe'};">
+							
+							<div class="textos_c" style="top: 75%"><font color="DF9230">*</font> PAÍS</div>
+							
+							
+							
+							<select id="pais" name="pais" class="textos_c redondear" style="border: 1px solid #312C32; background:#fff; width:100%; height:5%; top: 79%; padding-left: 20px; color:#2F2F2F">
+							  		<option value="Argentina">Argentina</option>
+  									<option value="Belice">Belice</option>
+                                	<option value="Bolivia">Bolivia</option>
+                                	<option value="Brasil">Brasil</option>
+                                	<option value="Canada">Canada</option>
+                                	<option value="Chile">Chile</option>
+                                	<option value="Colombia">Colombia</option>
+                                	<option value="Costa Rica">Costa Rica</option>
+                                	<option value="Cuba">Cuba</option>
+                                	<option value="Ecuador">Ecuador</option>
+                                	<option value="El Salvador">El Salvador</option>
+                                	<option value="Estados Unidos">Estados Unidos</option>
+                                	<option value="Guatemala">Guatemala</option>
+                                	<option value="Guyana">Guyana</option>
+                                	<option value="Guyana Francesa">Guyana Francesa</option>
+                                	<option value="Honduras">Honduras</option>
+                                	<option value="Mexico">Mexico</option>
+                                	<option value="Nicaragua">Nicaragua</option>
+                                	<option value="Panama">Panama</option>
+                                	<option value="Paraguay">Paraguay</option>
+                                	<option value="Peru">Peru</option>
+                                	<option value="Puerto Rico">Puerto Rico</option>
+                                	<option value="Republica Dominicana">Republica Dominicana</option>
+                                	<option value="Santo Domingo">Santo Domingo</option>
+                                	<option value="Suriname">Suriname</option>
+                                	<option value="Venezuela">Venezuela</option>  	
+							</select>
+							
+							
+							<input type="submit" class="textos_c" style="width: 100%; height: 8%; background:#312C32; color:#DCD3C2; top: 87%; font-weight: bold; border: none" value="CONTINUAR">
+							
+							
+							<div id="retro1" class="textos_c" style="position: absolute; top: 96%; width: 100%; color:#312C32; text-align: center; font-family:ariLight"></div>
+				
+				
+							<div id="terminoss" class="textos_c" style="position: absolute; top: 98%; width: 100%; color:#312C32; text-align: center; font-family:ariLight">Al continuar aceptas los <br><b id="terms" style="cursor: pointer">Términos y Condiciones</b> y <b id="privacy" style="cursor: pointer">el Aviso de Privacidad.</b></div>
+							
+							
+			</div>
 
-						<img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
-						<div id="texto1" class="centrar_h textos_m" style="top: 40%; text-align: left; font-weight: bold; width: 70%">Ya eres Usuario, ingresa:</div>
+    		</form>
+    
+    
+	    </div><!--fin registro-->
+	    
+	    
+	    
+	    
+	    
+	    <script>
+	    
+	    $('#forma_registro').submit(function() {
+			
+			
+			var correo = $("input#correo").val();
+			var pass = $("input#pass").val();
+			var nombre = $("input#nombre").val();
+			var apellido = $("input#apellido").val();
+			var nickname = $("input#nickname").val();
 
-						<form id="forma_login" name="forma_login" method="post">
-							<input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}" onBlur="if(this.value==''){this.value='Email'};">
-							<input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
+			
+			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+			
+			if(!filtro.test(correo)) {
+				$('#retro1').html('* Email address required')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
+			if(correo == "name@example.com" || correo == ""){
+				$('#retro1').html('* Email address required')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
+			if($('#existe').html()=="Email ya utilizado"){
+				$('#retro1').html('* Email ya utilizado')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
+			if(pass == "Password" || pass == ""){
+				$('#retro1').html('* Password required')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
+			if(nombre == "John" || nombre == ""){
+				$('#retro1').html('* Name required')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
+			if(apellido == "Doe" || apellido == ""){
+				$('#retro1').html('* Lastname required')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
+			if(nickname == "Doe" || nickname == ""){
+				$('#retro1').html('* Nickname required')
+				$('#terminoss').animate({top:'99%'},0)
+				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+			    return false;
+			}
+			
 
-							<input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 6%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="LOG IN">
-
-							<div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 82%; width:70%"></div>
-
-						</form>
-
-
-						<div id="remember" class="campo1b centrar_h textos_c" style="top: 68%; text-align: right; cursor: pointer; padding-right: 33px; color:#312C32; width:calc(70% - 15px)">
-							<span id="te2" style="margin-right: 20px;">RecuérdaME!</span>
-							<img class="centrar_v" src="img/cuadro2.png" style="position: absolute; right: 2px; height:100%"/>
-							<img id="palomita" class="centrar_v" src="img/palomita.png" style="position: absolute; right: 2px; height:100%; display: none"/>
-						</div>
-
-
-					  <div id="registro" class="campo1a centrar_h textos_c" style="top: 75%; height: 6%; background:#312C32; border: none; cursor:pointer; width:calc(70% + 15px)">
-							<div class="centrar textos_m" style="color:#DCD3C2">RegistrarME!</div>
-						</div>
-
-						<div id="te3" class="campo1 centrar_h textos_c" style="top: 71%; padding-right: 16px; text-align: left; cursor: pointer; width: 70%">¿Todavía no eres Usuario?</div>
-					</div>
-
-
-						<script>
-						var rem=0
-						$('#remember').click(function(){
-							if(rem==0){
-								$('#palomita').fadeIn()
-								rem=1
-							}else if(rem==1){
-								$('#palomita').fadeOut()
-								rem=0
-							}
-						})	
-
-						$('#registro').click(function(){
-							window.location.href ='registro.html'
-						})	
-
-						$('#forma_login').submit(function() {
-						var correo = $("input#correo").val();
-						var pass = $("input#pass").val();	
-						var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
-						if (!filtro.test(correo)) {
-							$('#retro1').html('* Email address required')
-							setTimeout("$('#retro1').html('')", 1500)
-							return false;
-						}
-
-						if(pass=='Password' || pass == ''){
-							$('#retro1').html('* Password required')
-							setTimeout("$('#retro1').html('')", 1500)
-							return false;
-						}
-
-
-
-						$('#retro1').html('* Wait a moment')
-						$.ajax({
-							type: 'POST',
-							//url: $(this).attr('action'),
-							url:   'https://conoceme.vip/phps/login.php?rem='+rem, //archivo que recibe la peticion
-							data: $(this).serialize(),
-							success: function(data) {
-									if(data.trim()=="no_pasa"){
-										$('#retro1').html('* Usuario o contraseña incorrectos')
-									}else{
-										$('#retro1').html('')
-
-
-										var datos = data
-										var campo = datos.split("-*");
-										var id=campo[0];
-										//var rol=campo[1].trim();
-										window.location.href = 'galeria.php';
-
-
-									}
-							}
-						})
-						return false;
-					}); 
-					</script> 
-				</div>
-           
-           
-           
-           
-        <div id="terminos" style="position: absolute; width: 100%; height: 100%; display: none; background:#FCDA3E; z-index: 3001">
+			$.ajax({
+				type: 'POST',
+				url: $(this).attr('action'),
+				data: $(this).serialize(),
+				success: function(data) {
+					var datos = data
+					window.location.href = 'search.php';
+					
+				}
+			})
+			return false;
+    	}); 
+	    
+	    
+	    
+	    </script>
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+		<div id="terminos" style="position: absolute; width: 100%; height: 100%; display: none; background:#FCDA3E; z-index: 3001">
 			<img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
-			<div class="centrar_h textos_m" style="top: 40%; height: 36%; width: 70%; background: rgba(255,255,255,1.00); padding: 30px; color:#252525; overflow: hidden; overflow-y: auto; text-align: justify">
-				<p align="center"></p>
+			<div class="centrar_h textos_m" style="top: 40%; height: 36%; width: 70%; background: rgba(255,255,255,1.00); padding: 30px; color:#252525; overflow: hidden; overflow-y: auto">
+				<p align="center">
 <p>Fecha de  publicación: Septiembre del 2017.<br>
   Última fecha de  actualización: 19 de septiembre del 2017. </p>
 <p align="center"><strong>&nbsp;</strong></p>
@@ -233,7 +395,6 @@
 </ol>
 <p>El Usuario reconoce que transmitirá,  en vivo y por medio de internet, satélite, fibra óptica, cable, o cualquier  otro medio análogo o digital, existente o por existir. Las Transmisiones serán  efímeras, es decir, serán únicamente en tiempo real y una vez que termine la  Transmisión, no habrá ningún respaldo ni se podrá acceder al contenido una vez  que termine la Transmisión. </p>
 <p>El Usuario se obliga, al aceptar  estos Términos y Condiciones, a no grabar en su propio dispositivo, sea cual  fuese, o en uno externo, a no grabar ni a compartir los videos que se generen  en las transmisiones de ConóceME! De  hacerlo, se hará sujeto a persecución legal.</p>
-
 <p>ConóceME! En ningún  momento grabará, almacenará ni hará copias del contenido de las Transmisiones. </p>
 <ol>
   <li><strong>Contenido de las  Transmisiones </strong></li>
@@ -252,7 +413,6 @@
 <p>El Usuario no podrá apagar la cámara  ni el micrófono.</p>
 <p>El Usuario reconoce que ConóceME! no puede garantizar en ningún momento la calidad de las  Transmisiones, por lo que ConóceME! habilitará un sistema  de &ldquo;semáforo&rdquo; en el cual el Usuario podrá ver la calidad de la señal  dependiendo de la conexión que tenga la conexión o el usuario con el que se  interactúa. Si la señal es mala y se llegara a perder la conexión, ConóceME! no tendrá ningún tipo de responsabilidad. </p>
 <p>De igual forma, si por cualquier  causa extraordinaria se llegara a perder la conexión, podrá hacerlo saber a ConóceME!, pero este último no estará obligado a ninguna culpa. </p>
-
 <p><strong>7.2. Sistema de Puntaje</strong></p>
 <p>Todos los usuarios podrán calificar  al usuario con el que interactuaron con un sistema que va de 1 a 5 estrellas.  Esta información es meramente para saber si un usuario es &ldquo;divertido&rdquo; ya que no  habrá ningún tipo de repercusión si se tienen una o cinco estrellas. </p>
 <ol>
@@ -365,15 +525,14 @@
 				<div class="centrar textos_m" style="width: 100%">DE ACUERDO</div>
 			</div>
 			
-			<!--<div id="cancel" class="redondear" style="top: 88%; height: 4%; width: 140px; background:#312C32; color:#DCD3C2; border: none; font-family: ariBold; position: absolute; right:calc(13% + 154px); cursor: pointer">
-				<div class="centrar">CANCEL</div>
-			</div>-->
+			
 		</div>
-		
-		
-		
-		
-		<div id="aviso" style="position: absolute; width: 100%; height: 100%; display: none; background:#FCDA3E; z-index: 3001">
+   
+   
+   
+   
+   
+   <div id="aviso" style="position: absolute; width: 100%; height: 100%; display: none; background:#FCDA3E; z-index: 3001">
 			<img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
 			<div class="centrar_h textos_m" style="top: 40%; height: 36%; width: 70%; background: rgba(255,255,255,1.00); padding: 30px; color:#252525; overflow: hidden; overflow-y: auto; text-align: justify">
 				<p align="center">
@@ -393,6 +552,7 @@
     <li>Nombre Completo;</li>
     <li>Firma autógrafa y  electrónica;</li>
     <li>Fecha y Lugar de  Nacimiento; </li>
+
     <li>Nacionalidad; </li>
     <li>Edad;</li>
     <li>Fecha y lugar de  nacimiento; </li>
@@ -502,14 +662,12 @@ Fecha de Última Actualización: 28 de  septiembre del 2017
 				<div class="centrar">CANCELAR</div>
 			</div>-->
 		</div>
-           
-            
-            
-            
-        </div> <!--/////////fin app-->
-        
-        
-        <script>
+   
+   
+   
+   
+    
+		<script>
 			$('#terms').click(function(){
 				$('#terminos').fadeIn(500)
 			})
@@ -521,12 +679,29 @@ Fecha de Última Actualización: 28 de  septiembre del 2017
 			$('#agree, #agree2').click(function(){
 				$('#terminos, #aviso').fadeOut(500)
 			})
-			
+		</script>
+	    
+      	
+      	
+      	<div class="menu sombra" style="position: absolute; width: 100%; height: 8%; background:#2D2A32">
+		  		<img class="centrar" src="img/logo_menu.png" style="height: 80%;"/> 
+		  	</div>
+	      	
+	</div>
 	
+	
+	
+	
+
+
+</body>
+
+
+<script>
 		function inicio(){
 				var $window = $(window);
 				width = $window.width();
-				height = $window.height();
+				height = alto;
 				
 				$('.textos_exg').css('font-size', height/15+'px')
 				$('.textos_ex').css('font-size', height/22+'px')
@@ -534,14 +709,9 @@ Fecha de Última Actualización: 28 de  septiembre del 2017
 				$('.textos_m').css('font-size', height/45+'px')
 				$('.textos_c').css('font-size', height/55+'px')	
 				$('.textos_cx').css('font-size', height/70+'px')
-				
 	  	}
-		</script>
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+	
+	
+</script>
+
 </html>
