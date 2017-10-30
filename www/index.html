@@ -39,71 +39,6 @@
 <title>ConoceME!</title>
 </head>
 <body onLoad="inicio()">
-<div id="fb-root"></div>
-
-
-<script>
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk.js";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-	
-	
-window.fbAsyncInit = function() {
-FB.init({
-appId : '1951120801820331',
-cookie : true, // enable cookies to allow the server to access the session
-xfbml : true, // parse social plugins on this page
-version : 'v2.10' // use version 2.1
-});
- 
-// Now that we've initialized the JavaScript SDK, we call FB.getLoginStatus().
-// This function gets the state of the person visiting this page.
-FB.getLoginStatus(function(response) {
-statusChangeCallback(response);
-});
-};	
-	
-	
-	
-function statusChangeCallback(response) {
-	if (response.status === 'connected') {
-
-		FB.api('/me', {fields: 'name,email,first_name,last_name,locale,picture{url},gender,age_range,cover'}, function(response) {
-			document.getElementById('correo').value =response.email;
-			document.getElementById('nombre').value =response.first_name;
-			document.getElementById('apellido').value =response.last_name;
-			document.getElementById('nickname').value =response.first_name + response.last_name;
-			if(response.gender=="male"){
-									soy = "Male"
-									$('#pal1a').show()
-									$('#pal1b').hide()
-									document.getElementById('genero').value="Male"
-			}else{
-									soy = "Woman"
-									$('#pal1b').show()
-									$('#pal1a').hide()
-									document.getElementById('genero').value="Woman"
-			}
-
-		});
-	} else if (response.status === 'not_authorized') {
-		document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-	} else {
-		document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
-	}
-}	
-	
-	
-function checkLoginState() {
-FB.getLoginStatus(function(response) {
-statusChangeCallback(response);
-});
-}
-</script>
 
 <div class="app"><!--/////////inicio app-->
   
@@ -198,29 +133,91 @@ statusChangeCallback(response);
   
   <div id='registro' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display: none">
     <div style="position: absolute; width: 100%; height:92%; top:8%;">
-      <form id="forma_registro" name="forma_registro" method="post" action="https://conoceme.vip/v/phps/enviar_perfil_v.php">
+      <form id="forma_registro" name="forma_registro" method="post" action="https://conoceme.vip/phps/enviar_perfil_app.php">
         <div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 7%">
-          <div class="textos_m"><b>ENTRAR DE MANERA SEGURA CON:</b></div>
-          <fb:login-button class="fb-login-button" scope="public_profile" data-width="200" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false"  onlogin="checkLoginState();" style="position:absolute; top:8%"></fb:login-button>
-          <div class="textos_m" style="top: 20%"><b>CREAR CUENTA</b></div>
-          <div class="textos_c" style="top: 27%"><font color="DF9230">*</font> CORREO ELECTRÓNICO</div>
-          <input id="ver_hombre" name="ver_hombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="ver_mujer" name="ver_mujer" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="rango_abajo" name="rango_abajo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="rango_arriba" name="rango_arriba" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+          <!--<div class="textos_m"><b>ENTRAR DE MANERA SEGURA CON:</b></div>-->
+          <!--<fb:login-button class="fb-login-button" scope="public_profile" data-width="200" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false"  onlogin="checkLoginState();" style="position:absolute; top:8%"></fb:login-button>-->
+          <div class="textos_m" style="top: 0%"><b>CREAR CUENTA</b></div>
+          <div class="textos_c" style="top: 7%"><font color="DF9230">*</font> CORREO ELECTRÓNICO</div>
           
-          <input id="correo_2" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 31%; padding-left: 20px; color:#312C32; left: 0px" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}" onBlur="if(this.value==''){this.value='name@example.com'};" onChange="validar_email(document.getElementById('correo').value)">
+          <input id="genero" name="genero" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="Male">
+           
+          <input id="ver_hombre" name="ver_hombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 24%; padding-left: 20px; color:#312C32; display:none" value="1">
+          
+          <input id="ver_mujer" name="ver_mujer" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 24%; padding-left: 20px; color:#312C32; display:none" value="1">
+          
+          <input id="rango_abajo" name="rango_abajo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 24%; padding-left: 20px; color:#312C32; display:none" value="1">
+          
+          <input id="rango_arriba" name="rango_arriba" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 24%; padding-left: 20px; color:#312C32; display:none" value="1">
+          
+          <input id="correo_2" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 11%; padding-left: 20px; color:#312C32; left: 0px" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}" onBlur="if(this.value==''){this.value='name@example.com'};" onChange="validar_email(document.getElementById('correo').value)">
           <div id="existe" class="textos_c" style="position: absolute; top:37%; right:0px"></div>
-          <div class="textos_c" style="top: 39%"><font color="DF9230">*</font> CONTRASEÑA</div>
-          <input id="pass_2" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 43%; padding-left: 20px; color:#312C32; left: 0px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
-          <div class="textos_c" style="top: 51%"><font color="DF9230">*</font> NOMBRE</div>
-          <input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#312C32; left: 0px" value="John" onFocus="if(this.value=='John'){this.value=''}" onBlur="if(this.value==''){this.value='John'};">
-          <div class="textos_c" style="top: 51%; left: 52%"><font color="DF9230">*</font> APELLIDO</div>
-          <input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}" onBlur="if(this.value==''){this.value='Doe'};">
-          <div class="textos_c" style="top: 63%"><font color="DF9230">*</font> NOMBRE DE USUARIO</div>
-          <input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 67%; padding-left: 20px; color:#312C32; left: 0px" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}" onBlur="if(this.value==''){this.value='JohnDoe'};">
-          <div class="textos_c" style="top: 75%"><font color="DF9230">*</font> PAÍS</div>
-          <select id="pais" name="pais" class="textos_c redondear" style="border: 1px solid #312C32; background:#fff; width:100%; height:5%; top: 79%; padding-left: 20px; color:#2F2F2F; left: 0px">
+          <div class="textos_c" style="top: 18%"><font color="DF9230">*</font> CONTRASEÑA</div>
+          <input id="pass_2" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 22%; padding-left: 20px; color:#312C32; left: 0px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
+          <div class="textos_c" style="top: 29%"><font color="DF9230">*</font> NOMBRE</div>
+          <input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 0px" value="John" onFocus="if(this.value=='John'){this.value=''}" onBlur="if(this.value==''){this.value='John'};">
+          <div class="textos_c" style="top: 29%; left: 52%"><font color="DF9230">*</font> APELLIDO</div>
+          <input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}" onBlur="if(this.value==''){this.value='Doe'};">
+          <div class="textos_c" style="top: 40%"><font color="DF9230">*</font> NOMBRE DE USUARIO</div>
+          <input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; left: 0px" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}" onBlur="if(this.value==''){this.value='JohnDoe'};">
+          
+          
+          					<div class="textos_c" style="top: 51%">SOY</div>
+							<div id="hombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#ffffff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#2F2F2F; left: 0px"><span class="centrar_v" style="left: 20px">HOMBRE</span><img src="img/cuadro.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/><img id="pal1a" src="img/palomita.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/></div>
+							
+							<div id="mujer" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#FFFFFF; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#2F2F2F; left: 52%"><span class="centrar_v" style="left:20px">MUJER</span><img src="img/cuadro.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/><img id="pal1b" src="img/palomita.png"style="position: absolute; right: 10px; height: 60%; top: 20%; display: none"/></div>
+         
+         
+          
+          
+          					<div class="textos_c" style="top: 62%">AÑO DE NACIMIENTO</div>
+		
+							<select id="edad" name="edad" class="textos_m redondear" style="border:1px solid #312C32; background:#FFFFFF; width:100%; height: 4.5%; top: 66%; padding-left: 20px; color:#2F2F2F; left: 0px">
+  									<option value="1999">1999</option>
+                                	<option value="1998">1998</option>
+                                	<option value="1997">1997</option>
+                                	<option value="1996">1996</option>
+                                	<option value="1995">1995</option>
+                                	<option value="1994">1994</option>
+                                	<option value="1993">1993</option>
+                                	<option value="1992">1992</option>
+                                	<option value="1991">1991</option>
+                                	<option value="1990">1990</option>
+                                	<option value="1989">1989</option>
+                                	<option value="1988">1988</option>
+                                	<option value="1987">1987</option>
+                                	<option value="1986">1986</option>
+                                	<option value="1985">1985</option>
+                                	<option value="1984">1984</option>
+                                	<option value="1983">1983</option>
+                                	<option value="1982">1982</option>
+                                	<option value="1981">1981</option>
+                                	<option value="1980">1980</option>
+                                	<option value="1979">1979</option>
+                                	<option value="1978">1978</option>
+                                	<option value="1977">1977</option>
+                                	<option value="1976">1976</option>
+                                	<option value="1975">1975</option>
+                                	<option value="1974">1974</option>
+                                	<option value="1973">1973</option>
+                                	<option value="1972">1972</option>
+                                	<option value="1971">1971</option>
+                                	<option value="1970">1970</option>
+                                	<option value="1969">1969</option>
+                                	<option value="1968">1968</option>
+                                	<option value="1967">1967</option>
+                                	<option value="1966">1966</option>
+                                	<option value="1965">1965</option>
+                                	<option value="1964">1964</option>
+                                	<option value="1963">1963</option>
+                                	<option value="1962">1962</option>
+                                	<option value="1961">1961</option>
+                                	<option value="1960">1960</option>
+                            </select>
+          
+          
+          <div class="textos_c" style="top: 73%"><font color="DF9230">*</font> PAÍS</div>
+          <select id="pais" name="pais" class="textos_c redondear" style="border: 1px solid #312C32; background:#fff; width:100%; height:5%; top: 77%; padding-left: 20px; color:#2F2F2F; left: 0px">
             <option value="Argentina">Argentina</option>
             <option value="Belice">Belice</option>
             <option value="Bolivia">Bolivia</option>
@@ -258,6 +255,22 @@ statusChangeCallback(response);
     
     
     <script>
+		
+		
+								var soy = "Male"
+								$('#hombre').click(function(){
+									soy = "Male"
+									$('#pal1a').show()
+									$('#pal1b').hide()
+									document.getElementById('genero').value="Male"
+								})
+								
+								$('#mujer').click(function(){
+									soy = "Woman"
+									$('#pal1b').show()
+									$('#pal1a').hide()
+									document.getElementById('genero').value="Woman"
+								})
 	    
 	    $('#forma_registro').submit(function() {
 			
@@ -272,51 +285,51 @@ statusChangeCallback(response);
 			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
 			
 			if(!filtro.test(correo)) {
-				$('#retro1').html('* Email address required')
+				$('#retro2').html('* Email address required')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
 			if(correo == "name@example.com" || correo == ""){
-				$('#retro1').html('* Email address required')
+				$('#retro2').html('* Email address required')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
 			if($('#existe').html()=="Email ya utilizado"){
-				$('#retro1').html('* Email ya utilizado')
+				$('#retro2').html('* Email ya utilizado')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
 			if(pass == "Password" || pass == ""){
-				$('#retro1').html('* Password required')
+				$('#retro2').html('* Password required')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
 			if(nombre == "John" || nombre == ""){
-				$('#retro1').html('* Name required')
+				$('#retro2').html('* Name required')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
 			if(apellido == "Doe" || apellido == ""){
-				$('#retro1').html('* Lastname required')
+				$('#retro2').html('* Lastname required')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
 			if(nickname == "Doe" || nickname == ""){
-				$('#retro1').html('* Nickname required')
+				$('#retro2').html('* Nickname required')
 				$('#terminoss').animate({top:'99%'},0)
-				setTimeout("$('#retro1').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
+				setTimeout("$('#retro2').html(''); $('#terminoss').animate({top:'97%'},300)", 1500)
 			    return false;
 			}
 			
