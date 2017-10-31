@@ -44,10 +44,10 @@
   height: 18px;
 }
 .noUi-horizontal .noUi-handle {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   left: -17px;
-  top: -10px;
+  top: -15px;
   background-image:url(../img/bolita.png);
   background-repeat:no-repeat;
   background-size:100% 100%;

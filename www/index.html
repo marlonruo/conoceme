@@ -54,8 +54,8 @@
       <img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
       <div id="texto1" class="centrar_h textos_m" style="top: 40%; text-align: left; font-weight: bold; width: 70%">Ya eres Usuario, ingresa:</div>
       <form id="forma_login" name="forma_login" method="post">
-        <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}" onBlur="if(this.value==''){this.value='Email'};">
-        <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
+        <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}" onBlur="if(this.value==''){this.value='Email'}; StatusBar.hide();">
+        <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'}; StatusBar.hide();">
         <input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 6%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="LOG IN">
         <div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 82%; width:70%"></div>
       </form>
@@ -78,6 +78,7 @@
 						})	
 
 						$('#bt_registro').click(function(){
+							$('#login').hide()
 							$('#registro, #menu').show()
 						})	
 
@@ -140,16 +141,23 @@
           <div class="textos_m" style="top: 0%"><b>CREAR CUENTA</b></div>
           <div class="textos_c" style="top: 7%"><font color="DF9230">*</font> CORREO ELECTRÓNICO</div>
           <input id="genero" name="genero" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="Male">
-          <input id="correo_2" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 11%; padding-left: 20px; color:#312C32; left: 0px" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}" onBlur="if(this.value==''){this.value='name@example.com'};" onChange="validar_email(document.getElementById('correo').value)">
+          
+          <input id="correo_2" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 11%; padding-left: 20px; color:#312C32; left: 0px" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}; $('#registro').stop().animate({marginTop:'-5%'}, 500)" onBlur="if(this.value==''){this.value='name@example.com'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide()" onChange="validar_email(document.getElementById('correo').value)">
+          
           <div id="existe" class="textos_c" style="position: absolute; top:37%; right:0px"></div>
           <div class="textos_c" style="top: 18%"><font color="DF9230">*</font> CONTRASEÑA</div>
-          <input id="pass_2" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 22%; padding-left: 20px; color:#312C32; left: 0px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'};">
+          
+          <input id="pass_2" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 22%; padding-left: 20px; color:#312C32; left: 0px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#registro').stop().animate({marginTop:'-16%'}, 500)" onBlur="if(this.value==''){this.value='Password'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
           <div class="textos_c" style="top: 29%"><font color="DF9230">*</font> NOMBRE</div>
-          <input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 0px" value="John" onFocus="if(this.value=='John'){this.value=''}" onBlur="if(this.value==''){this.value='John'};">
+         
+           <input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 0px" value="John" onFocus="if(this.value=='John'){this.value=''}; $('#registro').stop().animate({marginTop:'-27%'}, 500)" onBlur="if(this.value==''){this.value='John'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
           <div class="textos_c" style="top: 29%; left: 52%"><font color="DF9230">*</font> APELLIDO</div>
-          <input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}" onBlur="if(this.value==''){this.value='Doe'};">
+          
+          <input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}; $('#registro').stop().animate({marginTop:'-27%'}, 500)" onBlur="if(this.value==''){this.value='Doe'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
           <div class="textos_c" style="top: 40%"><font color="DF9230">*</font> NOMBRE DE USUARIO</div>
-          <input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; left: 0px" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}" onBlur="if(this.value==''){this.value='JohnDoe'};">
+          
+          <input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; left: 0px" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}; $('#registro').stop().animate({marginTop:'-38%'}, 500)" onBlur="if(this.value==''){this.value='JohnDoe'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
+          
           <div class="textos_c" style="top: 51%">SOY</div>
           <div id="hombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#ffffff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#2F2F2F; left: 0px"><span class="centrar_v" style="left: 20px">HOMBRE</span><img src="img/cuadro.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/><img id="pal1a" src="img/palomita.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/></div>
           <div id="mujer" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#FFFFFF; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#2F2F2F; left: 52%"><span class="centrar_v" style="left:20px">MUJER</span><img src="img/cuadro.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/><img id="pal1b" src="img/palomita.png"style="position: absolute; right: 10px; height: 60%; top: 20%; display: none"/></div>
@@ -234,16 +242,16 @@
     </div>
     <script>
 		
-		
+								var id = 0;
 								var soy = "Male"
-								$('#hombre').click(function(){
+								$('#hombre').mousedown(function(){
 									soy = "Male"
 									$('#pal1a').show()
 									$('#pal1b').hide()
 									document.getElementById('genero').value="Male"
 								})
 								
-								$('#mujer').click(function(){
+								$('#mujer').mousedown(function(){
 									soy = "Woman"
 									$('#pal1b').show()
 									$('#pal1a').hide()
@@ -317,7 +325,7 @@
 				url: $(this).attr('action'),
 				data: $(this).serialize(),
 				success: function(data) {
-					//var datos = data
+					id = data.trim();
 					$('#busqueda').show()
 					rango();
 				}
@@ -335,36 +343,11 @@
   
   <div id='busqueda' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display: none">
     <div style="position: absolute; width: 100%; height:92%; top:8%;">
-      <form id="forma_busqueda" name="forma_busqueda" method="post" action="https://conoceme.vip/phps/enviar_perfil_app2.php?id=<?php echo $id?>">
+      <form id="forma_busqueda" name="forma_busqueda" method="post">
         <div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 7%">
           <div class="textos_g">BUSQUEDA</div>
           
-          <input id="idioma1" name="idioma1" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma2" name="idioma2" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma3" name="idioma3" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma4" name="idioma4" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma5" name="idioma5" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma6" name="idioma6" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma7" name="idioma7" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma8" name="idioma8" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma9" name="idioma9" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma10" name="idioma10" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma11" name="idioma11" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma12" name="idioma12" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma13" name="idioma13" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma14" name="idioma14" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma15" name="idioma15" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma16" name="idioma16" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma17" name="idioma17" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma18" name="idioma18" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma19" name="idioma19" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma20" name="idioma20" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma21" name="idioma21" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma22" name="idioma22" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma23" name="idioma23" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma24" name="idioma24" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma25" name="idioma25" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
-          <input id="idioma26" name="idioma26" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+          
          
           
           
@@ -403,107 +386,107 @@
             <script>
 									var pas1=1
 									$('#pais1').click(function(){
-										if(pas1==1){$('#palom1').hide(); document.getElementById('idioma1').value=0; pas1=0}else{$('#palom1').show(); document.getElementById('idioma1').value=1; pas1=1}
+										if(pas1==1){$('#palom1').hide(); pas1=0}else{$('#palom1').show(); pas1=1}
 									})
 									var pas2=1
 									$('#pais2').click(function(){
-										if(pas2==1){$('#palom2').hide(); document.getElementById('idioma2').value=0; pas2=0}else{$('#palom2').show(); document.getElementById('idioma2').value=1; pas2=1}
+										if(pas2==1){$('#palom2').hide(); pas2=0}else{$('#palom2').show(); pas2=1}
 									})
 									var pas3=1
 									$('#pais3').click(function(){
-										if(pas3==1){$('#palom3').hide(); document.getElementById('idioma3').value=0; pas3=0}else{$('#palom3').show(); document.getElementById('idioma3').value=1; pas3=1}
+										if(pas3==1){$('#palom3').hide(); pas3=0}else{$('#palom3').show(); pas3=1}
 									})
 									var pas4=1
 									$('#pais4').click(function(){
-										if(pas4==1){$('#palom4').hide(); document.getElementById('idioma4').value=0; pas4=0}else{$('#palom4').show(); document.getElementById('idioma4').value=1; pas4=1}
+										if(pas4==1){$('#palom4').hide(); pas4=0}else{$('#palom4').show(); pas4=1}
 									})
 									var pas5=1
 									$('#pais5').click(function(){
-										if(pas5==1){$('#palom5').hide(); document.getElementById('idioma5').value=0; pas5=0}else{$('#palom5').show(); document.getElementById('idioma5').value=1; pas5=1}
+										if(pas5==1){$('#palom5').hide(); pas5=0}else{$('#palom5').show(); pas5=1}
 									})
 									var pas6=1
 									$('#pais6').click(function(){
-										if(pas6==1){$('#palom6').hide(); document.getElementById('idioma6').value=0; pas6=0}else{$('#palom6').show(); document.getElementById('idioma6').value=1; pas6=1}
+										if(pas6==1){$('#palom6').hide(); pas6=0}else{$('#palom6').show(); pas6=1}
 									})
 									var pas7=1
 									$('#pais7').click(function(){
-										if(pas7==1){$('#palom7').hide(); document.getElementById('idioma7').value=0; pas7=0}else{$('#palom7').show(); document.getElementById('idioma7').value=1; pas7=1}
+										if(pas7==1){$('#palom7').hide(); pas7=0}else{$('#palom7').show(); pas7=1}
 									})
 									var pas8=1
 									$('#pais8').click(function(){
-										if(pas8==1){$('#palom8').hide(); document.getElementById('idioma8').value=0; pas8=0}else{$('#palom8').show(); document.getElementById('idioma8').value=1; pas8=1}
+										if(pas8==1){$('#palom8').hide(); pas8=0}else{$('#palom8').show(); pas8=1}
 									})
 									var pas9=1
 									$('#pais9').click(function(){
-										if(pas9==1){$('#palom9').hide(); document.getElementById('idioma9').value=0; pas9=0}else{$('#palom9').show(); document.getElementById('idioma9').value=1; pas9=1}
+										if(pas9==1){$('#palom9').hide(); pas9=0}else{$('#palom9').show(); pas9=1}
 									})
 									var pas10=1
 									$('#pais10').click(function(){
-										if(pas10==1){$('#palom10').hide(); document.getElementById('idioma10').value=0; pas10=0}else{$('#palom10').show(); document.getElementById('idioma10').value=1; pas10=1}
+										if(pas10==1){$('#palom10').hide(); pas10=0}else{$('#palom10').show(); pas10=1}
 									})
 									var pas11=1
 									$('#pais11').click(function(){
-										if(pas11==1){$('#palom11').hide(); document.getElementById('idioma11').value=0; pas11=0}else{$('#palom11').show(); document.getElementById('idioma11').value=1; pas11=1}
+										if(pas11==1){$('#palom11').hide(); pas11=0}else{$('#palom11').show(); pas11=1}
 									})
 									var pas12=1
 									$('#pais12').click(function(){
-										if(pas12==1){$('#palom12').hide(); document.getElementById('idioma12').value=0; pas12=0}else{$('#palom12').show(); document.getElementById('idioma12').value=1; pas12=1}
+										if(pas12==1){$('#palom12').hide(); pas12=0}else{$('#palom12').show(); pas12=1}
 									})
 									var pas13=1
 									$('#pais13').click(function(){
-										if(pas13==1){$('#palom13').hide(); document.getElementById('idioma13').value=0; pas13=0}else{$('#palom13').show(); document.getElementById('idioma13').value=1; pas13=1}
+										if(pas13==1){$('#palom13').hide(); pas13=0}else{$('#palom13').show(); pas13=1}
 									})
 									var pas14=1
 									$('#pais14').click(function(){
-										if(pas14==1){$('#palom14').hide(); document.getElementById('idioma14').value=0; pas14=0}else{$('#palom14').show(); document.getElementById('idioma14').value=1; pas14=1}
+										if(pas14==1){$('#palom14').hide(); pas14=0}else{$('#palom14').show(); pas14=1}
 									})
 									var pas15=1
 									$('#pais15').click(function(){
-										if(pas15==1){$('#palom15').hide(); document.getElementById('idioma15').value=0; pas15=0}else{$('#palom15').show(); document.getElementById('idioma15').value=1; pas15=1}
+										if(pas15==1){$('#palom15').hide(); pas15=0}else{$('#palom15').show();  pas15=1}
 									})
 									var pas16=1
 									$('#pais16').click(function(){
-										if(pas16==1){$('#palom16').hide(); document.getElementById('idioma16').value=0; pas16=0}else{$('#palom16').show(); document.getElementById('idioma16').value=1; pas16=1}
+										if(pas16==1){$('#palom16').hide(); pas16=0}else{$('#palom16').show(); pas16=1}
 									})
 									var pas17=1
 									$('#pais17').click(function(){
-										if(pas17==1){$('#palom17').hide(); document.getElementById('idioma17').value=0; pas17=0}else{$('#palom17').show(); document.getElementById('idioma17').value=1; pas17=1}
+										if(pas17==1){$('#palom17').hide(); pas17=0}else{$('#palom17').show(); pas17=1}
 									})
 									var pas18=1
 									$('#pais18').click(function(){
-										if(pas18==1){$('#palom18').hide(); document.getElementById('idioma18').value=0; pas18=0}else{$('#palom18').show(); document.getElementById('idioma18').value=1; pas18=1}
+										if(pas18==1){$('#palom18').hide(); pas18=0}else{$('#palom18').show(); pas18=1}
 									})
 									var pas19=1
 									$('#pais19').click(function(){
-										if(pas19==1){$('#palom19').hide(); document.getElementById('idioma19').value=0; pas19=0}else{$('#palom19').show(); document.getElementById('idioma19').value=1; pas19=1}
+										if(pas19==1){$('#palom19').hide(); pas19=0}else{$('#palom19').show();  pas19=1}
 									})
 									var pas20=1
 									$('#pais20').click(function(){
-										if(pas20==1){$('#palom20').hide(); document.getElementById('idioma20').value=0; pas20=0}else{$('#palom20').show(); document.getElementById('idioma20').value=1; pas20=1}
+										if(pas20==1){$('#palom20').hide(); pas20=0}else{$('#palom20').show(); pas20=1}
 									})
 									var pas21=1
 									$('#pais21').click(function(){
-										if(pas21==1){$('#palom21').hide(); document.getElementById('idioma21').value=0; pas21=0}else{$('#palom21').show(); document.getElementById('idioma21').value=1; pas21=1}
+										if(pas21==1){$('#palom21').hide(); pas21=0}else{$('#palom21').show(); pas21=1}
 									})
 									var pas22=1
 									$('#pais22').click(function(){
-										if(pas22==1){$('#palom22').hide(); document.getElementById('idioma22').value=0; pas22=0}else{$('#palom22').show(); document.getElementById('idioma22').value=1; pas22=1}
+										if(pas22==1){$('#palom22').hide(); pas22=0}else{$('#palom22').show(); pas22=1}
 									})
 									var pas23=1
 									$('#pais23').click(function(){
-										if(pas23==1){$('#palom23').hide(); document.getElementById('idioma23').value=0; pas23=0}else{$('#palom23').show(); document.getElementById('idioma23').value=1; pas23=1}
+										if(pas23==1){$('#palom23').hide(); pas23=0}else{$('#palom23').show(); pas23=1}
 									})
 									var pas24=1
 									$('#pais24').click(function(){
-										if(pas24==1){$('#palom24').hide(); document.getElementById('idioma24').value=0; pas24=0}else{$('#palom24').show(); document.getElementById('idioma24').value=1; pas24=1}
+										if(pas24==1){$('#palom24').hide(); pas24=0}else{$('#palom24').show(); pas24=1}
 									})
 									var pas25=1
 									$('#pais25').click(function(){
-										if(pas25==1){$('#palom25').hide(); document.getElementById('idioma25').value=0; pas25=0}else{$('#palom25').show(); document.getElementById('idioma25').value=1; pas25=1}
+										if(pas25==1){$('#palom25').hide(); pas25=0}else{$('#palom25').show(); pas25=1}
 									})
 									var pas26=1
 									$('#pais26').click(function(){
-										if(pas26==1){$('#palom26').hide(); document.getElementById('idioma26').value=0; pas26=0}else{$('#palom26').show(); document.getElementById('idioma26').value=1; pas26=1}
+										if(pas26==1){$('#palom26').hide(); pas26=0}else{$('#palom26').show(); pas26=1}
 									})
 									
 								</script> 
@@ -518,14 +501,14 @@
           <input type="submit" class="textos_c" style="width: 100%; height: 8%; background:#312C32; color:#DCD3C2; top: 86%; font-weight: bold; border: none; left: 0px" value="CONTINUAR">
           <script>
 								var soy = "Male"
-								$('#hombre').click(function(){
+								$('#hombre').mousedown(function(){
 									soy = "Male"
 									$('#pal1a').show()
 									$('#pal1b').hide()
 									document.getElementById('genero').value="Male"
 								})
 								
-								$('#mujer').click(function(){
+								$('#mujer').mousedown(function(){
 									soy = "Woman"
 									$('#pal1b').show()
 									$('#pal1a').hide()
@@ -609,6 +592,24 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 });
 
 }
+			  
+			  
+			  
+		$('#forma_busqueda').submit(function() {
+
+			$.ajax({
+				type: 'POST',
+				url:   'https://conoceme.vip/phps/enviar_perfil_app2.php?id='+id, //archivo que recibe la peticion
+				data: $(this).serialize(),
+				success: function(data) {
+					//var datos = data
+					alert('bien')
+					window.location.href = 'photos.php';
+					
+				}
+			})
+			return false;
+    	}); 
 
 								
 							</script>
@@ -1004,6 +1005,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 				$('.textos_m').css('font-size', height/45+'px')
 				$('.textos_c').css('font-size', height/55+'px')	
 				$('.textos_cx').css('font-size', height/70+'px')
+				StatusBar.hide();
 				
 	  	}
 		</script> 
