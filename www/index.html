@@ -28,9 +28,14 @@
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link href="css/nouislider.css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.wallform.js"></script>
 <script src="js/nouislider.js"></script> 
+
+
+
+
+
 
 <style>
 .redondear {
@@ -42,12 +47,156 @@
 <title>ConoceME!</title>
 </head>
 <body onLoad="inicio()">
+
+
+
+<script>
+	
+var fotitos = 0
+var foto1 ='a'
+var foto2 ='a'
+var foto3 ='a'
+var foto4 ='a'
+var foto5 ='a'
+var foto6 ='a'
+var foto7 ='a'
+var foto8 ='a'
+var foto9 ='a'
+
+ $(document).ready(function() { 
+            $('#photoimg').die('click').live('change', function(){ 
+				
+				//$("#imageform").ajaxForm({url:'server.php', target: '#preview', 
+				$("#imageform").ajaxForm({url:'https://conoceme.vip/ajaxImage_app.php', target: '#preview', 
+				     beforeSubmit:function(){
+					 $("#imageloadstatus").show();
+					 $("#imageloadbutton").hide();
+					 }, 
+					success:function(){
+					 setTimeout('carga()', 500);
+					 $("#imageloadstatus").hide();
+					 $("#imageloadbutton").show();
+					}, 
+					error:function(){
+					setTimeout('carga()', 500);
+					$("#imageloadstatus").hide();
+					$("#imageloadbutton").show();
+					} }).submit();
+			});
+        });
+	
+	function carga(){
+		
+					$.ajax({
+							url:   'https://conoceme.vip/phps/traer_fotos.php', //archivo que recibe la peticion
+							type:  'post', //método de envio
+							beforeSend: function () {
+
+							},
+							success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+								 var datos = response
+								 var campo = datos.split(",-");
+								 foto1=campo[0];
+								 foto2=campo[1];
+								 foto3=campo[2];
+								 foto4=campo[3];
+								 foto5=campo[4];
+								 foto6=campo[5];
+								 foto7=campo[6];
+								 foto8=campo[7];
+								 foto9=campo[8];
+								 $('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								 $('#ima1').css('background-size', 'cover')
+								 $('#ima1').css('background-position', 'center')
+								 
+								 $('#ima2').css('background-image', 'url(https://conoceme.vip/uploads/'+foto2+')')
+								 $('#ima2').css('background-size', 'cover')
+								 $('#ima2').css('background-position', 'center')
+
+								 $('#ima3').css('background-image', 'url(https://conoceme.vip/uploads/'+foto3+')')
+								 $('#ima3').css('background-size', 'cover')
+								 $('#ima3').css('background-position', 'center')
+
+
+								 $('#ima4').css('background-image', 'url(https://conoceme.vip/uploads/'+foto4+')')
+								 $('#ima4').css('background-size', 'cover')
+								 $('#ima5').css('background-position', 'center')
+
+
+								 $('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								 $('#ima5').css('background-size', 'cover')
+								 $('#ima5').css('background-position', 'center')
+
+
+								 $('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								 $('#ima6').css('background-size', 'cover')
+								 $('#ima6').css('background-position', 'center')
+
+
+								 $('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								 $('#ima7').css('background-size', 'cover')
+								 $('#ima7').css('background-position', 'center')
+
+								 $('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								 $('#ima8').css('background-size', 'cover')
+								 $('#ima8').css('background-position', 'center')
+
+								 $('#ima9').css('background-image', 'url(https://conoceme.vip/uploads/'+foto9+')')
+								 $('#ima9').css('background-size', 'cover')
+								 $('#ima9').css('background-position', 'center')
+								 
+								 if(foto2!=''){
+									$('#mover2').show()
+								}else{
+									$('#mover2').hide()
+								}
+								if(foto3!=''){
+									$('#mover3').show()
+								}else{
+									$('#mover3').hide()
+								}
+								if(foto4!=''){
+									$('#mover4').show()
+								}else{
+									$('#mover4').hide()
+								}
+								if(foto5!=''){
+									$('#mover5').show()
+								}else{
+									$('#mover5').hide()
+								}
+								if(foto6!=''){
+									$('#mover6').show()
+								}else{
+									$('#mover6').hide()
+								}
+								if(foto7!=''){
+									$('#mover7').show()
+								}else{
+									$('#mover7').hide()
+								}
+								if(foto8!=''){
+									$('#mover8').show()
+								}else{
+									$('#mover8').hide()
+								}
+								if(foto9!=''){
+									$('#mover9').show()
+								}else{
+									$('#mover9').hide()
+								}
+							}
+					}); 
+			
+	}
+	
+	carga()
+</script>
+
 <div class="app"><!--/////////inicio app-->
  
  
- 
-  
-  <div id='login' style="position: absolute; width: 100%; height: 100%; background-color:#FCDA3E;">
+  <div id='login' style="position:absolute; width:100%; height:100%; background-color:#FCDA3E">
     <div style="position: absolute; width: 100%; height: 100%"> 
       <!--<div id="idioma" class="campo1 textos_m" style="top: 5%; right: 30px; text-align: right;30px; position: absolute; cursor: pointer"><b>ENG</b>/SPA</div>-->
       <div class="campo1 textos_c" style="bottom: 2%; left: 20px; text-align: right; position: absolute;"><b id="terms" style="cursor: pointer">Términos y Condiciones</b> y <b id="privacy" style="cursor: pointer">Aviso de Privacidad.</b></div>
@@ -326,6 +475,7 @@
 				data: $(this).serialize(),
 				success: function(data) {
 					id = data.trim();
+					$('#registro').hide()
 					$('#busqueda').show()
 					rango();
 				}
@@ -343,7 +493,7 @@
   
   <div id='busqueda' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display: none">
     <div style="position: absolute; width: 100%; height:92%; top:8%;">
-      <form id="forma_busqueda" name="forma_busqueda" method="post">
+      <form id="forma_busqueda" name="forma_busqueda">
         <div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 7%">
           <div class="textos_g">BUSQUEDA</div>
           
@@ -355,6 +505,9 @@
           <input id="ver_mujer" name="ver_mujer" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
           <input id="rango_abajo" name="rango_abajo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
           <input id="rango_arriba" name="rango_arriba" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+          
+          <input id="paises" name="paises" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none1" value="1">
+          
           <div class="textos_c" style="top: 8%">PAISES</div>
           <div class="textos_c redondear" style="border: 1px solid #312C32; background:#FFFFFF; width:calc(100% - 20px); height:44%; top: 12%; padding-left: 20px; color:#2F2F2F; overflow: hidden; overflow-y:auto">
             <div id="pais1" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Argentina</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="palom1" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
@@ -596,15 +749,17 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 			  
 			  
 		$('#forma_busqueda').submit(function() {
-
+			document.getElementById('paises').value = pas1+', '+pas2+', '+pas3+', '+pas4+', '+pas5+', '+pas6+', '+pas7+', '+pas8+', '+pas9+', '+pas10+', '+pas11+', '+pas12+', '+pas13+', '+pas14+', '+pas15+', '+pas16+', '+pas17+', '+pas18+', '+pas19+', '+pas20+', '+pas21+', '+pas22+', '+pas23+', '+pas24+', '+pas25+', '+pas26
 			$.ajax({
 				type: 'POST',
 				url:   'https://conoceme.vip/phps/enviar_perfil_app2.php?id='+id, //archivo que recibe la peticion
 				data: $(this).serialize(),
 				success: function(data) {
 					//var datos = data
-					alert('bien')
-					window.location.href = 'photos.php';
+					//alert('bien')
+					
+					$('#busqueda').hide()
+					$('#fotos').show()
 					
 				}
 			})
@@ -620,6 +775,651 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
       </form>
     </div>
   </div><!--/////////// fin busqueda-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div id="fotos" style="position:absolute; top:0%; width:100%; height:100%; background-color:#FCDA3E; display: none">
+			<div style="position:absolute; width: 100%; height: 84%; top: 8%">
+				<div id="ima1" style="position: absolute; width: 100%; height: 50%; background:#D0D1D3; background-position: center; background-size: cover">
+			    	
+				    <div id='preview' style="display: none"></div>
+				    
+				    <div class="centrar" style="width: 40%; height: 40%; background: rgba(255,255,255,.2)"></div>
+				    <div class="centrar textos_m" id='imageloadstatus' style='display:none; margin-top: 20%; color: #606060; text-align: center; line-height: 19px; width: 40%; background: rgba(255,255,255,.3); padding-top: 1%; padding-bottom: 1%;'>Espera un momento<br>estamos subiendo tus fotos</div>
+				  
+				  	<img class="centrar" src="img/photo.png" style="height: 30%"/>
+					<form id="imageform" method="post" enctype="multipart/form-data" style="clear:both"> 
+						  <input type="file" name="photos[]" id="photoimg" multiple accept="image/*" style="position: absolute; width: 100%; height: 100%; opacity: 0; left: 0px"/>
+					</form>
+		    
+		    		<img id="eli1" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 10%; cursor: pointer"/>
+					
+			    </div>
+			    
+			    
+			    <div style="position: absolute; width: 100%; top:50%; height: 50%;">
+					
+					<div style="height: 31%; width: 100%; position: absolute; top:0%">
+						<div id="ima2" style="position: absolute; width: 33%; height: 100%; background:#F2F2F2; background-position: center; background-size:cover;">
+							<div id="mover2" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display:none"></div>
+							<img id="eli2" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%; cursor: pointer"/>
+							
+							
+							
+						</div>
+				  		<div id="ima3" style="position: absolute; width: 34%; left: 33%; height: 100%; background:#D0D1D3; background-position: center; background-size:cover">
+							<div id="mover3" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli3" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+				  		</div>
+						
+						
+						
+						
+						
+				  		<div id="ima4" style="position: absolute; width: 33%; left: 67%; height: 100%; background-position: center; background-size:cover">
+				  			<div id="mover4" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli4" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+				  		</div>
+					</div>
+					
+					
+					<div style="height: 38%; width: 100%; position: absolute; top:31%; background:#2D2A32">
+					   <div id="ima5" style="position: absolute; width: 50%; height: 100%; background-position: center; background-size:cover">
+					  		<div id="mover5" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli5" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+					  </div>
+						
+					  <div id="ima6" style="position: absolute; width: 50%; left: 50%; height: 100%; background:#F2F2F2; background-position: center; background-size:cover">
+					  		<div id="mover6" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli6" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+					  </div>		
+					</div>
+					
+					<div style="height: 31%; width: 100%; position: absolute; top:69%">
+						<div id="ima7" style="position: absolute; width: 33%; height: 100%; background:#F2F2F2; background-position: center; background-size:cover">
+							<div id="mover7" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli7" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+						</div>
+						<div id="ima8" style="position: absolute; width: 34%; left: 33%; height: 100%; background:#D0D1D3; background-position: center; background-size:cover">
+							<div id="mover8" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli8" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+						</div>
+					    <div id="ima9" style="position: absolute; width: 33%; left: 67%; height: 100%; background:#ffffff; background-position: center; background-size:cover">
+					    	<div id="mover9" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
+				  			<img id="eli9" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+							
+					    </div>
+					</div>
+			  </div>
+				
+		</div>
+		
+		
+		
+		<script>
+							var posicion = 0;
+			
+							
+							
+							function revisar(){
+								if(foto2!=''){
+									$('#mover2').show()
+								}else{
+									$('#mover2').hide()
+								}
+								if(foto3!=''){
+									$('#mover3').show()
+								}else{
+									$('#mover3').hide()
+								}
+								if(foto4!=''){
+									$('#mover4').show()
+								}else{
+									$('#mover4').hide()
+								}
+								if(foto5!=''){
+									$('#mover5').show()
+								}else{
+									$('#mover5').hide()
+								}
+								if(foto6!=''){
+									$('#mover6').show()
+								}else{
+									$('#mover6').hide()
+								}
+								if(foto7!=''){
+									$('#mover7').show()
+								}else{
+									$('#mover7').hide()
+								}
+								if(foto8!=''){
+									$('#mover8').show()
+								}else{
+									$('#mover8').hide()
+								}
+								if(foto9!=''){
+									$('#mover9').show()
+								}else{
+									$('#mover9').hide()
+								}
+								
+								$.ajax({
+										url:   'https://conoceme.vip/phps/eliminar_foto.php?id=120', //archivo que recibe la peticion
+										type:  'post', //método de envio
+									    data: {foto1: foto1, foto2: foto2, foto3: foto3, foto4: foto4, foto5: foto5, foto6: foto6, foto7: foto7, foto8: foto8, foto9: foto9},
+										beforeSend: function () {
+												
+										},
+										success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+												
+										}
+								});
+							}
+							//revisar()
+							
+							
+							
+							
+							
+							
+							$('#eli1').click(function(){
+								foto1=foto2
+								foto2=foto3
+								foto3=foto4
+								foto4=foto5
+								foto5=foto6
+								foto6=foto7
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima2').css('background-image', 'url(https://conoceme.vip/uploads/'+foto2+')')
+								$('#ima2').css('background-size', 'cover')
+								$('#ima2').css('background-position', 'center')
+								
+								$('#ima3').css('background-image', 'url(https://conoceme.vip/uploads/'+foto3+')')
+								$('#ima3').css('background-size', 'cover')
+								$('#ima3').css('background-position', 'center')
+								
+								$('#ima4').css('background-image', 'url(https://conoceme.vip/uploads/'+foto4+')')
+								$('#ima4').css('background-size', 'cover')
+								$('#ima4').css('background-position', 'center')
+								
+								$('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								$('#ima5').css('background-size', 'cover')
+								$('#ima5').css('background-position', 'center')
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							
+							
+							
+							$('#mover2').click(function(){
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto2+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima2').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima2').css('background-size', 'cover')
+								$('#ima2').css('background-position', 'center')
+								
+								var foto1a = foto2;
+								foto2=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli2').click(function(){
+						
+								
+								foto2=foto3
+								foto3=foto4
+								foto4=foto5
+								foto5=foto6
+								foto6=foto7
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+								
+								$('#ima2').css('background-image', 'url(https://conoceme.vip/uploads/'+foto2+')')
+								$('#ima2').css('background-size', 'cover')
+								$('#ima2').css('background-position', 'center')
+								
+								$('#ima3').css('background-image', 'url(https://conoceme.vip/uploads/'+foto3+')')
+								$('#ima3').css('background-size', 'cover')
+								$('#ima3').css('background-position', 'center')
+								
+								$('#ima4').css('background-image', 'url(https://conoceme.vip/uploads/'+foto4+')')
+								$('#ima4').css('background-size', 'cover')
+								$('#ima4').css('background-position', 'center')
+								
+								$('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								$('#ima5').css('background-size', 'cover')
+								$('#ima5').css('background-position', 'center')
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar() 
+							})
+							
+							
+							
+							
+							
+							
+							$('#mover3').click(function(){
+							
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto3+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima3').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima3').css('background-size', 'cover')
+								$('#ima3').css('background-position', 'center')
+								
+								var foto1a = foto3;
+								foto3=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli3').click(function(){
+								
+								
+								foto3=foto4
+								foto4=foto5
+								foto5=foto6
+								foto6=foto7
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+								
+								
+								$('#ima3').css('background-image', 'url(https://conoceme.vip/uploads/'+foto3+')')
+								$('#ima3').css('background-size', 'cover')
+								$('#ima3').css('background-position', 'center')
+								
+								$('#ima4').css('background-image', 'url(https://conoceme.vip/uploads/'+foto4+')')
+								$('#ima4').css('background-size', 'cover')
+								$('#ima4').css('background-position', 'center')
+								
+								$('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								$('#ima5').css('background-size', 'cover')
+								$('#ima5').css('background-position', 'center')
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							
+						
+							
+							
+							$('#mover4').click(function(){
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto4+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima4').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima4').css('background-size', 'cover')
+								$('#ima4').css('background-position', 'center')
+								
+								var foto1a = foto4;
+								foto4=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli4').click(function(){
+								
+								
+								
+								foto4=foto5
+								foto5=foto6
+								foto6=foto7
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+								
+								
+								
+								
+								$('#ima4').css('background-image', 'url(https://conoceme.vip/uploads/'+foto4+')')
+								$('#ima4').css('background-size', 'cover')
+								$('#ima4').css('background-position', 'center')
+								
+								$('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								$('#ima5').css('background-size', 'cover')
+								$('#ima5').css('background-position', 'center')
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							
+							
+							
+							
+							
+							$('#mover5').click(function(){
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima5').css('background-size', 'cover')
+								$('#ima5').css('background-position', 'center')
+								
+								var foto1a = foto5;
+								foto5=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli5').click(function(){
+								
+								
+							
+								foto5=foto6
+								foto6=foto7
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+								
+								$('#ima5').css('background-image', 'url(https://conoceme.vip/uploads/'+foto5+')')
+								$('#ima5').css('background-size', 'cover')
+								$('#ima5').css('background-position', 'center')
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							
+							
+							
+							
+							$('#mover6').click(function(){
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								var foto1a = foto6;
+								foto6=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli6').click(function(){
+								
+		
+								foto6=foto7
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+								
+								$('#ima6').css('background-image', 'url(https://conoceme.vip/uploads/'+foto6+')')
+								$('#ima6').css('background-size', 'cover')
+								$('#ima6').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							$('#mover7').click(function(){
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								var foto1a = foto7;
+								foto7=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli7').click(function(){
+								
+
+								foto7=foto8
+								foto8=foto9
+								foto9=''
+			
+								$('#ima7').css('background-image', 'url(https://conoceme.vip/uploads/'+foto7+')')
+								$('#ima7').css('background-size', 'cover')
+								$('#ima7').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							$('#mover8').click(function(){
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								var foto1a = foto8;
+								foto8=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli8').click(function(){
+							
+
+								foto8=foto9
+								foto9=''
+
+								$('#ima8').css('background-image', 'url(https://conoceme.vip/uploads/'+foto8+')')
+								$('#ima8').css('background-size', 'cover')
+								$('#ima8').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+							
+							
+							
+							$('#mover9').click(function(){
+								
+								$('#ima1').css('background-image', 'url(https://conoceme.vip/uploads/'+foto9+')')
+								$('#ima1').css('background-size', 'cover')
+								$('#ima1').css('background-position', 'center')
+								
+								$('#ima9').css('background-image', 'url(https://conoceme.vip/uploads/'+foto1+')')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								
+								var foto1a = foto9;
+								foto9=foto1;
+								foto1=foto1a;
+							})
+							
+							$('#eli9').click(function(){
+								
+
+								foto9=''
+
+								$('#ima9').css('background-image', 'none')
+								$('#ima9').css('background-size', 'cover')
+								$('#ima9').css('background-position', 'center')
+								revisar()
+							})
+						</script>
+		
+		
+		
+			
+			<div class="menu sombra" style="position: absolute; width: 100%; height: 8%; bottom:0px; background:#999">
+				<form id="forma_fotos" name="forma_registro">
+                    <input id="descripcion" name="descripcion" type="text" class="textos_cx" style="position:absolute; width:calc(74% - 60px); height:calc(100% - 34px); padding-left: 20px; left: 20px; top: 15px; background: #FFFFFF; border:1px solid #312C32; color:#868689" value="SOBRE MI" onFocus="if(this.value=='SOBRE MI'){this.value=''}; $('#fotos').animate({})" onBlur="if(this.value==''){this.value='SOBRE MI'};">
+                    <input type="submit" class="textos_cx redondear" style="position:absolute; width: 23%; height:calc(100% - 30px); right: 20px; top: 15px; background:#312C32; border: none; color:#DCD3C2" value="CONTINUAR">
+                    
+                </form>
+                <div id="retro3" class="textos_c" style="position: absolute; bottom: 5%; right:20px; text-align: right; color:#fff"></div>
+			</div>
+            
+       		<script>
+	    
+			$('#forma_fotos').submit(function() {
+
+				revisar()
+				var descripcion = $("input#descripcion").val();
+				if(descripcion == "SOBRE MI"){
+					$('#retro3').html('* Sobre mi requerido')
+					setTimeout("$('#retro3').html('');", 1500)
+					return false;
+				}
+
+
+				$.ajax({
+					type: 'POST',
+					url:   'https://conoceme.vip/phps/editar_perfil.php?id=120', 
+					data: $(this).serialize(),
+					success: function(data) {
+						//var datos = data
+						//alert(data)
+						alert('bien')
+						//window.location.href = 'galeria.php';
+					}
+				})
+				return false;
+			}); 
+	    </script>
+	
+		</div><!--//////////fin fotos-->
+  
+  
+  
+  
+  
   
   
   
@@ -981,11 +1781,11 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 <!--/////////fin app--> 
 
 <script>
-			$('#terms, #terms2').click(function(){
+			$('#terms, #terms2, #terms3').click(function(){
 				$('#terminos').fadeIn(500)
 			})
 			
-			$('#privacy, #privacy2').click(function(){
+			$('#privacy, #privacy2, #privacy3').click(function(){
 				$('#aviso').fadeIn(500)
 			})
 			
