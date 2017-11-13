@@ -48,7 +48,7 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-    <plugin name ="cordova-plugin-camera" version = "2.9.0" />
+    <plugin name ="cordova-plugin-camera"/>
   	<plugin name ="cordova-plugin-file"/>
 	<plugin name ="cordova-plugin-file-transfer"/>
 	<plugin name="cordova-plugin-statusbar" />
