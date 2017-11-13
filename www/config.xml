@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "Conoceme"
-        version   = "1.0.0">
+        version   = "1.0.1">
 
     <name>ConoceME!</name>
 
@@ -12,7 +12,7 @@
         Con ConóceME! vas a conocer gente para hacer nuevos amigos de América Latina.
     </description>
 
-    <author href="conoceme.vip" email="marlonruo@gmail.com">
+    <author href="conoceme.vip" email="marlon@watchmeweb.com">
         Nospun
     </author>
 
