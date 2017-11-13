@@ -71,25 +71,8 @@
     border: 3px solid white;
     border-radius: 3px;
 	background: rgba(0,0,0,.8)
-}
-.circle {
-    width: 35%;
-    height:0;
-    padding-bottom: 35%;
-    -moz-border-radius: 50%; 
-    -webkit-border-radius: 50%; 
-    border-radius: 50%;
-    background: #4679BD; 
-}
-.square {
-  width: 70%;
-}
-
-.square:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
 }	
+	
 </style>
 <title>ConoceME!</title>
 </head>
@@ -376,7 +359,7 @@ var foto9 ='a'
 										$('#bt_menu').show()
 										$('#bt_chat').show()
 										$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
-										llamadas()
+
 									}
 							}
 						})
@@ -1515,8 +1498,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 						$('#bt_menu').show()
 						$('#bt_chat').show()
 						$('#mensajes').show()
-						$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
-						llamadas()
+						$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)	
 					}
 				})
 				return false;
@@ -1945,16 +1927,15 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   </div><!--/////////// fin favoritos-->
   	
   	
-
-    
+  
   	
   	
   	
-  <div id='canal1' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display:none">
+  	<div id='canal1' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display:none1">
   	
-  			<div id="foto_canal" style="position:absolute; width: 100%; height: 92%; top: 8%; background: #8E8E8E; background-position:center; background-size: cover">
-				  <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,.6)"></div>
-				  <div class="centrar textos_g" style="color:#ffffff">LLAMANDO</div>
+  			<div style="position:absolute; width: 100%; height: 92%; top: 8%; background: #8E8E8E; background-image:url(); background-position:center; background-size: cover">
+					<div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,.6)"></div>
+				  <div class="centrar textos_g">LLAMANDO</div>
 					
 				  <div id="videos">
 					<div id="subscriber"></div>
@@ -1963,9 +1944,9 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 					
 					
 				  <div id="maa" class="centrar_h textos_exg" style="top:35px; color:#BA205A; opacity: 0"></div>
-				  <img id="camara" src="img/camara.png" style="height: 6%; top: 35px; right: 35px; cursor: pointer; position: absolute; z-index: 3002"/>
+				  <img id="camara" src="img/camara.png" style="height: 6%; top: 35px; right: 35px; cursor: pointer; position: absolute"/>
 					
-				  <div id="salir2" class="redondear" style="top: 35px; right: 25%; height: 6%; width: 70%; background:rgba(255,255,255,1.00); position: absolute; display: none; z-index: 3003">
+				  <div id="salir2" class="redondear" style="top: 35px; right: 25%; height: 6%; width: 70%; background:rgba(255,255,255,1.00); position: absolute; display: none">
 			  	  	<img src="img/derecha.png" class="centrar_v" style="width: 7px; right: -7px"/> 
 					  <div class="centrar_v textos_cx" style="width: 40%; text-align: center; color:#868689">TERMINAR LLAMADA?</div>
 					  <div id="no" class="centrar_v redondear textos_c" style="width: 18%; text-align: center; color:#868689; left: 42%; height:80%; background:#FCDA3E; color: #312C32; cursor: pointer"><span class="centrar">NO</span></div>
@@ -1992,7 +1973,10 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   	
   	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 2b4ba4d... conoceme sin mensaje
   	
   	
   	<script>
@@ -2031,7 +2015,11 @@ var API_KEY = '45971012';
 			
 		
 	var SERVER_BASE_URL = 'https://conoceme.herokuapp.com/';
+<<<<<<< HEAD
     fetch(SERVER_BASE_URL + '/room/:<?php echo $canal?>').then(function(res) {
+=======
+    fetch(SERVER_BASE_URL + '/room/:120').then(function(res) {
+>>>>>>> parent of 2b4ba4d... conoceme sin mensaje
       return res.json()
     }).then(function(res) {
       apiKey = res.apiKey;
@@ -2069,136 +2057,118 @@ function initializeSession() {
   session.on('sessionDisconnected', function(event) {
     console.log('You were disconnected from the session.', event.reason);
   });
+<<<<<<< HEAD
 >>>>>>> parent of fa1d768... 120
+=======
+>>>>>>> parent of 2b4ba4d... conoceme sin mensaje
 	
 	
-	<div id='fin' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display:none">
-  			
-  			
-  				<div id="foto_fin" style="position:absolute; width: 100%; height: 92%; top: 8%; background: #8E8E8E; background-position:center; background-size: cover">
-					<div style="position: absolute; width: 100%; height: 100%; background:rgba(0,0,0,.5);">
-						
-						<div style="position: absolute; width: 60%; left: 20%; height: 50%; top: 15%; background: rgba(255,255,255,1.00)">
-							<div style="position: absolute; width: 100%; height: 12%; background:#53575A">
-								<div class="centrar_v textos_m" style="color:#fff; left: 10%">Sesión Terminada</div>
-							</div>
-				    	
-				    		<div style="position: absolute; width: 100%; height: 20%; top: 12%; background:#F2F2F2; border-bottom: 1px solid rgba(176,176,176,1.00)">
-								<div class="centrar textos_c" style="color:#535759; width: 100%; text-align: center"><b>CALIFICA TU EXPERIENCIA</b></div>
-							</div>
-		    		
-		    				
-			    		
-			    		
-			    			<div style="position: absolute; width: 100%; height: 50%; top:calc(32% + 1px); background:#fff;">
-								<div class="textos_c" style="color:#535759; width: 80%; left: 10%; height: 40%; border-bottom: 1px solid rgba(167,167,167,1.00); position: absolute">
-								   	 	<img class="centrar" src="img/estrella3.png" style="height: 50%; margin-left: -40%"/> 
-								   	 	<img class="centrar" src="img/estrella3.png" style="height: 50%; margin-left: -20%"/> 
-								   	 	<img class="centrar" src="img/estrella3.png" style="height: 50%"/> 
-								   	 	<img class="centrar" src="img/estrella3.png" style="height: 50%; margin-left: 20%"/> 
-								   	 	<img class="centrar" src="img/estrella3.png" style="height: 50%; margin-left: 40%"/>
-								   	 	
-								   	 	 
-								   	 	<img id="es1" class="centrar" src="img/estrella.png" style="height: 50%; margin-left: -40%; opacity: 0; cursor: pointer"/> 
-								   	 	<img id="es2" class="centrar" src="img/estrella.png" style="height: 50%; margin-left: -20%; opacity: 0; cursor: pointer"/> 
-								   	 	<img id="es3" class="centrar" src="img/estrella.png" style="height: 50%; opacity: 0; cursor: pointer"/> 
-								   	 	<img id="es4" class="centrar" src="img/estrella.png" style="height: 50%; margin-left: 20%; opacity: 0; cursor: pointer"/> 
-								   	 	<img id="es5" class="centrar" src="img/estrella.png" style="height: 50%; margin-left: 40%; opacity: 0; cursor: pointer"/> 
-									    <div id="bloquea" style="position: absolute; width: 100%; height: 100%; display: none"></div>
-								</div>
-								<div class="textos_c" style="color:#535759; width: 80%; left: 10%; height: 59%; top:calc(40% + 1px); position: absolute">
-									<div class="centrar_v textos_m" style="color:#535759; line-height: 22px">Total: <b id="tiempo_final">0</b></div>
-								</div>
-							</div>
-		    		
-		    		
-							<script>
-								var es = 1
-								$('#es1').mouseover(function(){
-									$('#es1').animate({opacity:'1'}, 200)
-									$('#es2').animate({opacity:'0'}, 200)
-									$('#es3').animate({opacity:'0'}, 200)
-									$('#es4').animate({opacity:'0'}, 200)
-									$('#es5').animate({opacity:'0'}, 200)
-									es=1
-								})
-								$('#es2').mouseover(function(){
-									$('#es1').animate({opacity:'1'}, 200)
-									$('#es2').animate({opacity:'1'}, 200)
-									$('#es3').animate({opacity:'0'}, 200)
-									$('#es4').animate({opacity:'0'}, 200)
-									$('#es5').animate({opacity:'0'}, 200)
-									es=2
-								})
-								$('#es3').mouseover(function(){
-									$('#es1').animate({opacity:'1'}, 200)
-									$('#es2').animate({opacity:'1'}, 200)
-									$('#es3').animate({opacity:'1'}, 200)
-									$('#es4').animate({opacity:'0'}, 200)
-									$('#es5').animate({opacity:'0'}, 200)
-									es=3
-								})
-								$('#es4').mouseover(function(){
-									$('#es1').animate({opacity:'1'}, 200)
-									$('#es2').animate({opacity:'1'}, 200)
-									$('#es3').animate({opacity:'1'}, 200)
-									$('#es4').animate({opacity:'1'}, 200)
-									$('#es5').animate({opacity:'0'}, 200)
-									es=4
-								})
-								$('#es5').mouseover(function(){
-									$('#es1').animate({opacity:'1'}, 200)
-									$('#es2').animate({opacity:'1'}, 200)
-									$('#es3').animate({opacity:'1'}, 200)
-									$('#es4').animate({opacity:'1'}, 200)
-									$('#es5').animate({opacity:'1'}, 200)
-									es=5
-								})
-								
-								$('#es1, #es2, #es3, #es4, #es5').click(function(){
-									$('#bloquea').show()
-									var parametros = {
-											"numero" : es,
-											"canal" : '<?php echo $canal?>'
-									};
-									$.ajax({
-											data:  parametros, //datos que se envian a traves de ajax
-											url:   'phps/enviar_estrella.php', //archivo que recibe la peticion
+  session.on("streamCreated", function(event) {
+  	perdida = 0;
+  })
+  
+  session.on("streamDestroyed", function(event) {
+    									$.ajax({
+											url:   'phps/abrir_fin.php', //archivo que recibe la peticion
 											type:  'post', //método de envio
 											beforeSend: function () {
 													//alert("pp")
 											},
 											success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-													//alert("bien")
+													 window.location.href = 'b_end.php?canal=<?php echo $canal?>&segundos='+total_segundos;
 											}
-									});
-								})
-							</script>
-			    		
-				    		
-				    		<div id="regresa" style="position: absolute; width: 100%; height: 18%; top: 82%; background:#FCDA3E; cursor: pointer">
-								<div class="centrar textos_c" style="color:#312C32;">BUSCAR DE NUEVO</div>
-							</div>
-							<div style="position: absolute; bottom: -13%; text-align: left; color:#ffffff" class="textos_c">¿ALGÚN PROBLEMA?<br><b id="cont" style="cursor: pointer">CONTACTANOS</b></div>
-					    	<img id="cierra" src="img/cierra.png" style="position: absolute; right: 0px; bottom: -19%; height: 15%; cursor: pointer"/>
-					    </div>
-					</div>
-				</div>
-				
-				
-				<script>
-		    		$('#regresa, #cierra').click(function(){
-						$('#fin').hide()
-						$('#galeria').show()
-					})
-					$('#cont').click(function(){
-						$('#fin').hide()
-						$('#contacto').show()
-					})
-		  		</script>
-				
+										}); 
+  })
 
-	</div>
+  // Connect to the session
+  session.connect(token, function(error) {
+    // If the connection is successful, initialize a publisher and publish to the session
+    if (!error) {
+      var publisherOptions = {
+        insertMode: 'append',
+        width: '100%',
+        height: '100%'
+      };
+      var publisher = OT.initPublisher('publisher', publisherOptions, function(error) {
+        if (error) {
+          console.log('There was an error initializing the publisher: ', error.name, error.message);
+          return;
+        }
+        session.publish(publisher, function(error) {
+          if (error) {
+            console.log('There was an error publishing: ', error.name, error.message);
+          }
+        });
+      });
+    } else {
+      console.log('There was an error connecting to the session: ', error.name, error.message);
+    }
+  });
+}
+		
+
+		
+
+		
+		
+		
+								var cron=0
+								var seg = 9
+								var dec = 5
+								var minu = 2
+								var total_segundos = 0
+								
+								function cronometro(){
+									seg--
+									total_segundos++
+									if(seg == 0 && dec ==0 && minu==0){
+										
+										
+										$.ajax({
+											url:   'phps/abrir_fin.php', //archivo que recibe la peticion
+											type:  'post', //método de envio
+											beforeSend: function () {
+													//alert("pp")
+											},
+											success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+													 window.location.href = 'b_end.php?canal=<?php echo $canal?>&segundos='+total_segundos;
+											}
+										}); 
+										
+										
+									}else{
+										if(cron==0){
+											setTimeout('cronometro()', 1000)
+										}
+									}
+
+									//if(seg == 9 && dec ==2 && minu==0){
+										//$('#persona_donate').animate({top:'64%'}, 800)
+										//$('#persona_tiempo').animate({top:'82%'}, 800)
+										//$('#persona_divide').delay(800).fadeIn(800)
+									//}
+
+									$('#seg').html(seg)
+									$('#seg2').html(seg)
+									if(seg==0){
+										seg=10
+									}else if(seg==9){
+										dec--
+										if(dec==-1){
+											dec=5	
+											minu--
+											$('#minu').html(minu)
+											$('#minu2').html(minu)
+										}
+										$('#dec').html(dec)
+										$('#dec2').html(dec)
+									}
+								}
+		
+    
+        </script>
+  	
+  	
   	
   		
   				
@@ -2426,7 +2396,6 @@ function initializeSession() {
 				<div class="centrar">CANCEL</div>
 			</div>--> 
   </div>
-  
   <div id="aviso" style="position: absolute; width: 100%; height: 100%; display: none; background:#FCDA3E; z-index: 3001"> <img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
     <div class="centrar_h textos_m" style="top: 40%; height: 36%; width: 70%; background: rgba(255,255,255,1.00); padding: 30px; color:#252525; overflow: hidden; overflow-y: auto; text-align: justify">
       <p align="center">
@@ -2567,7 +2536,7 @@ function initializeSession() {
   </div>
   
   
-  <div id="oscurese" style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,34,.7); display: none"></div>
+  <div id="oscurese" style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,34,.5); display: none"></div>
   
   <div id="menu" style="position:absolute; width:100%; height:92%; background:rgba(255,255,255,1.00); left: -100%; top: 8%">
 			<div class="textos_g" style="position: absolute; top: 12%; left: 15%; color:#424243; font-family:ariBold; cursor: pointer">MENU</div>
@@ -2592,278 +2561,11 @@ function initializeSession() {
   </div>
   
   
-  		<div id="ir_video" class="square centrar sombra" style="position: absolute; width: 70%; background: #fff; display: none">
-   					
-   			<div style="position: absolute; height: 18%; width: 100%; background:#FCDA3E; color: rgba(33,33,33,1.00); width: 100%">
-					<div class="centrar textos_c" style="width: 100%; text-align: center"><b>VIDEOLLAMADA ENTRANTE</b></div>
-			    </div>
-	  		<div id="animacion" class="circle" style="position: absolute; left:calc(32% - 3px); top: 27%; border: 6px solid #78ba22; background:#78ba22"></div>
-	  		<div id="animacion2" class="circle" style="position: absolute; left:calc(32% - 3px); top: 27%; border: 6px solid #78ba22; background:#78ba22"></div>
-	  		
-			<div id="foto_entrante" class="circle" style="position: absolute; left:calc(32% - 3px); top: 27%; background: url('img/chica.jpg'); background-size: cover; border: 6px solid #fff"></div>
-   			<div id="nombre_entrante" class="textos_c" style="position: absolute; width: 100%; color:#2B2B2B; text-align: center; top:70%">@alexajimenez</div>
-   			<div id="acepta" style="position: absolute; width: 100%; height: 100%; cursor: pointer"></div>
-   			
-   			<img src="img/boton_mensajes.png" class="centrar_h" style="width:12%; cursor: pointer; position: absolute; bottom:15px; margin-left:-12%"/>
-			<img id="rechaza" src="img/rechazo.png" class="centrar_h" style="width:12%;  cursor: pointer; position: absolute; bottom: 15px; margin-left:12%"/>
-   		</div>
-  
-  
   
 </div>
 <!--/////////fin app--> 
 
-
-
-
-
-
 <script>
-	
-			function conversion_seconde_heure(time) {
-				var reste=time;
-				var result='';
- 
-				var nbJours=Math.floor(reste/(3600*24));
-				reste -= nbJours*24*3600;
- 
-				var nbHours=Math.floor(reste/3600);
-				reste -= nbHours*3600;
- 
-				var nbMinutes=Math.floor(reste/60);
-				reste -= nbMinutes*60;
- 
-				var nbSeconds=reste;
- 
-				if (nbJours>0)
-					result=result+nbJours+'j ';
- 
-				if (nbHours>0)
-					result=result+nbHours+'h ';
- 
-				if (nbMinutes>0)
-					result=result+nbMinutes+'min ';
- 
-				if (nbSeconds>0)
-					result=result+nbSeconds+'s ';
- 
-				return result;
-			}
-	
-			var respuesta
-			var canal
-			var llamante
-			var llamante_foto
-		
-			$('#acepta').click(function(){
-					$('#ir_video, #oscurese').fadeOut()
-					$('#canal1').fadeIn()
-					abrir_canal(canal)
-					clearTimeout(anima)
-					clearTimeout(anima2)
-			})
-			
-			
-			$('#rechaza').click(function(){
-				$('#ir_video, #oscurese').fadeOut()
-				clearTimeout(anima)
-				clearTimeout(anima2)
-			})	
-		
-		
-			var anima
-			var anima2
-			function animar(){
-				$('#animacion').transition({scale:1.3, opacity:0}, 2000)
-				$('#animacion').transition({scale:1, opacity:1}, 0)
-				anima = setTimeout('animar()',2000)
-			}
-		
-			function animar2(){
-				$('#animacion2').transition({scale:1.3, opacity:0}, 2000)
-				$('#animacion2').transition({scale:1, opacity:1}, 0)
-				anima2 = setTimeout('animar2()',2000)
-			}
-		
-			$('#camara').click(function(){
-				$('#salir2').fadeIn()
-			})
-			
-			
-			$('#no').click(function(){
-				$('#salir2').fadeOut()
-			})
-			
-			
-			
-			
-var SAMPLE_SERVER_BASE_URL = 'https://conoceme.vip';
-var API_KEY = '45971012';
-var SERVER_BASE_URL = 'https://conoceme.herokuapp.com/';
-		
-function abrir_canal(numero){						
-		fetch(SERVER_BASE_URL + '/room/:'+numero+'').then(function(res) {
-		  return res.json()
-		}).then(function(res) {
-		  apiKey = res.apiKey;
-		  sessionId = res.sessionId;
-		  token = res.token;
-		  initializeSession();
-		}).catch(handleError);
-
-
-	function handleError(error) {
-	  if (error) {
-		//alert(error.message);
-	  }
-	}
-
-
-	function initializeSession() {
-		
-		
-	  var session = OT.initSession(apiKey, sessionId);
-
-	  // Subscribe to a newly created stream
-	  session.on('streamCreated', function(event) {
-		  var subscriberOptions = {
-		  insertMode: 'append',
-		  width: '100%',
-		  height: '100%'
-		};
-		session.subscribe(event.stream, 'subscriber', subscriberOptions, function(error) {
-			cronometro()
-		  if (error) {
-			console.log('There was an error publishing: ', error.name, error.message);
-		  }
-		});
-	  });
-
-	  session.on('sessionDisconnected', function(event) {
-		console.log('You were disconnected from the session.', event.reason);
-	  });
-
-
-	  session.on("streamCreated", function(event) {
-		perdida = 0;
-	  })
-
-	  session.on("streamDestroyed", function(event) {
-		  session.disconnect();
-		  $('#canal1').hide()
-		  $('#fin').show()
-		  $('#tiempo_final').html(conversion_seconde_heure(total_segundos))
-											/*$.ajax({
-												url:   'phps/abrir_fin.php', //archivo que recibe la peticion
-												type:  'post', //método de envio
-												beforeSend: function () {
-														//alert("pp")
-												},
-												success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-														 window.location.href = 'b_end.php?canal=<?php echo $canal?>&segundos='+total_segundos;
-												}
-											}); */
-	  })
-	  
-	  
-	  $('#si').click(function(){
-		session.disconnect();
-		 $('#canal1').hide()
-		 $('#fin').show()
-		 $('#tiempo_final').html(conversion_seconde_heure(total_segundos))
-	  })
-
-	  // Connect to the session
-	  session.connect(token, function(error) {
-		// If the connection is successful, initialize a publisher and publish to the session
-		if (!error) {
-		  var publisherOptions = {
-			insertMode: 'append',
-			width: '100%',
-			height: '100%'
-		  };
-		  var publisher = OT.initPublisher('publisher', publisherOptions, function(error) {
-			if (error) {
-			  console.log('There was an error initializing the publisher: ', error.name, error.message);
-			  return;
-			}
-			session.publish(publisher, function(error) {
-			  if (error) {
-				console.log('There was an error publishing: ', error.name, error.message);
-			  }
-			});
-		  });
-		} else {
-		  console.log('There was an error connecting to the session: ', error.name, error.message);
-		}
-	  });
-	}
-		
-}
-		
-
-		
-		
-		
-								var cron=0
-								var seg = 9
-								var dec = 5
-								var minu = 2
-								var total_segundos = 0
-								
-								function cronometro(){
-									seg--
-									total_segundos++
-									if(seg == 0 && dec ==0 && minu==0){
-										
-										session.disconnect();
-										$('#canal1').hide()
-										$('#fin').show()
-										$('#tiempo_final').html(conversion_seconde_heure(total_segundos))
-		 
-										/*$.ajax({
-											url:   'phps/abrir_fin.php', //archivo que recibe la peticion
-											type:  'post', //método de envio
-											beforeSend: function () {
-													//alert("pp")
-											},
-											success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-													 window.location.href = 'b_end.php?canal=<?php echo $canal?>&segundos='+total_segundos;
-											}
-										}); */
-										
-										
-									}else{
-										if(cron==0){
-											setTimeout('cronometro()', 1000)
-										}
-									}
-
-									//if(seg == 9 && dec ==2 && minu==0){
-										//$('#persona_donate').animate({top:'64%'}, 800)
-										//$('#persona_tiempo').animate({top:'82%'}, 800)
-										//$('#persona_divide').delay(800).fadeIn(800)
-									//}
-
-									$('#seg').html(seg)
-									$('#seg2').html(seg)
-									if(seg==0){
-										seg=10
-									}else if(seg==9){
-										dec--
-										if(dec==-1){
-											dec=5	
-											minu--
-											$('#minu').html(minu)
-											$('#minu2').html(minu)
-										}
-										$('#dec').html(dec)
-										$('#dec2').html(dec)
-									}
-								}
-		
-    
-
 
 			$('#me1').click(function(){
 				$('#oscurese').fadeOut(500)
@@ -3035,60 +2737,7 @@ function abrir_canal(numero){
 					$('.textos_cx').css('font-size', height/70+'px')
 					StatusBar.hide();
 			}
-	
-			
-			var checar
-			function llamadas(){
-				$.ajax({
-						url:   'https://conoceme.vip/phps/llamada_entrante_app.php?id='+id, //archivo que recibe la peticion
-						type:  'post', //método de envio
-						beforeSend: function () {
-								//alert('pp')						//alert("pp")
-						},
-						success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-							respuesta =response.trim()
-							if(respuesta!=""){
-								//alert(respuesta)
-								
-								respuesta = respuesta.split("*_");
-								canal = respuesta[1]
-								llamante = respuesta[0]
-								llamante_foto = respuesta[3]
-								
-								
-								$('#nombre_entrante').html(respuesta[2])
-								$('#foto_entrante, #foto_fin, #foto_canal').css('background', 'url("https://conoceme.vip/uploads/'+respuesta[3]+'")')
-								$('#foto_entrante, #foto_fin, #foto_canal').css('background-size', 'cover')
-								$('#foto_entrante, #foto_fin, #foto_canal').css('background-position', 'center')
-								
-								$('#ir_video, #oscurese').fadeIn()
-								animar()
-								setTimeout('animar2()',500)	
-							}
-							//$('#canal1').show()
-							//abrir_canal(numero)
-						}
-				}); 
-				checar = setTimeout('llamadas()', 3000)
-			}
-	
-	
-			ver_online()
-			setInterval('ver_online()', 60000)
-				function ver_online(){
-				$.ajax({
-					url:   'https://conoceme.vip/phps/online.php?id='+id, //archivo que recibe la peticion
-					type:  'post', //método de envio
-					beforeSend: function () {
-											//alert("pp")
-					},
-					success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-						//$('#mensajes').html(response)
-						//alert(response)							 
-					}
-				});
-			}
-	
+				
 		</script> 
 <script type="text/javascript" src="cordova.js"></script> 
 <script type="text/javascript" src="js/index.js"></script> 
