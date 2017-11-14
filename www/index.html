@@ -276,14 +276,22 @@ var foto9 ='a'
       <form id="forma_login" name="forma_login" method="post">
         <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}" onBlur="if(this.value==''){this.value='Email'}; StatusBar.hide();">
         <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}" onBlur="if(this.value==''){this.value='Password'}; StatusBar.hide();">
-        <input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 6%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="LOG IN">
-        <div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 82%; width:70%"></div>
+        <input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 5%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="ENTRAR">
+        <div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 85%; width:70%"></div>
       </form>
-      <div id="remember" class="campo1b centrar_h textos_c" style="top: 68%; text-align: right; cursor: pointer; padding-right: 33px; width:calc(70% - 15px)"> <span id="te2" style="margin-right: 20px;">RecuérdaME!</span> <img class="centrar_v" src="img/cuadro2.png" style="position: absolute; right: 2px; height:100%"/> <img id="palomita" class="centrar_v" src="img/palomita.png" style="position: absolute; right: 2px; height:100%; display: none"/> </div>
-      <div id="bt_registro" class="campo1a centrar_h textos_c" style="top: 75%; height: 6%; background:#312C32; border: none; cursor:pointer; width:calc(70% + 15px)">
-        <div class="centrar textos_m" style="color:#DCD3C2">RegistrarME!</div>
+      
+      
+      <div id="olvide" class="campo1b textos_c" style="top: 69%; text-align: left; cursor: pointer; width:50%; left:calc(15% - 7px)">Olvidé mi contraseña</div>
+      
+      <div class="campo1b textos_c" style="top: 69%; text-align: left; cursor: pointer; left:50%; color:#ed3737">|</div>
+      
+      <div id="remember" class="campo1b centrar_h textos_c" style="top: 69%; text-align: right; cursor: pointer; padding-right: 33px; left:70%; width:calc(30% - 15px)"> <span id="te2" style="margin-right: 20px;">RecuérdaME!</span> <img class="centrar_v" src="img/cuadro2.png" style="position: absolute; right: 2px; height:100%"/> <img id="palomita" class="centrar_v" src="img/palomita.png" style="position: absolute; right: 2px; height:100%; display: none"/> </div>
+      
+      
+      <div id="bt_registro" class="campo1a centrar_h textos_c" style="top: 79%; height: 5%; background:#312C32; border: none; cursor:pointer; width:calc(70% + 15px)">
+        <div class="centrar textos_m" style="color:#DCD3C2">Registrar<b>ME!</b></div>
       </div>
-      <div id="te3" class="campo1 centrar_h textos_c" style="top: 71%; padding-right: 16px; text-align: left; cursor: pointer; width: 70%">¿Todavía no eres Usuario?</div>
+      <div id="te3" class="campo1 centrar_h textos_c" style="top: 75%; padding-right: 16px; text-align: left; cursor: pointer; width: 70%; font-weight: bold;">¿Todavía no eres Usuario?</div>
     </div>
     <script>
 						var rem=0
@@ -900,10 +908,10 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 			    	
 				    <div id='preview' style="display: none"></div>
 				    
-				    <div class="centrar" style="width: 40%; height: 40%; background: rgba(255,255,255,.2)"></div>
-				    <div class="centrar textos_m" id='imageloadstatus' style='display:none; margin-top: 20%; color: #606060; text-align: center; line-height: 19px; width: 40%; background: rgba(255,255,255,.3); padding-top: 1%; padding-bottom: 1%;'>Espera un momento<br>estamos subiendo tus fotos</div>
+				    
+				    <div class="centrar textos_m" id='imageloadstatus' style='display:none; margin-top: 20%; color: #606060; text-align: center; line-height: 19px; width: 40%; background: rgba(255,255,255,.7); padding-top: 1%; padding-bottom: 1%;'>Espera un momento<br>estamos subiendo tus fotos</div>
 				  
-				  	<img class="centrar" src="img/subir_fotoblanco.png" style="height: 30%"/>
+				  	<img class="centrar" src="img/subir_fotoblanco.png" style="height: 50%"/>
 					<form id="imageform" method="post" enctype="multipart/form-data" style="clear:both"> 
 						  <input type="file" name="photos[]" id="photoimg" multiple accept="image/*" style="position: absolute; width: 100%; height: 100%; opacity: 0; left: 0px"/>
 					</form>
@@ -918,14 +926,14 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 					<div style="height: 31%; width: 100%; position: absolute; top:0%">
 						<div id="ima2" style="position: absolute; width: 33%; height: 100%; background:#F2F2F2; background-position: center; background-size:cover;">
 							<div id="mover2" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display:none"></div>
-							<img id="eli2" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%; cursor: pointer"/>
+							<img id="eli2" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%; cursor: pointer"/>
 							
 							
 							
 						</div>
 				  		<div id="ima3" style="position: absolute; width: 34%; left: 33%; height: 100%; background:#D0D1D3; background-position: center; background-size:cover">
 							<div id="mover3" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli3" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli3" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 				  		</div>
 						
@@ -935,7 +943,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 						
 				  		<div id="ima4" style="position: absolute; width: 33%; left: 67%; height: 100%; background-position: center; background-size:cover">
 				  			<div id="mover4" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli4" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli4" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 				  		</div>
 					</div>
@@ -944,13 +952,13 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 					<div style="height: 38%; width: 100%; position: absolute; top:31%; background:#2D2A32">
 					   <div id="ima5" style="position: absolute; width: 50%; height: 100%; background-position: center; background-size:cover">
 					  		<div id="mover5" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli5" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli5" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 					  </div>
 						
 					  <div id="ima6" style="position: absolute; width: 50%; left: 50%; height: 100%; background:#F2F2F2; background-position: center; background-size:cover">
 					  		<div id="mover6" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli6" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli6" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 					  </div>		
 					</div>
@@ -958,17 +966,17 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 					<div style="height: 31%; width: 100%; position: absolute; top:69%">
 						<div id="ima7" style="position: absolute; width: 33%; height: 100%; background:#F2F2F2; background-position: center; background-size:cover">
 							<div id="mover7" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli7" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli7" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 						</div>
 						<div id="ima8" style="position: absolute; width: 34%; left: 33%; height: 100%; background:#D0D1D3; background-position: center; background-size:cover">
 							<div id="mover8" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli8" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli8" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 						</div>
 					    <div id="ima9" style="position: absolute; width: 33%; left: 67%; height: 100%; background:#ffffff; background-position: center; background-size:cover">
 					    	<div id="mover9" style="position: absolute; width: 100%; height: 100%; cursor: pointer; display: none"></div>
-				  			<img id="eli9" src="img/delete.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
+				  			<img id="eli9" src="img/eliminar.png" style="position: absolute; right: 10px; bottom: 10px; height: 15%"/>
 							
 					    </div>
 					</div>
@@ -1533,36 +1541,38 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 	
 	
 	
-	<div id="perfil" style="position:absolute; top:0%; width:100%; height:100%; background-color:#FCDA3E; overflow:hidden; display: none">
-  		<div style="position: absolute; width: 100%; height: 92%; top: 8%; background: #8E8E8E; color: #ffffff">
+	<div id="perfil" style="position:absolute; top:0%; width:100%; height:100%; background-color:#e8e7e8; overflow:hidden; display: none">
+  		<div style="position: absolute; width: 100%; height: 92%; top: 8%; background: #e8e7e8; color: #ffffff">
   		<form id="forma_perfil" name="forma_perfil">
-			<div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 4%">
-							<div class="textos_g" style="top:-2%">PERFIL</div>
+			<div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 4%; color:rgba(45,42,50,1.00)">
+							<div class="textos_m" style="top:-2%; text-align: center; width: 100%;"><img class="iconitos" src="img/usuario.png" style="height: 20px; margin-right: 10px;"/><b>PERFIL</b></div>
 				
-							<div id='perfil_foto' style="position: absolute;  width:100%; height: 32%; top: 6%; background-size: cover; background-position: center;"></div>
-							<div class="textos_c" style="top: 39%; width: 100%; text-align: right; cursor: pointer">Editar fotos y descripción</div>
+							<div id='perfil_foto' style="position: absolute;  width:100%; height: 28%; top: 6%; background-size: cover; background-position: center;"></div>
+							<div id="cambiar_foto" class="textos_c" style="top: 35%; width: 100%; text-align: right; cursor: pointer; color: #090909">Cambiar foto de perfil y/o descripción</div>
 	
                                                        
      
-                            <div class="textos_c" style="top: 44%">CORREO ELECTRÓNICO</div>
-							<div id="correo" name="correo" class="textos_c redondear" type="text" style="background:rgba(255,255,255,.1); width: calc(100% - 20px); height: 4.5%; top: 47%; padding-left: 20px; color:rgba(255,255,255,.8)"><div id='perfil_correo' class="centrar_v"></div></div>
+                            <div class="textos_c" style="top: 43%">CORREO ELECTRÓNICO</div>
+							<div id="correo" name="correo" class="textos_c redondear" type="text" style="background:rgba(255,255,255,.8); width: calc(100% - 20px); height: 4.5%; top: 47%; padding-left: 20px; color:rgba(43,43,43,0.80)"><div id='perfil_correo' class="centrar_v"></div></div>
 							
-							<div class="textos_c" style="top: 55%">NOMBRE DE USUARIO</div>
-							<div id="nickname" name="nickname" class="textos_c redondear" type="text" style="background:rgba(255,255,255,.1); width: calc(100% - 20px); height: 4.5%; top: 58%; padding-left: 20px; color:rgba(255,255,255,.8)"><div id='perfil_nick' class="centrar_v">@</div></div>
+							<div class="textos_c" style="top: 54%">NOMBRE DE USUARIO</div>
+							<div id="nickname" name="nickname" class="textos_c redondear" type="text" style="background:rgba(255,255,255,.8); width: calc(100% - 20px); height: 4.5%; top: 58%; padding-left: 20px; color:rgba(43,43,43,0.80)"><div id='perfil_nick' class="centrar_v">@</div></div>
 							
-							<div class="textos_c" style="top: 64%; width: 100%; text-align: right">Cambiar contraseña</div>
+							<div class="textos_c" style="top: 64%; width: 100%; text-align: right; color: #090909">Cambiar contraseña</div>
 							
-							<div class="textos_c" style="top: 68%; left:0px">NOMBRE</div>
-							<input id="perfil_nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #FFFFFF; background:none; width: calc(48% - 20px); height: 4.5%; top: 72%; padding-left: 20px; color:rgba(255,255,255,.8); left: 0px" value="">
+							<div class="centrar_h" style="height: 1px; width: 30px; background: rgba(91,91,91,1.00); top: 68%"></div>
 							
-							<div class="textos_c" style="top: 68%; left: 52%">APELLIDO</div>
-							<input id="perfil_apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #FFFFFF; background:none; width: calc(48% - 20px); height: 4.5%; top: 72%; padding-left: 20px; color:rgba(255,255,255,.8); left: 52%" value="">
+							<div class="textos_c" style="top: 72%; left:0px">NOMBRE</div>
+							<input id="perfil_nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #999; background:none; width: calc(48% - 20px); height: 4.5%; top: 76%; padding-left: 20px; color:rgba(45,42,50,1.00); left: 0px" value="">
+							
+							<div class="textos_c" style="top: 72%; left: 52%">APELLIDO</div>
+							<input id="perfil_apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #999; background:none; width: calc(48% - 20px); height: 4.5%; top: 76%; padding-left: 20px; color:rgba(45,42,50,1.00); left: 52%" value="">
 							
 							
-							<div class="textos_c" style="top: 79%">PAIS</div>
+							<div class="textos_c" style="top: 83%">PAIS</div>
 							
                             
-                            <select id="perfil_pais" name="pais" class="textos_c redondear" style="border: 1px solid #FFFFFF; background:#fff; width:100%; height:5%; top: 83%; left: 0px; padding-left: 20px; color:#2F2F2F">
+                            <select id="perfil_pais" name="pais" class="textos_c redondear" style="border: 1px solid #FFFFFF; background:#fff; width:100%; height:5%; top: 87%; left: 0px; padding-left: 20px; color:#2F2F2F">
 							  		<option value="Argentina">Argentina</option>
   									<option value="Belice">Belice</option>
                                 	<option value="Bolivia">Bolivia</option>
@@ -1590,18 +1600,39 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
                                 	<option value="Suriname">Suriname</option>
                                 	<option value="Venezuela">Venezuela</option> 
 							</select>
-                            
-        
-							
-							
-							<input id="bus" class="textos_cx" style="width: 100%; height: 6%; background:#515151; color:#DCD3C2; top: 92%; font-weight: bold; border: none; cursor: pointer; text-align: center; left: 0px" value="OPCIONES DE BÚSQUEDA">
-							
-							
-							<input type="submit" class="textos_c" style="width: 100%; height: 8%; background:#312C32; color:#DCD3C2; top: 99%; font-weight: bold; border: none; cursor: pointer; left: 0px" value="CONTINUAR">
+						
+							<input type="submit" class="textos_c" style="width: 100%; height: 8%; background:#ed3737; color:#ffffff; top: 95%; font-weight: bold; border: none; cursor: pointer; left: 0px" value="CONTINUAR">
 			
 			</div>
     	</form>
 		</div>
+		
+		<script>
+			
+			$('#forma_perfil').submit(function() {
+				$.ajax({
+					type: 'POST',
+					url: 'https://conoceme.vip/phps/editar_datos_perfil_app.php?id='+id,
+					data: $(this).serialize(),
+					success: function(data) {
+						p_nombre = document.getElementById('perfil_nombre').value
+						p_apellido = document.getElementById('perfil_apellido').value
+						p_pais = document.getElementById('perfil_pais').value
+						
+						$('#perfil').hide()
+						$('#galeria').show()
+					}
+				})
+				return false;
+			}); 
+			
+			
+			$('#cambiar_foto').click(function(){
+				carga()
+				$('#perfil').hide()
+				$('#fotos').show()
+			})
+		</script>
 	</div><!--//////////fin perfil-->
 	
 	
@@ -1610,33 +1641,34 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 	
 	
 	
-	<div id='opciones' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display: none">
-    <div style="position: absolute; width: 100%; height:92%; top:8%; background:#8E8E8E">
+	<div id='opciones' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#e8e7e8; display: none">
+    <div style="position: absolute; width: 100%; height:92%; top:8%; background-color:#e8e7e8; color:rgba(45,42,50,1.00)">
       <form id="forma_opciones" name="forma_opciones">
         <div style="position: absolute; width: 80%; left: 10%; height: 86%; top: 7%">
           
           
-          	<div class="textos_m" style="position: absolute; top: -2%">BÚSQUEDA POR NOMBRE DE USUARIO</div>
+          	<div class="textos_m" style="top:-2%; text-align: center; width: 100%;"><img class="iconitos" src="img/buscar.png" style="height: 20px; margin-right: 10px;"/><b>BÚSQUEDA</b></div>
+          	
+          	
 							
-			<input id="nnomm" class="textos_c redondear" type="text" style="border: 1px solid #FFFFFF; background:none; width: calc(65% - 20px); height: 4.5%; top: 4%; padding-left: 20px; color:rgba(255,255,255,.8); left: 0px" value="@JohnDoe" onFocus="if(this.value=='@JohnDoe'){this.value=''}" onBlur="if(this.value==''){this.value='@JohnDoe'};">
+			<input id="nnomm" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(65% - 20px); height: 4.5%; top: 6%; padding-left: 20px; color:rgba(45,42,50,1.00); left: 0px" value="Por nombre de usuario" onFocus="if(this.value=='Por nombre de usuario'){this.value=''}" onBlur="if(this.value==''){this.value='Por nombre de usuario'};">
 							
-			<input id="enviar" type="submit" class="textos_c" style="width: 30%; height: 5.2%; right: 0px; background:#312C32; color:#DCD3C2; top:4%; font-weight: bold; border: none; cursor: pointer" value="CONTINUAR">
+			<input id="enviar" type="submit" class="textos_c" style="width: 30%; height: 5.2%; right: 0px; background:#ed3737; color:#ffffff; top:6%; font-weight: bold; border: none; cursor: pointer" value="CONTINUAR">
 							
 					
 							<script>
 								$('#enviar').click(function(){
-									if(document.getElementById('nnomm').value=="" || document.getElementById('nnomm').value=="@JohnDoe"){
+									if(document.getElementById('nnomm').value=="" || document.getElementById('nnomm').value=="Por nombre de usuario"){
 										busca()
 									}else{
-										$("#trens").load("phps/trends2.php?id=<?php echo $id?>&bus="+document.getElementById('nnomm').value, function(){
-											inicio()
-										});
+										$('#galeria').show()
+										$('#opciones').hide()
 									}
 								})
 							</script>
           
-          <div class="textos_g" style="position: absolute;top: 12%">BÚSQUEDA</div>
-          
+
+          <div class="centrar_h" style="height: 1px; width: 30px; background: rgba(91,91,91,1.00); top: 16%"></div>
           
          
           
@@ -1646,36 +1678,36 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
           <input id="op_rango_abajo" name="rango_abajo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
           <input id="op_rango_arriba" name="rango_arriba" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
           
-          <input id="op_paises" name="paises" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="1">
+          <input id="op_paises" name="paises" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none">
           
           <div class="textos_c" style="top: 18%">PAISES</div>
-          <div class="textos_c redondear" style="border: 1px solid #312C32; background:#FFFFFF; width:calc(100% - 20px); height:40%; top: 22%; padding-left: 20px; color:#2F2F2F; overflow: hidden; overflow-y:auto">
-            <div id="op_pais1" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Argentina</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom1" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais2" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Belice</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom2" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais3" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Bolivia</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom3" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais4" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Brasil</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom4" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais5" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Canada</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom5" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais6" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Chile</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom6" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais7" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Colombia</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom7" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais8" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Costa Rica</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom8" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais9" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Cuba</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom9" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais10" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Ecuador</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom10" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais11" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">El salvador</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom11" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais12" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Estados Unidos</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom12" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais13" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Guatemala</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom13" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais14" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Guyana</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom14" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais15" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Guyana Francesa</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom15" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais16" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Honduras</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom16" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais17" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Mexico</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom17" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais18" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Nicaragua</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom18" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais19" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Panama</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom19" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais20" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Paraguay</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom20" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais21" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Peru</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom21" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais22" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Puerto Rico</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom22" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais23" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Republica Dominicana</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom23" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais24" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Santo Domingo</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom24" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais25" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Suriname</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom25" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
-            <div id="op_pais26" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Venezuela</span> <img src="img/cuadro.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom26" src="img/palomita.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+          <div class="textos_c redondear" style="background:#2d2a32; width:calc(100% - 20px); height:40%; top: 22%; padding-left: 20px; color:#fff; overflow: hidden; overflow-y:auto">
+            <div id="op_pais1" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Argentina</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom1" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais2" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Belice</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom2" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais3" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Bolivia</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom3" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais4" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Brasil</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom4" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais5" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Canada</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom5" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais6" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Chile</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom6" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais7" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Colombia</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom7" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais8" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Costa Rica</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom8" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais9" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Cuba</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom9" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais10" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Ecuador</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom10" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais11" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">El salvador</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom11" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais12" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Estados Unidos</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom12" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais13" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Guatemala</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom13" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais14" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Guyana</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom14" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais15" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Guyana Francesa</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom15" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais16" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Honduras</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom16" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais17" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Mexico</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom17" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais18" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Nicaragua</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom18" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais19" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Panama</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom19" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais20" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Paraguay</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom20" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais21" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Peru</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom21" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais22" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Puerto Rico</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom22" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais23" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Republica Dominicana</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom23" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais24" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Santo Domingo</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom24" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais25" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Suriname</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom25" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
+            <div id="op_pais26" style="position: relative; float: left; width: 100%; height: 8.3%; cursor: pointer"> <span class="centrar_v" style="left: 0px">Venezuela</span> <img src="img/cuadro3.png"style="position: absolute; right: 20px; height: 70%; top: 15%"/> <img id="op_palom26" src="img/palomita2.png"style="position: absolute; right: 20px; height: 70%; top: 15%;"/> </div>
             <script>
 									var op_pas1=1
 									$('#op_pais1').click(function(){
@@ -1791,7 +1823,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
           <div class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#FFFFFF; width: calc(100% - 20px); height: 4.5%; top: 82%; padding-left: 20px; color:#2F2F2F">
             <div class="centrar_v" id="op_slider" style="width: 80%; height:1px; left: 10%"></div>
           </div>
-          <input type="submit" class="textos_c" style="width: 100%; height: 8%; background:#312C32; color:#DCD3C2; top: 92%; font-weight: bold; border: none; left: 0px" value="CONTINUAR">
+          <input type="submit" class="textos_c" style="width: 100%; height: 8%; background:#ed3737; color:#ffffff; top: 92%; font-weight: bold; border: none; left: 0px" value="CONTINUAR">
           <script>
 								
 								
@@ -1876,7 +1908,15 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 			  
 			  
 		$('#forma_opciones').submit(function() {
-			document.getElementById('paises').value = pas1+', '+pas2+', '+pas3+', '+pas4+', '+pas5+', '+pas6+', '+pas7+', '+pas8+', '+pas9+', '+pas10+', '+pas11+', '+pas12+', '+pas13+', '+pas14+', '+pas15+', '+pas16+', '+pas17+', '+pas18+', '+pas19+', '+pas20+', '+pas21+', '+pas22+', '+pas23+', '+pas24+', '+pas25+', '+pas26
+			document.getElementById('op_paises').value = op_pas1+', '+op_pas2+', '+op_pas3+', '+op_pas4+', '+op_pas5+', '+op_pas6+', '+op_pas7+', '+op_pas8+', '+op_pas9+', '+op_pas10+', '+op_pas11+', '+op_pas12+', '+op_pas13+', '+op_pas14+', '+op_pas15+', '+op_pas16+', '+op_pas17+', '+op_pas18+', '+op_pas19+', '+op_pas20+', '+op_pas21+', '+op_pas22+', '+op_pas23+', '+op_pas24+', '+op_pas25+', '+op_pas26
+			
+			p_paises = op_pas1+', '+op_pas2+', '+op_pas3+', '+op_pas4+', '+op_pas5+', '+op_pas6+', '+op_pas7+', '+op_pas8+', '+op_pas9+', '+op_pas10+', '+op_pas11+', '+op_pas12+', '+op_pas13+', '+op_pas14+', '+op_pas15+', '+op_pas16+', '+op_pas17+', '+op_pas18+', '+op_pas19+', '+op_pas20+', '+op_pas21+', '+op_pas22+', '+op_pas23+', '+op_pas24+', '+op_pas25+', '+op_pas26
+			
+			p_ver_hombre = op_ver1
+			p_ver_mujer = op_ver2
+			
+			p_rango_abajo = document.getElementById('op_rango_abajo')
+			p_rango_arriba = document.getElementById('op_rango_arriba')
 			
 			$.ajax({
 				type: 'POST',
@@ -1886,8 +1926,9 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 					//var datos = data
 					//alert('bien')
 					
-					//$('#busqueda').hide()
-					//$('#fotos').show()
+					$('#opciones').hide()
+					$('#galeria').show()
+					$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 					
 				}
 			})
@@ -1907,14 +1948,14 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   
   
   
-  <div id='favoritos' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display:none">
-  		<div id='favs' style="position:absolute; width: 100%; height: 92%; top: 8%; background:#8E8E8E"></div>
+  <div id='favoritos' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: #e8e7e8; display:none">
+  		<div id='favs' style="position:absolute; width: 100%; height: 92%; top: 8%; background: #e8e7e8;"></div>
   </div><!--/////////// fin favoritos-->
   
   
   
   
-  <div id='losmas' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display:none">
+  <div id='losmas' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: #e8e7e8; display:none">
   		<div id='tren' style="position:absolute; width: 100%; height: 92%; top: 8%; background:#8E8E8E"></div>
   </div><!--/////////// fin favoritos-->
   
@@ -1922,7 +1963,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   
   
   
-  <div id='contacto' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color:#FCDA3E; display:none">
+  <div id='contacto' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: #e8e7e8; display:none">
   		<div style="position:absolute; width: 100%; height: 92%; top: 8%; background:#8E8E8E">
   						<div style="position: absolute; width: 70%; left: 15%; height: 100%;">
 							<div class="textos_g" style="top:18%">CONTÁCTANOS</div>
@@ -2836,7 +2877,69 @@ function abrir_canal(numero){
 				$('#favoritos').hide()
 				$('#losmas').hide()
 				$('#contacto').hide()
+				
+				if(p_ver_hombre==1){
+					$('#op_pal2a').show()
+					op_ver1=1
+					document.getElementById('op_ver_hombre').value=1
+				}else{
+					$('#op_pal2a').hide()
+					op_ver1=0
+					document.getElementById('op_ver_hombre').value=0
+				}
+				
+				
+				if(p_ver_mujer==1){
+					$('#op_pal2b').show()
+					op_ver2=1
+					document.getElementById('op_ver_mujer').value=1
+				}else{
+					$('#op_pal2b').hide()
+					op_ver2=0
+					document.getElementById('op_ver_mujer').value=0
+				}			
+				op_val1 = p_rango_abajo;
+				op_val2 = p_rango_arriba;
+
+				var pai = p_paises.split(", ");
+
+				var op_pas1=1
+				if(pai[0]==1){$('#op_palom1').show(); op_pas1=1;}else{$('#op_palom1').hide(); op_pas1=0}
+				if(pai[1]==1){$('#op_palom2').show(); op_pas2=1;}else{$('#op_palom2').hide(); op_pas2=0}
+				if(pai[2]==1){$('#op_palom3').show(); op_pas3=1;}else{$('#op_palom3').hide(); op_pas3=0}
+				if(pai[3]==1){$('#op_palom4').show(); op_pas4=1;}else{$('#op_palom4').hide(); op_pas4=0}
+				if(pai[4]==1){$('#op_palom5').show(); op_pas5=1;}else{$('#op_palom5').hide(); op_pas5=0}
+				if(pai[5]==1){$('#op_palom6').show(); op_pas6=1;}else{$('#op_palom6').hide(); op_pas6=0}
+				if(pai[6]==1){$('#op_palom7').show(); op_pas7=1;}else{$('#op_palom7').hide(); op_pas7=0}
+				if(pai[7]==1){$('#op_palom8').show(); op_pas8=1;}else{$('#op_palom8').hide(); op_pas8=0}
+				if(pai[8]==1){$('#op_palom9').show(); op_pas9=1;}else{$('#op_palom9').hide(); op_pas9=0}
+				if(pai[9]==1){$('#op_palom10').show(); op_pas10=1;}else{$('#op_palom10').hide(); op_pas10=0}
+				if(pai[10]==1){$('#op_palom11').show(); op_pas11=1;}else{$('#op_palom11').hide(); op_pas11=0}
+				if(pai[11]==1){$('#op_palom12').show(); op_pas12=1;}else{$('#op_palom12').hide(); op_pas12=0}
+				if(pai[12]==1){$('#op_palom13').show(); op_pas13=1;}else{$('#op_palom13').hide(); op_pas13=0}
+				if(pai[13]==1){$('#op_palom14').show(); op_pas14=1;}else{$('#op_palom14').hide(); op_pas14=0}
+				if(pai[14]==1){$('#op_palom15').show(); op_pas15=1;}else{$('#op_palom15').hide(); op_pas15=0}
+				if(pai[15]==1){$('#op_palom16').show(); op_pas16=1;}else{$('#op_palom16').hide(); op_pas16=0}
+				if(pai[16]==1){$('#op_palom17').show(); op_pas17=1;}else{$('#op_palom17').hide(); op_pas17=0}
+				if(pai[17]==1){$('#op_palom18').show(); op_pas18=1;}else{$('#op_palom18').hide(); op_pas18=0}
+				if(pai[18]==1){$('#op_palom19').show(); op_pas19=1;}else{$('#op_palom19').hide(); op_pas19=0}
+				if(pai[19]==1){$('#op_palom20').show(); op_pas20=1;}else{$('#op_palom20').hide(); op_pas20=0}
+				if(pai[20]==1){$('#op_palom21').show(); op_pas21=1;}else{$('#op_palom21').hide(); op_pas21=0}
+				if(pai[21]==1){$('#op_palom22').show(); op_pas22=1;}else{$('#op_palom22').hide(); op_pas22=0}
+				if(pai[22]==1){$('#op_palom23').show(); op_pas23=1;}else{$('#op_palom23').hide(); op_pas23=0}
+				if(pai[23]==1){$('#op_palom24').show(); op_pas24=1;}else{$('#op_palom24').hide(); op_pas24=0}
+				if(pai[24]==1){$('#op_palom25').show(); op_pas25=1;}else{$('#op_palom25').hide(); op_pas25=0}
+				if(pai[25]==1){$('#op_palom26').show(); op_pas26=1;}else{$('#op_palom26').hide(); op_pas26=0}
+				
+			
+				
 				rango2()
+				document.getElementById('op_ver_hombre').value = p_ver_hombre
+				document.getElementById('op_ver_mujer').value = p_ver_mujer
+				document.getElementById('op_rango_abajo').value = p_rango_abajo
+				document.getElementById('op_rango_arriba').value = p_rango_arriba
+				document.getElementById('op_paises').value = p_paises
+
 			})
 			
 			$('#me4').click(function(){
@@ -2954,6 +3057,11 @@ function abrir_canal(numero){
 					$('.textos_m').css('font-size', height/45+'px')
 					$('.textos_c').css('font-size', height/55+'px')	
 					$('.textos_cx').css('font-size', height/70+'px')
+					
+					
+					.cuadro_negro
+					
+					$('.iconitos').css('height', height/42+'px')
 					StatusBar.hide();
 			}
 	
