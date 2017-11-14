@@ -1956,7 +1956,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   
   
   <div id='losmas' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: #e8e7e8; display:none">
-  		<div id='tren' style="position:absolute; width: 100%; height: 92%; top: 8%; background:#8E8E8E"></div>
+  		<div id='tren' style="position:absolute; width: 100%; height: 92%; top: 8%; background:#e8e7e8"></div>
   </div><!--/////////// fin favoritos-->
   
   
@@ -1964,22 +1964,25 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   
   
   <div id='contacto' style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: #e8e7e8; display:none">
-  		<div style="position:absolute; width: 100%; height: 92%; top: 8%; background:#8E8E8E">
+  		<div style="position:absolute; width: 100%; height: 92%; top: 8%; background:#e8e7e8E">
+  						
+  						<div class="textos_m" style="top:5%; text-align: center; width: 100%;"><img class="iconitos" src="img/contactanos.png" style="height: 20px; margin-right: 10px; vertical-align: middle"/><b>CONTÁCTANOS</b></div>
+  							
   						<div style="position: absolute; width: 70%; left: 15%; height: 100%;">
-							<div class="textos_g" style="top:18%">CONTÁCTANOS</div>
-
-                            <div class="textos_c" style="top: 27%">NOMBRE</div>
-							<input id="contacto_nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #FFFFFF; background:none; width: calc(100% - 20px); height: 4.5%; top: 31%; padding-left: 20px; color:rgba(255,255,255,1); left: 0px" value="">
 							
-							<div class="textos_c" style="top: 39%">CORREO ELECTRÓNICO</div>
-							<input id="contacto_correo" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #FFFFFF; background:none; width: calc(100% - 20px); height: 4.5%; top: 43%; padding-left: 20px; color:rgba(255,255,255,1); left: 0px" value="">
 
-							<div class="textos_c" style="top: 51%;">COMENTARIOS</div>
-							<textarea id="comentarios" name="comentarios" class="textos_m redondear" style="border: 1px solid #312C32; background:#FFFFFF; width: calc(100% - 20px); height: 13.5%; top: 55%; padding-left: 20px; color:#2F2F2F; padding-top: 10px; left: 0px"></textarea>
-
-							<input id="enviar" type="submit" class="textos_c" style="width: 100%; height: 7%; background:#312C32; color:#DCD3C2; top: 74%; font-weight: bold; border: none; cursor: pointer; left: 0px" value="ENVIAR">
+                            <div class="textos_c" style="top: 22%">NOMBRE</div>
+							<input id="contacto_nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #272727; background:none; width: calc(100% - 20px); height: 4.5%; top: 26%; padding-left: 20px; color:#272727; left: 0px" value="">
 							
-							<div id="retro1" class="textos_m" style="position: absolute; top: 82%; width: 100%; color:#fff; text-align: center; font-family:ariLight; left: 0px"></div>
+							<div class="textos_c" style="top: 34%">CORREO ELECTRÓNICO</div>
+							<input id="contacto_correo" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #272727; background:none; width: calc(100% - 20px); height: 4.5%; top: 38%; padding-left: 20px; color:#272727; left: 0px" value="">
+
+							<div class="textos_c" style="top: 46%;">COMENTARIOS</div>
+							<textarea id="comentarios" name="comentarios" class="textos_m redondear" style="border: 1px solid #312C32; background:#FFFFFF; width: calc(100% - 20px); height: 13.5%; top: 50%; padding-left: 20px; color:#2F2F2F; padding-top: 10px; left: 0px"></textarea>
+
+							<input id="enviar" type="submit" class="textos_c" style="width: 100%; height: 7%; background:#ed3737; color:#fff; top: 69%; font-weight: bold; border: none; cursor: pointer; left: 0px" value="ENVIAR">
+							
+							<div id="retro1" class="textos_m" style="position: absolute; top: 77%; width: 100%; color:#fff; text-align: center; font-family:ariLight; left: 0px"></div>
 
 						</div>
   		</div>
@@ -3057,11 +3060,9 @@ function abrir_canal(numero){
 					$('.textos_m').css('font-size', height/45+'px')
 					$('.textos_c').css('font-size', height/55+'px')	
 					$('.textos_cx').css('font-size', height/70+'px')
-					
-					
-					.cuadro_negro
-					
+
 					$('.iconitos').css('height', height/42+'px')
+
 					StatusBar.hide();
 			}
 	
