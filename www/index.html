@@ -284,7 +284,7 @@ var foto9 ='a'
 <div class="app"><!--/////////inicio app-->
  
  
-  <div id='crece' style="position:absolute; width:100%; height:150%; display: none"></div>
+  <div id='crece' style="position:absolute; width:100%; height:140%; display: none"></div>
  
   <div id='login' style="position:absolute; width:100%; height:100%; background-color:#FCDA3E; color:#312C32">
     <div style="position: absolute; width: 100%; height: 100%"> 
@@ -293,8 +293,8 @@ var foto9 ='a'
       <img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
       <div id="texto1" class="centrar_h textos_m" style="top: 40%; text-align: left; font-weight: bold; width: 70%">Ya eres Usuario, ingresa:</div>
       <form id="forma_login" name="forma_login" method="post">
-        <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}; $('#crece').stop().fadeIn(0); scroll1()" onBlur="if(this.value==''){this.value='Email'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
-        <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#crece').stop().fadeIn(0); scroll2()" onBlur="if(this.value==''){this.value='Password'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
+        <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}; $('#crece').stop().fadeIn(0); scroll2()" onBlur="if(this.value==''){this.value='Email'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
+        <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#crece').stop().fadeIn(0); scroll3()" onBlur="if(this.value==''){this.value='Password'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
         <input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 5%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="ENTRAR">
         <div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 85%; width:70%"></div>
       </form>
@@ -429,21 +429,21 @@ var foto9 ='a'
           <div class="textos_c" style="top: 7%"><font color="DF9230">*</font> CORREO ELECTRÓNICO</div>
           <input id="genero" name="genero" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:none; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; display:none" value="Male">
           
-          <input id="correo_2" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 11%; padding-left: 20px; color:#312C32; left: 0px" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}; $('#registro').stop().animate({marginTop:'-5%'}, 500)" onBlur="if(this.value==''){this.value='name@example.com'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide()" onChange="validar_email(document.getElementById('correo').value)">
+          <input id="correo_2" name="correo" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 11%; padding-left: 20px; color:#312C32; left: 0px" value="name@example.com" onFocus="if(this.value=='name@example.com'){this.value=''}; $('#crece').stop().fadeIn(0); scroll1()" onBlur="if(this.value==''){this.value='name@example.com'}; $('#registro').stop().animate({marginTop:'0%'}, 500); $('#crece').fadeOut(500); scroll0(); StatusBar.hide()" onChange="validar_email(document.getElementById('correo').value)">
           
           <div id="existe" class="textos_c" style="position: absolute; top:37%; right:0px"></div>
           <div class="textos_c" style="top: 18%"><font color="DF9230">*</font> CONTRASEÑA</div>
           
-          <input id="pass_2" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 22%; padding-left: 20px; color:#312C32; left: 0px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#registro').stop().animate({marginTop:'-16%'}, 500)" onBlur="if(this.value==''){this.value='Password'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
+          <input id="pass_2" name="pass" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 22%; padding-left: 20px; color:#312C32; left: 0px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#crece').stop().fadeIn(0); scroll1()" onBlur="if(this.value==''){this.value='Password'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
           <div class="textos_c" style="top: 29%"><font color="DF9230">*</font> NOMBRE</div>
          
-           <input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 0px" value="John" onFocus="if(this.value=='John'){this.value=''}; $('#registro').stop().animate({marginTop:'-27%'}, 500)" onBlur="if(this.value==''){this.value='John'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
+           <input id="nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 0px" value="John" onFocus="if(this.value=='John'){this.value=''}; $('#crece').stop().fadeIn(0); scroll2()" onBlur="if(this.value==''){this.value='John'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
           <div class="textos_c" style="top: 29%; left: 52%"><font color="DF9230">*</font> APELLIDO</div>
           
-          <input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}; $('#registro').stop().animate({marginTop:'-27%'}, 500)" onBlur="if(this.value==''){this.value='Doe'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
+          <input id="apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(48% - 20px); height: 4.5%; top: 33%; padding-left: 20px; color:#312C32; left: 52%" value="Doe" onFocus="if(this.value=='Doe'){this.value=''}; $('#crece').stop().fadeIn(0); scroll3()" onBlur="if(this.value==''){this.value='Doe'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
           <div class="textos_c" style="top: 40%"><font color="DF9230">*</font> NOMBRE DE USUARIO</div>
           
-          <input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; left: 0px" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}; $('#registro').stop().animate({marginTop:'-38%'}, 500)" onBlur="if(this.value==''){this.value='JohnDoe'}; $('#registro').stop().animate({marginTop:'0%'}, 500); StatusBar.hide();">
+          <input id="nickname" name="nickname" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#fff; width: calc(100% - 20px); height: 4.5%; top: 44%; padding-left: 20px; color:#312C32; left: 0px" value="JohnDoe" onFocus="if(this.value=='JohnDoe'){this.value=''}; $('#crece').stop().fadeIn(0); scroll3()" onBlur="if(this.value==''){this.value='JohnDoe'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
           
           <div class="textos_c" style="top: 51%">SOY</div>
           <div id="hombre" class="textos_c redondear" type="text" style="border: 1px solid #312C32; background:#ffffff; width: calc(48% - 20px); height: 4.5%; top: 55%; padding-left: 20px; color:#2F2F2F; left: 0px"><span class="centrar_v" style="left: 20px">HOMBRE</span><img src="img/cuadro.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/><img id="pal1a" src="img/palomita.png"style="position: absolute; right: 10px; height: 60%; top: 20%"/></div>
@@ -1515,7 +1515,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 			
 			<div class="menu sombra" style="position: absolute; width: 100%; height: 8%; bottom:0px; background:#999">
 				<form id="forma_fotos" name="forma_registro">
-                    <input id="descripcion" name="descripcion" type="text" class="textos_cx" style="position:absolute; width:calc(74% - 60px); height:calc(100% - 34px); padding-left: 20px; left: 20px; top: 15px; background: #FFFFFF; border:1px solid #312C32; color:#868689" value="SOBRE MI" onFocus="if(this.value=='SOBRE MI'){this.value=''}; $('#fotos').animate({})" onBlur="if(this.value==''){this.value='SOBRE MI'};">
+                    <input id="descripcion" name="descripcion" type="text" class="textos_cx" style="position:absolute; width:calc(74% - 60px); height:calc(100% - 34px); padding-left: 20px; left: 20px; top: 15px; background: #FFFFFF; border:1px solid #312C32; color:#868689" value="SOBRE MI" onFocus="if(this.value=='SOBRE MI'){this.value=''}; $('#fotos').animate({}); $('#crece').stop().fadeIn(0); scroll4()" onBlur="if(this.value==''){this.value='SOBRE MI'}; $('#crece').fadeOut(500); scroll0()">
                     <input type="submit" class="textos_cx redondear" style="position:absolute; width: 23%; height:calc(100% - 30px); right: 20px; top: 15px; background:#312C32; border: none; color:#DCD3C2" value="CONTINUAR">
                     
                 </form>
@@ -3940,12 +3940,22 @@ function abrir_canal(numero){
 			}
 			function scroll1(){
 				$("html, body").stop().animate({
-					scrollTop: height/4
+					scrollTop: height/7
 				}, 500);
 			}
 			function scroll2(){
 				$("html, body").stop().animate({
+					scrollTop: height/4
+				}, 500);
+			}
+			function scroll3(){
+				$("html, body").stop().animate({
 					scrollTop: height/3
+				}, 500);
+			}
+			function scroll4(){
+				$("html, body").stop().animate({
+					scrollTop: height/2
 				}, 500);
 			}
 	
