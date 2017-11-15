@@ -1585,7 +1585,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 							<div class="centrar_h" style="height: 1px; width: 30px; background: rgba(91,91,91,1.00); top: 68%"></div>
 							
 							<div class="textos_c" style="top: 72%; left:0px">NOMBRE</div>
-							<input id="perfil_nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #999; background:none; width: calc(48% - 20px); height: 4.5%; top: 76%; padding-left: 20px; color:rgba(45,42,50,1.00); left: 0px" value="">
+							<input id="perfil_nombre" name="nombre" class="textos_c redondear" type="text" style="border: 1px solid #999; background:none; width: calc(48% - 20px); height: 4.5%; top: 76%; padding-left: 20px; color:rgba(45,42,50,1.00); left: 0px" value="" onFocus="$('#crece').stop().fadeIn(0); scroll4()" onBlur=" $('#crece').fadeOut(500); scroll0()">
 							
 							<div class="textos_c" style="top: 72%; left: 52%">APELLIDO</div>
 							<input id="perfil_apellido" name="apellido" class="textos_c redondear" type="text" style="border: 1px solid #999; background:none; width: calc(48% - 20px); height: 4.5%; top: 76%; padding-left: 20px; color:rgba(45,42,50,1.00); left: 52%" value="">
@@ -3663,123 +3663,140 @@ function abrir_canal(numero){
 		
     
 
+			window.onhashchange=function(){
+				if(window.location.hash=='#galeria'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
 
+					$('#perfil').hide()
+					$('#galeria').show()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').hide()
+					$('#chat').hide()
+
+					$('#bt_menu').show()
+					$('#bt_chat').show()
+					$('#mensajes').show()
+				}else if(window.location.hash=='#perfil'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+
+					$('#galeria').hide()
+					$('#perfil').show()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').hide()
+					$('#chat').hide()
+
+					$('#perfil_foto').css('background', 'url(https://conoceme.vip/uploads/'+p_foto1+')')
+					$('#perfil_foto').css('background-position', 'center')
+					$('#perfil_foto').css('background-size', 'cover')
+
+					$('#perfil_correo').html(p_correo)
+					$('#perfil_nick').html('@'+p_nickname)
+					document.getElementById('perfil_nombre').value=p_nombre
+					document.getElementById('perfil_apellido').value=p_apellido
+					$('#perfil_pais > option[value="'+p_pais+'"]').attr('selected', 'selected');
+				}else if(window.location.hash=='#opciones'){
+						$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+
+					$('#galeria').hide()
+					$('#perfil').hide()
+					$('#opciones').show()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').hide()
+					$('#chat').hide()
+
+					if(p_ver_hombre==1){
+						$('#op_pal2a').show()
+						op_ver1=1
+						document.getElementById('op_ver_hombre').value=1
+					}else{
+						$('#op_pal2a').hide()
+						op_ver1=0
+						document.getElementById('op_ver_hombre').value=0
+					}
+
+
+					if(p_ver_mujer==1){
+						$('#op_pal2b').show()
+						op_ver2=1
+						document.getElementById('op_ver_mujer').value=1
+					}else{
+						$('#op_pal2b').hide()
+						op_ver2=0
+						document.getElementById('op_ver_mujer').value=0
+					}			
+					op_val1 = p_rango_abajo;
+					op_val2 = p_rango_arriba;
+
+					var pai = p_paises.split(", ");
+
+					var op_pas1=1
+					if(pai[0]==1){$('#op_palom1').show(); op_pas1=1;}else{$('#op_palom1').hide(); op_pas1=0}
+					if(pai[1]==1){$('#op_palom2').show(); op_pas2=1;}else{$('#op_palom2').hide(); op_pas2=0}
+					if(pai[2]==1){$('#op_palom3').show(); op_pas3=1;}else{$('#op_palom3').hide(); op_pas3=0}
+					if(pai[3]==1){$('#op_palom4').show(); op_pas4=1;}else{$('#op_palom4').hide(); op_pas4=0}
+					if(pai[4]==1){$('#op_palom5').show(); op_pas5=1;}else{$('#op_palom5').hide(); op_pas5=0}
+					if(pai[5]==1){$('#op_palom6').show(); op_pas6=1;}else{$('#op_palom6').hide(); op_pas6=0}
+					if(pai[6]==1){$('#op_palom7').show(); op_pas7=1;}else{$('#op_palom7').hide(); op_pas7=0}
+					if(pai[7]==1){$('#op_palom8').show(); op_pas8=1;}else{$('#op_palom8').hide(); op_pas8=0}
+					if(pai[8]==1){$('#op_palom9').show(); op_pas9=1;}else{$('#op_palom9').hide(); op_pas9=0}
+					if(pai[9]==1){$('#op_palom10').show(); op_pas10=1;}else{$('#op_palom10').hide(); op_pas10=0}
+					if(pai[10]==1){$('#op_palom11').show(); op_pas11=1;}else{$('#op_palom11').hide(); op_pas11=0}
+					if(pai[11]==1){$('#op_palom12').show(); op_pas12=1;}else{$('#op_palom12').hide(); op_pas12=0}
+					if(pai[12]==1){$('#op_palom13').show(); op_pas13=1;}else{$('#op_palom13').hide(); op_pas13=0}
+					if(pai[13]==1){$('#op_palom14').show(); op_pas14=1;}else{$('#op_palom14').hide(); op_pas14=0}
+					if(pai[14]==1){$('#op_palom15').show(); op_pas15=1;}else{$('#op_palom15').hide(); op_pas15=0}
+					if(pai[15]==1){$('#op_palom16').show(); op_pas16=1;}else{$('#op_palom16').hide(); op_pas16=0}
+					if(pai[16]==1){$('#op_palom17').show(); op_pas17=1;}else{$('#op_palom17').hide(); op_pas17=0}
+					if(pai[17]==1){$('#op_palom18').show(); op_pas18=1;}else{$('#op_palom18').hide(); op_pas18=0}
+					if(pai[18]==1){$('#op_palom19').show(); op_pas19=1;}else{$('#op_palom19').hide(); op_pas19=0}
+					if(pai[19]==1){$('#op_palom20').show(); op_pas20=1;}else{$('#op_palom20').hide(); op_pas20=0}
+					if(pai[20]==1){$('#op_palom21').show(); op_pas21=1;}else{$('#op_palom21').hide(); op_pas21=0}
+					if(pai[21]==1){$('#op_palom22').show(); op_pas22=1;}else{$('#op_palom22').hide(); op_pas22=0}
+					if(pai[22]==1){$('#op_palom23').show(); op_pas23=1;}else{$('#op_palom23').hide(); op_pas23=0}
+					if(pai[23]==1){$('#op_palom24').show(); op_pas24=1;}else{$('#op_palom24').hide(); op_pas24=0}
+					if(pai[24]==1){$('#op_palom25').show(); op_pas25=1;}else{$('#op_palom25').hide(); op_pas25=0}
+					if(pai[25]==1){$('#op_palom26').show(); op_pas26=1;}else{$('#op_palom26').hide(); op_pas26=0}
+
+
+
+					rango2()
+					document.getElementById('op_ver_hombre').value = p_ver_hombre
+					document.getElementById('op_ver_mujer').value = p_ver_mujer
+					document.getElementById('op_rango_abajo').value = p_rango_abajo
+					document.getElementById('op_rango_arriba').value = p_rango_arriba
+					document.getElementById('op_paises').value = p_paises
+				}
+				
+				if(window.location.hash!='#menu'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+				}
+			}
+	
+	
+		
+	
+	
+	
 			$('#me1').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#perfil').hide()
-				$('#galeria').show()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').hide()
-				$('#chat').hide()
-				
-				$('#bt_menu').show()
-				$('#bt_chat').show()
-				$('#mensajes').show()
+				window.location.href = '#galeria'
 				//$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 			})
 			
 			$('#me2').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#galeria').hide()
-				$('#perfil').show()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').hide()
-				$('#chat').hide()
-				
-				$('#perfil_foto').css('background', 'url(https://conoceme.vip/uploads/'+p_foto1+')')
-				$('#perfil_foto').css('background-position', 'center')
-				$('#perfil_foto').css('background-size', 'cover')
-				
-				$('#perfil_correo').html(p_correo)
-				$('#perfil_nick').html('@'+p_nickname)
-				document.getElementById('perfil_nombre').value=p_nombre
-				document.getElementById('perfil_apellido').value=p_apellido
-				$('#perfil_pais > option[value="'+p_pais+'"]').attr('selected', 'selected');
-				
+				window.location.href = '#perfil'
 			})
 			
 			$('#me3').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#galeria').hide()
-				$('#perfil').hide()
-				$('#opciones').show()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').hide()
-				$('#chat').hide()
-				
-				if(p_ver_hombre==1){
-					$('#op_pal2a').show()
-					op_ver1=1
-					document.getElementById('op_ver_hombre').value=1
-				}else{
-					$('#op_pal2a').hide()
-					op_ver1=0
-					document.getElementById('op_ver_hombre').value=0
-				}
-				
-				
-				if(p_ver_mujer==1){
-					$('#op_pal2b').show()
-					op_ver2=1
-					document.getElementById('op_ver_mujer').value=1
-				}else{
-					$('#op_pal2b').hide()
-					op_ver2=0
-					document.getElementById('op_ver_mujer').value=0
-				}			
-				op_val1 = p_rango_abajo;
-				op_val2 = p_rango_arriba;
-
-				var pai = p_paises.split(", ");
-
-				var op_pas1=1
-				if(pai[0]==1){$('#op_palom1').show(); op_pas1=1;}else{$('#op_palom1').hide(); op_pas1=0}
-				if(pai[1]==1){$('#op_palom2').show(); op_pas2=1;}else{$('#op_palom2').hide(); op_pas2=0}
-				if(pai[2]==1){$('#op_palom3').show(); op_pas3=1;}else{$('#op_palom3').hide(); op_pas3=0}
-				if(pai[3]==1){$('#op_palom4').show(); op_pas4=1;}else{$('#op_palom4').hide(); op_pas4=0}
-				if(pai[4]==1){$('#op_palom5').show(); op_pas5=1;}else{$('#op_palom5').hide(); op_pas5=0}
-				if(pai[5]==1){$('#op_palom6').show(); op_pas6=1;}else{$('#op_palom6').hide(); op_pas6=0}
-				if(pai[6]==1){$('#op_palom7').show(); op_pas7=1;}else{$('#op_palom7').hide(); op_pas7=0}
-				if(pai[7]==1){$('#op_palom8').show(); op_pas8=1;}else{$('#op_palom8').hide(); op_pas8=0}
-				if(pai[8]==1){$('#op_palom9').show(); op_pas9=1;}else{$('#op_palom9').hide(); op_pas9=0}
-				if(pai[9]==1){$('#op_palom10').show(); op_pas10=1;}else{$('#op_palom10').hide(); op_pas10=0}
-				if(pai[10]==1){$('#op_palom11').show(); op_pas11=1;}else{$('#op_palom11').hide(); op_pas11=0}
-				if(pai[11]==1){$('#op_palom12').show(); op_pas12=1;}else{$('#op_palom12').hide(); op_pas12=0}
-				if(pai[12]==1){$('#op_palom13').show(); op_pas13=1;}else{$('#op_palom13').hide(); op_pas13=0}
-				if(pai[13]==1){$('#op_palom14').show(); op_pas14=1;}else{$('#op_palom14').hide(); op_pas14=0}
-				if(pai[14]==1){$('#op_palom15').show(); op_pas15=1;}else{$('#op_palom15').hide(); op_pas15=0}
-				if(pai[15]==1){$('#op_palom16').show(); op_pas16=1;}else{$('#op_palom16').hide(); op_pas16=0}
-				if(pai[16]==1){$('#op_palom17').show(); op_pas17=1;}else{$('#op_palom17').hide(); op_pas17=0}
-				if(pai[17]==1){$('#op_palom18').show(); op_pas18=1;}else{$('#op_palom18').hide(); op_pas18=0}
-				if(pai[18]==1){$('#op_palom19').show(); op_pas19=1;}else{$('#op_palom19').hide(); op_pas19=0}
-				if(pai[19]==1){$('#op_palom20').show(); op_pas20=1;}else{$('#op_palom20').hide(); op_pas20=0}
-				if(pai[20]==1){$('#op_palom21').show(); op_pas21=1;}else{$('#op_palom21').hide(); op_pas21=0}
-				if(pai[21]==1){$('#op_palom22').show(); op_pas22=1;}else{$('#op_palom22').hide(); op_pas22=0}
-				if(pai[22]==1){$('#op_palom23').show(); op_pas23=1;}else{$('#op_palom23').hide(); op_pas23=0}
-				if(pai[23]==1){$('#op_palom24').show(); op_pas24=1;}else{$('#op_palom24').hide(); op_pas24=0}
-				if(pai[24]==1){$('#op_palom25').show(); op_pas25=1;}else{$('#op_palom25').hide(); op_pas25=0}
-				if(pai[25]==1){$('#op_palom26').show(); op_pas26=1;}else{$('#op_palom26').hide(); op_pas26=0}
-				
-			
-				
-				rango2()
-				document.getElementById('op_ver_hombre').value = p_ver_hombre
-				document.getElementById('op_ver_mujer').value = p_ver_mujer
-				document.getElementById('op_rango_abajo').value = p_rango_abajo
-				document.getElementById('op_rango_arriba').value = p_rango_arriba
-				document.getElementById('op_paises').value = p_paises
-
+				window.location.href = '#opciones'
 			})
 			
 			$('#me4').click(function(){
@@ -3795,6 +3812,8 @@ function abrir_canal(numero){
 				$('#chat').hide()
 				
 				$('#favs').load('https://conoceme.vip/favoritos_app.php?id='+id)
+				
+				window.location.href = '#favoritos'
 			})
 			
 			$('#me5').click(function(){
@@ -3810,6 +3829,7 @@ function abrir_canal(numero){
 				$('#chat').hide()
 				
 				$('#tren').load('https://conoceme.vip/losmas_app.php?id='+id)
+				window.location.href = '#losmas'
 			})
 			
 			$('#me6').click(function(){
@@ -3828,6 +3848,7 @@ function abrir_canal(numero){
 				$('#bt_chat').show()
 				$('#mensajes').show()
 				$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
+				window.location.href = '#galeria'
 			})
 			
 			$('#me7').click(function(){
@@ -3844,6 +3865,7 @@ function abrir_canal(numero){
 				
 				document.getElementById('contacto_nombre').value=p_nombre+' '+p_apellido;
 				document.getElementById('contacto_correo').value=p_correo;
+				window.location.href = '#contacto'
 			})
 			
 			$('#me8').click(function(){
@@ -3863,6 +3885,7 @@ function abrir_canal(numero){
 				$('#losmas').hide()
 				$('#contacto').hide()
 				$('#chat').hide()
+				window.location.href = '#index'
 			})
 			
 			
@@ -3882,11 +3905,13 @@ function abrir_canal(numero){
 				$('#bt_chat').show()
 				$('#mensajes').show()
 				*/
-				$('#chat').show()			
+				$('#chat').show()	
+				window.location.href = '#chat'
 					
 			})
 	
-	
+			
+		
 			$('#bt_menu').click(function(){
 				$('#oscurese').fadeIn(500)
 				//$('#todo').animate({left:'20%'},500)
@@ -4041,17 +4066,6 @@ function abrir_canal(numero){
 				});
 			}
 	
-	
-			window.addEventListener('native.keyboardshow', function (e) {
-				var deviceHeight = window.innerHeight;
-				var keyboardHeight = e.keyboardHeight;
-				alert('teclado')
-			});
-	
-			window.addEventListener('native.keyboardhide', function (e) {
-				alert('oculto')
-			});
-			
 		</script> 
 <script type="text/javascript" src="cordova.js"></script> 
 <script type="text/javascript" src="js/index.js"></script> 
