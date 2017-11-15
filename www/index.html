@@ -4040,6 +4040,17 @@ function abrir_canal(numero){
 					}
 				});
 			}
+	
+	
+			window.addEventListener('native.keyboardshow', function (e) {
+				var deviceHeight = window.innerHeight;
+				var keyboardHeight = e.keyboardHeight;
+				alert('teclado')
+			});
+	
+			window.addEventListener('native.keyboardhide', function (e) {
+				alert('oculto')
+			});
 			
 		</script> 
 <script type="text/javascript" src="cordova.js"></script> 
