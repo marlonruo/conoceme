@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		app.initApplozicChat();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,5 +46,21 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    
+    initApplozicChat: function() {
+	    try {
+	        (function(d, m){var s, h;       
+	        s = document.createElement("script");
+	        s.type = "text/javascript";
+	        s.async=true;
+	        s.src="https://apps.applozic.com/sidebox.app";
+	        h=document.getElementsByTagName('head')[0];
+	        h.appendChild(s);
+	        window.applozic=m;
+	        m.init=function(t){m._globals=t;}})(document, window.applozic || {});
+	        window.applozic.init({appId:"applozic-sample-app", userId: "john", userName: "John Snow", desktopNotification: true,  notificationIconLink: "PUT_LOGO_IMAGE_LINK_HERE"});
+	    } catch(err) {alert(err); }
     }
 };
+
