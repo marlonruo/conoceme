@@ -7150,11 +7150,12 @@ function abrir_canal(numero){
 			
 			var width
 			var height
+			var alto
 			function inicio(){
 					var $window = $(window);
 					width = $window.width();
 					height = $window.height();
-
+					alto = $window.height();
 					$('.textos_exg').css('font-size', height/15+'px')
 					$('.textos_ex').css('font-size', height/22+'px')
 					$('.textos_g').css('font-size', height/32+'px')
@@ -7163,10 +7164,17 @@ function abrir_canal(numero){
 					$('.textos_cx').css('font-size', height/70+'px')
 
 					$('.iconitos').css('height', height/42+'px')
-
+					alert(alto)
 					StatusBar.hide();
+					
 			}
 	
+			
+			
+			$(window).on("resize", function() {
+				inicio()
+			});
+
 			
 			function scroll0(){
 				$("html, body").stop().animate({
@@ -7275,6 +7283,8 @@ function abrir_canal(numero){
 					}
 				});
 			}
+	
+	
 	
 		</script> 
 <script type="text/javascript" src="cordova.js"></script> 
