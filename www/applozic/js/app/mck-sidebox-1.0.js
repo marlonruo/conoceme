@@ -1813,7 +1813,7 @@ var MCK_CLIENT_GROUP_MAP = [];
 				
 				window.onhashchange=function(){
 					alert('pp')
-				})
+				}
 				
 				$('#polloloco').click(function(){
 					alert('pollo')
