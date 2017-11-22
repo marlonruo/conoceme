@@ -3171,14 +3171,13 @@ function abrir_canal(numero){
 					$('.iconitos').css('height', height/42+'px')
 					checar_alto()
 					StatusBar.hide();
-					
 			}
 	
 			
 			
-			$(window).on("resize", function() {
+			/*$(window).on("resize", function() {
 				inicio()
-			});
+			});*/
 
 			
 			function scroll0(){
@@ -3289,13 +3288,29 @@ function abrir_canal(numero){
 				});
 			}
 	
-			function checar_alto(){
+			/*function checar_alto(){
 				alert(screen.width + " x " + screen.height)
 				alert($(window).width() + " x " + $(window).height())
 				alert(document.body.clientWidth + " x " + document.body.clientHeight)
 				alert(window.innerWidth + " x " + window.innerHeight)
-			}
+				alert('aa')
+			}*/
 	
+	
+			sessionStorage.setItem("anchoInicial", window.innerWidth);
+			sessionStorage.setItem("altoInicial",window.innerHeight);
+	
+			$(window).on("resize", function() {
+				
+					anchoInicial = sessionStorage.getItem("anchoInicial");
+					altoInicial = sessionStorage.getItem("altoInicial");
+					if ( window.innerHeight != altoInicial && window.innerWidth != anchoInicial ) {
+						alert('no es teclado')
+					} else {
+						alert('teclado')
+					}
+				
+			});
 	
 		</script> 
 <script type="text/javascript" src="cordova.js"></script> 
