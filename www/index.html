@@ -3180,11 +3180,18 @@ function abrir_canal(numero){
 			function crecer(){
 				alto = $window.height();
 				$('.pantallas').css('height',alto+'px')
-				setTimeout("$('#texto1').html($window.height())", 1000)
+				setTimeout("$('#texto1').html($window.height())", 500)
+				setTimeout("checar_diferencia()", 500)
 			}
 			function cien(){
-				setTimeout("$('.pantallas').css('height','100%')", 1000)
-				setTimeout("$('#texto1').html($window.height())", 1000)
+				setTimeout("$('.pantallas').css('height','100%')", 500)
+				setTimeout("$('#texto1').html($window.height())", 500)
+			}
+	
+			function checar_diferencia(){
+				var alto2 = $(window).height();
+				var dif = alto - alto2
+				alert(dif)
 			}
 
 			
