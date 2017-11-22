@@ -3087,17 +3087,6 @@ function abrir_canal(numero){
 					$('#bt_menu').show()
 					$('#bt_chat').show()
 					$('#mensajes').show()
-					
-					var $this = $applozic(this);
-                    var currTabId = $mck_msg_inner.data("mck-id");
-                    var isGroup = $mck_msg_inner.data("isgroup");
-                    mckMessageLayout.loadTab({
-                        'tabId': '',
-                        'isGroup': false,
-                        'lastActiveTabId': currTabId,
-                        'isLastActiveTabGroup': isGroup
-                    });
-					
 					StatusBar.hide();
 				}
 				
@@ -3108,10 +3097,6 @@ function abrir_canal(numero){
 			}
 	
 	
-		
-			window.onbeforeunload = function() {
-				  alert( "¿Estás seguro que deseas salir de la actual página?")
-			  }
 	
 	
 			$('#me1').click(function(){

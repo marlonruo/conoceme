@@ -1812,20 +1812,7 @@ var MCK_CLIENT_GROUP_MAP = [];
 				
 				
 				window.onhashchange=function(){
-					if(window.location.hash=='#chat'){
-						alert('pollo')
-						var $this = $applozic(this);
-						var currTabId = $mck_msg_inner.data("mck-id");
-						var isGroup = $mck_msg_inner.data("isgroup");
-						mckMessageLayout.loadTab({
-							'tabId': '',
-							'isGroup': false,
-							'lastActiveTabId': currTabId,
-							'isLastActiveTabGroup': isGroup
-						});
-						window.location.href = '#chat'
-						StatusBar.hide();
-					}
+					alert('pp')
 				})
 				
 				$('#polloloco').click(function(){
