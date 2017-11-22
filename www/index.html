@@ -3167,6 +3167,7 @@ function abrir_canal(numero){
 					$('.textos_c').css('font-size', height/55+'px')	
 					$('.textos_cx').css('font-size', height/70+'px')
 					$('.iconitos').css('height', height/42+'px')
+					
 					StatusBar.hide();
 			}
 	
@@ -3179,21 +3180,11 @@ function abrir_canal(numero){
 			function crecer(){
 				alto = $window.height();
 				$('.pantallas').css('height',alto+'px')
-				setTimeout("$('#texto1').html($window.height()); checa_dif()", 1000)
+				setTimeout("$('#texto1').html($window.height())", 1000)
 			}
 			function cien(){
 				setTimeout("$('.pantallas').css('height','100%')", 1000)
 				setTimeout("$('#texto1').html($window.height())", 1000)
-			}
-	
-	
-			function checa_dif(){
-				var alto2 = $window.height();
-				alert (alto +', 'alto2 +', '+(alto-alto2))
-				var dif =alto-alto2
-				$("html, body").stop().animate({
-					scrollTop: dif
-				}, 500);
 			}
 
 			
