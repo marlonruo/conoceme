@@ -424,6 +424,7 @@ var foto9 ='a'
 										$('#bt_menu').show()
 										$('#bt_chat').show()
 										$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
+										window.location.href = '#galeria'
 										llamadas()
 										$('#chat').load('chat.html')
 									}
@@ -3007,6 +3008,97 @@ function abrir_canal(numero){
 
 					$('#favs').load('https://conoceme.vip/favoritos_app.php?id='+id)
 					StatusBar.hide();
+				}else if(window.location.hash=='#losmas'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+				
+					$('#galeria').hide()
+					$('#perfil').hide()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').show()
+					$('#contacto').hide()
+					$('#chat').hide()
+
+					$('#tren').load('https://conoceme.vip/losmas_app.php?id='+id)
+					StatusBar.hide();
+				}else if(window.location.hash=='#galeria_live'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+
+					$('#perfil').hide()
+					$('#galeria').show()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').hide()
+					$('#chat').hide()
+
+					$('#bt_menu').show()
+					$('#bt_chat').show()
+					$('#mensajes').show()
+					$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
+					StatusBar.hide();
+				}else if(window.location.hash=='#contacto'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+
+					$('#perfil').hide()
+					$('#galeria').hide()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').show()
+					$('#chat').hide()
+
+					document.getElementById('contacto_nombre').value=p_nombre+' '+p_apellido;
+					document.getElementById('contacto_correo').value=p_correo;
+					StatusBar.hide();
+				}else if(window.location.hash=='#index'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+
+					$('#menu_inicio').hide()
+					$('#bt_menu').hide()
+					$('#bt_chat').hide()
+					$('#mensajes').hide()
+
+					$('#login').show()
+					$('#perfil').hide()
+					$('#galeria').hide()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').hide()
+					$('#chat').hide()
+					StatusBar.hide();
+				}else if(window.location.hash=='#chat'){
+					$('#oscurese').fadeOut(500)
+					$('#menu').animate({left:'-100%'},500)
+
+					$('#perfil').hide()
+					$('#galeria').hide()
+					$('#opciones').hide()
+					$('#favoritos').hide()
+					$('#losmas').hide()
+					$('#contacto').hide()
+					$('#chat').show()
+
+					$('#bt_menu').show()
+					$('#bt_chat').show()
+					$('#mensajes').show()
+					
+					var $this = $applozic(this);
+                    var currTabId = $mck_msg_inner.data("mck-id");
+                    var isGroup = $mck_msg_inner.data("isgroup");
+                    mckMessageLayout.loadTab({
+                        'tabId': '',
+                        'isGroup': false,
+                        'lastActiveTabId': currTabId,
+                        'isLastActiveTabGroup': isGroup
+                    });
+					
+					StatusBar.hide();
 				}
 				
 				if(window.location.hash!='#menu'){
@@ -3038,100 +3130,24 @@ function abrir_canal(numero){
 			})
 			
 			$('#me5').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#galeria').hide()
-				$('#perfil').hide()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').show()
-				$('#contacto').hide()
-				$('#chat').hide()
-				
-				$('#tren').load('https://conoceme.vip/losmas_app.php?id='+id)
 				window.location.href = '#losmas'
-				StatusBar.hide();
 			})
 			
 			$('#me6').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#perfil').hide()
-				$('#galeria').show()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').hide()
-				$('#chat').hide()
-				
-				$('#bt_menu').show()
-				$('#bt_chat').show()
-				$('#mensajes').show()
-				$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
-				window.location.href = '#galeria'
-				StatusBar.hide();
+				window.location.href = '#galeria_live'
 			})
 			
 			$('#me7').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#perfil').hide()
-				$('#galeria').hide()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').show()
-				$('#chat').hide()
-				
-				document.getElementById('contacto_nombre').value=p_nombre+' '+p_apellido;
-				document.getElementById('contacto_correo').value=p_correo;
 				window.location.href = '#contacto'
-				StatusBar.hide();
 			})
 			
 			$('#me8').click(function(){
-				$('#oscurese').fadeOut(500)
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#menu_inicio').hide()
-				$('#bt_menu').hide()
-				$('#bt_chat').hide()
-				$('#mensajes').hide()
-				
-				$('#login').show()
-				$('#perfil').hide()
-				$('#galeria').hide()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').hide()
-				$('#chat').hide()
 				window.location.href = '#index'
-				StatusBar.hide();
 			})
 			
 			
 			$('#bt_chat').click(function(){
-				$('#oscurese').fadeOut(500)
-				
-				$('#menu').animate({left:'-100%'},500)
-				
-				$('#perfil').hide()
-				$('#galeria').hide()
-				$('#opciones').hide()
-				$('#favoritos').hide()
-				$('#losmas').hide()
-				$('#contacto').hide()
-				$('#chat').show()
-				
-				$('#bt_menu').show()
-				$('#bt_chat').show()
-				$('#mensajes').show()
 				window.location.href = '#chat'
-				StatusBar.hide();
 			})
 	
 			
