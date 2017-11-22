@@ -225,7 +225,7 @@
         						class="mck-row mck-price-widget mck-top-widget n-vis">
         						<div class="mck-widget-panel">
         							<input type="text" id="mck-price-text-box"
-        								placeholder="Enter final agreed price">
+        								placeholder="Enter final agreed price" onFocus="alert('aa')">
         							<button type="button" id="mck-price-submit"
         								class="mck-btn mck-btn-green mck-price-submit" title="Submit">
         								<span>Submit</span>
@@ -271,7 +271,7 @@
         							<div class="mck-form-group n-vis">
         								<label class="sr-only placeholder-text control-label"
         									for="mck-msg-to">To:</label> <input class="mck-form-cntrl"
-        									id="mck-msg-to" name="mck-msg-to" placeholder="To" required>
+        									id="mck-msg-to" name="mck-msg-to" placeholder="To" onFocus="alert('bb')" required>
         							</div>
         							<div class="mck-form-group last last-child">
         								<label class="sr-only placeholder-text control-label"
@@ -332,7 +332,7 @@
         										</div>
         									</div>
         									<input id="mck-file-input" class="mck-file-input n-vis"
-        										type="file" name="files[]">
+        										type="file" name="files[]" onFocus="alert('cc')">
         									<div id="mck-file-box" class="n-vis"></div>
         								</div>
         							</div>
@@ -638,14 +638,14 @@
         				<div class="mck-form-group">
         					<div class="blk-lg-12">
         						<input id="mck-loc-address" type="text" class="mck-form-control"
-        							placeholder="Enter a location" autocomplete="off">
+        							placeholder="Enter a location" onFocus="alert('dd')" autocomplete="off">
         					</div>
         				</div>
         				<div id="mck-map-content" class="mck-loc-content"></div>
         				<div class="n-vis">
         					<label class="blk-sm-2 mck-control-label">Lat.:</label>
         					<div class="blk-sm-3">
-        						<input type="text" id="mck-loc-lat" class="mck-form-control">
+        						<input type="text" id="mck-loc-lat" class="mck-form-control" onFocus="alert('ee')">
         					</div>
         					<label class="blk-sm-2 mck-control-label">Long.:</label>
         					<div class="blk-sm-3">
