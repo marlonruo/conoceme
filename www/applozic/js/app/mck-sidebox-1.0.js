@@ -1795,8 +1795,8 @@ var MCK_CLIENT_GROUP_MAP = [];
                     $mck_search.val("");
                 });
                 
-				$applozic(d).on("click", ".mck-conversation-tab-link", function() {
-                    //e.preventDefault();
+				$applozic(d).on("click", ".mck-conversation-tab-link", function(e) {
+                    e.preventDefault();
                     var $this = $applozic(this);
                     var currTabId = $mck_msg_inner.data("mck-id");
                     var isGroup = $mck_msg_inner.data("isgroup");
@@ -1809,6 +1809,20 @@ var MCK_CLIENT_GROUP_MAP = [];
 					window.location.href = '#chat'
 					StatusBar.hide();
                 });
+				
+				$('#polloloco').click(function(){
+					alert('pollo')
+					var $this = $applozic(this);
+                    var currTabId = $mck_msg_inner.data("mck-id");
+                    var isGroup = $mck_msg_inner.data("isgroup");
+                    mckMessageLayout.loadTab({
+                        'tabId': '',
+                        'isGroup': false,
+                        'lastActiveTabId': currTabId,
+                        'isLastActiveTabGroup': isGroup
+                    });
+					window.location.href = '#chat'
+				})
 				
 				
                 $applozic(d).on("click", ".mck-close-sidebox", function(e) {

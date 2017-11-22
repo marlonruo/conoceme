@@ -105,7 +105,7 @@
 <body onLoad="inicio()">
 <script>
 	
-	
+	window.location.href = '#index'
 	
 	var v_userId
 	var id = 0;	
@@ -3109,7 +3109,9 @@ function abrir_canal(numero){
 	
 	
 		
-	
+			window.onbeforeunload = function() {
+				  alert( "¿Estás seguro que deseas salir de la actual página?")
+			  }
 	
 	
 			$('#me1').click(function(){
@@ -3325,7 +3327,7 @@ function abrir_canal(numero){
 			}
 	
 			
-	
+			
 			
 			
 	
