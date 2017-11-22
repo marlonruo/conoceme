@@ -1814,7 +1814,9 @@ var MCK_CLIENT_GROUP_MAP = [];
 				window.onhashchange=function(){
 					alert('pp')
 				}
-				
+				function reff (){
+					alert('pp2')
+				}
 				$('#polloloco').click(function(){
 					alert('pollo')
 					var $this = $applozic(this);
