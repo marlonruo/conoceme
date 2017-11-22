@@ -294,7 +294,7 @@ var foto9 ='a'
       <form id="forma_login" name="forma_login" method="post">
         <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}; $('#crece').stop().fadeIn(0); crecer(); StatusBar.show();" onBlur="if(this.value==''){this.value='Email'}; $('#crece').fadeOut(500); cien(); StatusBar.hide();">
         
-        <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#crece').stop().fadeIn(0); crecer() StatusBar.show();" onBlur="if(this.value==''){this.value='Password'}; $('#crece').fadeOut(500); cien();  StatusBar.hide()">
+        <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#crece').stop().fadeIn(0); crecer(); StatusBar.show();" onBlur="if(this.value==''){this.value='Password'}; $('#crece').fadeOut(500); cien();  StatusBar.hide()">
         
         <input class="campo1a centrar_h textos_m" type="submit" style="top: 61%; height: 5%; width:calc(70% + 15px); background:#312C32; border: none; color:#DCD3C2;" value="ENTRAR">
         <div id="retro1" class="campo1 centrar_h textos_c" style="text-align: right; top: 85%; width:70%"></div>
@@ -3169,6 +3169,7 @@ function abrir_canal(numero){
 					$('.iconitos').css('height', height/42+'px')
 					
 					StatusBar.hide();
+					alto = $window.height();
 			}
 	
 			
@@ -3178,7 +3179,6 @@ function abrir_canal(numero){
 			});
 	
 			function crecer(){
-				alto = $window.height();
 				$('.pantallas').css('height',alto+'px')
 				setTimeout("$('#texto1').html($window.height())", 500)
 				setTimeout("checar_diferencia()", 500)
@@ -3191,7 +3191,9 @@ function abrir_canal(numero){
 			function checar_diferencia(){
 				var alto2 = $(window).height();
 				var dif = alto - alto2
-				alert(dif)
+				$("html, body").stop().animate({
+					scrollTop: dif
+				}, 500);
 			}
 
 			
