@@ -1605,6 +1605,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     if ($applozic(this).hasClass('mck-msg-preview')) {
                         $applozic(this).hide();
                     }
+					window.location.href = '#mensajes'
 					StatusBar.show();
                 });
                 mckMessageLayout.initSearchAutoType();
@@ -1793,8 +1794,9 @@ var MCK_CLIENT_GROUP_MAP = [];
                     }
                     $mck_search.val("");
                 });
-                $applozic(d).on("click", ".mck-conversation-tab-link", function(e) {
-                    e.preventDefault();
+                
+				$applozic(d).on("click", ".mck-conversation-tab-link", function() {
+                    //e.preventDefault();
                     var $this = $applozic(this);
                     var currTabId = $mck_msg_inner.data("mck-id");
                     var isGroup = $mck_msg_inner.data("isgroup");
@@ -1804,8 +1806,11 @@ var MCK_CLIENT_GROUP_MAP = [];
                         'lastActiveTabId': currTabId,
                         'isLastActiveTabGroup': isGroup
                     });
+					window.location.href = '#chat'
 					StatusBar.hide();
                 });
+				
+				
                 $applozic(d).on("click", ".mck-close-sidebox", function(e) {
                     e.preventDefault();
                     $mck_sidebox.mckModal('hide');
