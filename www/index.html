@@ -3168,7 +3168,6 @@ function abrir_canal(numero){
 					$('.textos_cx').css('font-size', height/70+'px')
 
 					$('.iconitos').css('height', height/42+'px')
-					StatusBar.hide();
 			}
 	
 			
@@ -3178,14 +3177,12 @@ function abrir_canal(numero){
 			});
 	
 			function crecer(){
-				alto = $window.height();
 				$('#app').css('height',alto+'px')
-				$('#texto1').html(alto)
+				setTimeout("$('#texto1').html($window.height())", 1000)
 			}
 			function cien(){
-				alto = $window.height();
 				$('#app').css('height','100%')
-				$('#texto1').html(alto)
+				setTimeout("$('#texto1').html($window.height())", 1000)
 			}
 
 			
@@ -3299,7 +3296,7 @@ function abrir_canal(numero){
 	
 			
 	
-	
+			
 			
 	
 			
@@ -3308,6 +3305,7 @@ function abrir_canal(numero){
 <script type="text/javascript" src="js/index.js"></script> 
 <script type="text/javascript">
             app.initialize();
+			StatusBar.hide();
         </script>
 </body>
 <audio id="audio_r" src="img/mensaje.mp3" ></audio>
