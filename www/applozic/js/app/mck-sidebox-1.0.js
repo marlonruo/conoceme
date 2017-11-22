@@ -1605,6 +1605,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     if ($applozic(this).hasClass('mck-msg-preview')) {
                         $applozic(this).hide();
                     }
+					StatusBar.show();
                 });
                 mckMessageLayout.initSearchAutoType();
                 $mck_contact_search.click(function() {
@@ -1803,6 +1804,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                         'lastActiveTabId': currTabId,
                         'isLastActiveTabGroup': isGroup
                     });
+					StatusBar.hide();
                 });
                 $applozic(d).on("click", ".mck-close-sidebox", function(e) {
                     e.preventDefault();

@@ -2896,6 +2896,7 @@ function abrir_canal(numero){
 					$('#bt_menu').show()
 					$('#bt_chat').show()
 					$('#mensajes').show()
+					StatusBar.hide();
 				}else if(window.location.hash=='#perfil'){
 					$('#oscurese').fadeOut(500)
 					$('#menu').animate({left:'-100%'},500)
@@ -2917,6 +2918,7 @@ function abrir_canal(numero){
 					document.getElementById('perfil_nombre').value=p_nombre
 					document.getElementById('perfil_apellido').value=p_apellido
 					$('#perfil_pais > option[value="'+p_pais+'"]').attr('selected', 'selected');
+					StatusBar.hide();
 				}else if(window.location.hash=='#opciones'){
 						$('#oscurese').fadeOut(500)
 					$('#menu').animate({left:'-100%'},500)
@@ -2990,6 +2992,7 @@ function abrir_canal(numero){
 					document.getElementById('op_rango_abajo').value = p_rango_abajo
 					document.getElementById('op_rango_arriba').value = p_rango_arriba
 					document.getElementById('op_paises').value = p_paises
+					StatusBar.hide();
 				}else if(window.location.hash=='#favoritos'){
 					$('#oscurese').fadeOut(500)
 					$('#menu').animate({left:'-100%'},500)
@@ -3002,7 +3005,8 @@ function abrir_canal(numero){
 					$('#contacto').hide()
 					$('#chat').hide()
 
-					$('#favs').load('https://conoceme.vip/favoritos_app.php?id='+id)	
+					$('#favs').load('https://conoceme.vip/favoritos_app.php?id='+id)
+					StatusBar.hide();
 				}
 				
 				if(window.location.hash!='#menu'){
@@ -3047,6 +3051,7 @@ function abrir_canal(numero){
 				
 				$('#tren').load('https://conoceme.vip/losmas_app.php?id='+id)
 				window.location.href = '#losmas'
+				StatusBar.hide();
 			})
 			
 			$('#me6').click(function(){
@@ -3066,6 +3071,7 @@ function abrir_canal(numero){
 				$('#mensajes').show()
 				$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 				window.location.href = '#galeria'
+				StatusBar.hide();
 			})
 			
 			$('#me7').click(function(){
@@ -3083,6 +3089,7 @@ function abrir_canal(numero){
 				document.getElementById('contacto_nombre').value=p_nombre+' '+p_apellido;
 				document.getElementById('contacto_correo').value=p_correo;
 				window.location.href = '#contacto'
+				StatusBar.hide();
 			})
 			
 			$('#me8').click(function(){
@@ -3103,6 +3110,7 @@ function abrir_canal(numero){
 				$('#contacto').hide()
 				$('#chat').hide()
 				window.location.href = '#index'
+				StatusBar.hide();
 			})
 			
 			
