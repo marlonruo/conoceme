@@ -292,7 +292,7 @@ var foto9 ='a'
       <img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
       <div id="texto1" class="centrar_h textos_m" style="top: 40%; text-align: left; font-weight: bold; width: 70%">Ya eres Usuario, ingresa:</div>
       <form id="forma_login" name="forma_login" method="post">
-        <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}; $('#crece').stop().fadeIn(0); scroll2(); StatusBar.show();" onBlur="if(this.value==''){this.value='Email'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
+        <input id="correo" name="correo" class="campo1 centrar_h redondear textos_c" type="text" style="top: 46%; height: 4%; width: 70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Email" onFocus="if(this.value=='Email'){this.value=''}; $('#crece').stop().fadeIn(0); scroll2(); crecer(); StatusBar.show();" onBlur="if(this.value==''){this.value='Email'}; $('#crece').fadeOut(500); scroll0(); cien(); StatusBar.hide();">
         
         <input id="pass" name="pass" class="campo1 centrar_h redondear textos_c" type="password" style="top: 53%; height: 4%; width:70%; background:#fff; border: 1px solid #312C32; font-family:ari; color:#312C32; padding-left: 15px" value="Password" onFocus="if(this.value=='Password'){this.value=''}; $('#crece').stop().fadeIn(0); scroll3()" onBlur="if(this.value==''){this.value='Password'}; $('#crece').fadeOut(500); scroll0(); StatusBar.hide();">
         
@@ -3169,15 +3169,22 @@ function abrir_canal(numero){
 					$('.textos_cx').css('font-size', height/70+'px')
 
 					$('.iconitos').css('height', height/42+'px')
-					checar_alto()
+					alert(alto)
 					StatusBar.hide();
 			}
 	
 			
 			
-			/*$(window).on("resize", function() {
+			$(window).on("resize", function() {
 				inicio()
-			});*/
+			});
+	
+			function crecer(){
+				$('#app').css('height',alto+'px')
+			}
+			function cien(){
+				$('#app').css('height','100%')
+			}
 
 			
 			function scroll0(){
@@ -3288,33 +3295,12 @@ function abrir_canal(numero){
 				});
 			}
 	
-			/*function checar_alto(){
-				alert(screen.width + " x " + screen.height)
-				alert($(window).width() + " x " + $(window).height())
-				alert(document.body.clientWidth + " x " + document.body.clientHeight)
-				alert(window.innerWidth + " x " + window.innerHeight)
-				alert('aa')
-			}*/
+			
 	
 	
-			sessionStorage.setItem("anchoInicial", window.innerWidth);
-			sessionStorage.setItem("altoInicial",window.innerHeight);
+			
 	
-			$(window).on("resize", function() {
-				
-					anchoInicial = sessionStorage.getItem("anchoInicial");
-					altoInicial = sessionStorage.getItem("altoInicial");
-					if ( window.innerHeight != altoInicial && window.innerWidth != anchoInicial ) {
-						alert('no es teclado')
-					} else {
-						alert('teclado')
-					}
-				
-			});
-	
-			alert(window.statusbar.visible)
-			window.statusbar.visible=false;
-			alert(window.statusbar.visible)
+			
 		</script> 
 <script type="text/javascript" src="cordova.js"></script> 
 <script type="text/javascript" src="js/index.js"></script> 
