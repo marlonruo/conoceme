@@ -1515,6 +1515,7 @@ var MCK_CLIENT_GROUP_MAP = [];
             };
         }
         function MckMessageService() {
+			var pr = 0
             var _this = this;
             var $mck_search = $applozic("#mck-search");
             var $mck_msg_to = $applozic("#mck-msg-to");
@@ -1605,6 +1606,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     if ($applozic(this).hasClass('mck-msg-preview')) {
                         $applozic(this).hide();
                     }
+					pr=0
 					window.location.href = '#mensajes'
 					StatusBar.show();
                 });
@@ -1810,26 +1812,25 @@ var MCK_CLIENT_GROUP_MAP = [];
 					StatusBar.hide();
                 });
 				
+				var revi = setInterval(function() {
+                    if(pr==0){
+						if(window.location.hash=='#chat'){
+							var $this = $applozic(this);
+							var currTabId = $mck_msg_inner.data("mck-id");
+							var isGroup = $mck_msg_inner.data("isgroup");
+							mckMessageLayout.loadTab({
+							'tabId': '',
+							'isGroup': false,
+							'lastActiveTabId': currTabId,
+							'isLastActiveTabGroup': isGroup
+						});
+							pr=1
+						}
+						
+					}
+                }, 500);
 				
-				window.onhashchange=function(){
-					alert('pp')
-				}
-				function reff (){
-					alert('pp2')
-				}
-				$('#polloloco').click(function(){
-					alert('pollo')
-					var $this = $applozic(this);
-                    var currTabId = $mck_msg_inner.data("mck-id");
-                    var isGroup = $mck_msg_inner.data("isgroup");
-                    mckMessageLayout.loadTab({
-                        'tabId': '',
-                        'isGroup': false,
-                        'lastActiveTabId': currTabId,
-                        'isLastActiveTabGroup': isGroup
-                    });
-					window.location.href = '#chat'
-				})
+				
 				
 				
                 $applozic(d).on("click", ".mck-close-sidebox", function(e) {
@@ -3532,6 +3533,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     }
                 } else {
                     params.tabId = '';
+
                     if (IS_OFFLINE_MESSAGE_ENABLED) {
                         mckMessageLayout.hideOfflineMessage();
                     }
@@ -5543,6 +5545,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                 $mck_group_name_save.removeClass('n-vis').addClass('vis');
                 $mck_group_name_edit.removeClass('vis').addClass('n-vis');
             });
+
             $mck_group_name_save.on('click', function() {
                 var groupName = $applozic.trim($mck_group_title.text());
                 if (groupName.length > 0) {
@@ -7455,4 +7458,4 @@ var MCK_CLIENT_GROUP_MAP = [];
             };
         }
     }
-}($applozic, window, document));
+}($applozic, window, document));// JavaScript Document

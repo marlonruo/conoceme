@@ -414,6 +414,24 @@ var foto9 ='a'
 										p_estatus=campo[32];
 										
 										
+										localStorage.setItem("id", id)
+										localStorage.setItem("p_nombre", p_nombre)
+										localStorage.setItem("p_apellido", p_apellido)
+										localStorage.setItem("p_correo", p_correo)
+										localStorage.setItem("p_nickname", p_nombre)
+										localStorage.setItem("p_genero", p_nombre)
+										localStorage.setItem("p_edad", p_nombre)
+										localStorage.setItem("p_m_idioma1", p_m_idioma1)
+										localStorage.setItem("p_m_idioma2", p_nombre)
+										localStorage.setItem("p_m_idioma3", p_nombre)
+										localStorage.setItem("p_m_idioma4", p_nombre)
+										localStorage.setItem("p_descripcion", p_nombre)
+										localStorage.setItem("p_estrellas", p_nombre)
+										localStorage.setItem("p_ver_hombre", p_nombre)
+										localStorage.setItem("p_ver_mujer", p_nombre)
+										localStorage.setItem("p_pais", p_nombre)
+										localStorage.setItem("p_paises", p_nombre)
+										
 										localStorage.setItem("correo", p_correo)
 										localStorage.setItem("contrasena", pass)
 										
@@ -2897,6 +2915,8 @@ function abrir_canal(numero){
 					$('#bt_menu').show()
 					$('#bt_chat').show()
 					$('#mensajes').show()
+					
+					$('#menu_inicio').show()
 					StatusBar.hide();
 				}else if(window.location.hash=='#perfil'){
 					$('#oscurese').fadeOut(500)
@@ -3230,8 +3250,11 @@ function abrir_canal(numero){
 				}, 500);
 			}
 	
-			
+
+			var respuesta
 			var checar
+			var totalMensajes;
+	
 			function llamadas(){
 				$.ajax({
 						url:   'https://conoceme.vip/phps/llamada_entrante_app.php?id='+id, //archivo que recibe la peticion
@@ -3266,7 +3289,7 @@ function abrir_canal(numero){
 				
 				
 				$.ajax({  
-						url:  'https://apps.applozic.com/rest/ws/analytics/message?applicationId=3b66345c921f7a78c8414e15221417cf7&messageType=MessageUnRead&to='+p_correo,
+						url:  'https://apps.applozic.com/rest/ws/analytics/message?applicationId=3b66345c921f7a78c8414e15221417cf7&messageType=MessageUnRead&to='+'marlonruo@gmail.com',
 						type: 'get',      
 						headers : { "Accept" : "application/json",
 									"Content-Type" : "application/json",
