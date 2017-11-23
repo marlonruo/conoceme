@@ -2329,7 +2329,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     }
 					pr=0
 					window.location.href = '#mensajes'
-					/*StatusBar.show();*/
+					StatusBar.show();
                 });
                 mckMessageLayout.initSearchAutoType();
                 $mck_contact_search.click(function() {
@@ -2530,7 +2530,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                         'isLastActiveTabGroup': isGroup
                     });
 					window.location.href = '#chat'
-					//StatusBar.hide();
+					StatusBar.hide();
                 });
 				
 				var revi = setInterval(function() {
@@ -2540,12 +2540,13 @@ var MCK_CLIENT_GROUP_MAP = [];
 							var currTabId = $mck_msg_inner.data("mck-id");
 							var isGroup = $mck_msg_inner.data("isgroup");
 							mckMessageLayout.loadTab({
-							'tabId': '',
-							'isGroup': false,
-							'lastActiveTabId': currTabId,
-							'isLastActiveTabGroup': isGroup
-						});
+								'tabId': '',
+								'isGroup': false,
+								'lastActiveTabId': currTabId,
+								'isLastActiveTabGroup': isGroup
+							});
 							pr=1
+							StatusBar.hide();
 						}
 						
 					}
