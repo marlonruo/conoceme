@@ -105,8 +105,6 @@
 <body onLoad="inicio()">
 <script>
 	
-	window.location.href = '#index'
-	
 	var v_userId
 	var id = 0;	
 	var p_nombre;	
@@ -137,6 +135,15 @@
 	
 	
 	
+	
+	
+	window.location.href = '#index'
+	
+	
+	
+	
+	
+	
 		
 	
 var fotitos = 0
@@ -151,6 +158,55 @@ var foto8 ='a'
 var foto9 ='a'
 
  $(document).ready(function() { 
+	 		
+	 		if (localStorage.getItem("correo") && localStorage.getItem("contrasena")) {
+        if(localStorage.getItem("correo")!='' && localStorage.getItem("contrasena")!=''){
+										id = localStorage.getItem("id");
+										p_nombre = localStorage.getItem("p_nombre");
+										p_apellido = localStorage.getItem("p_apellido");
+										p_correo = localStorage.getItem("p_correo");
+										p_nickname = localStorage.getItem("p_nickname");
+										p_genero = localStorage.getItem("p_genero");
+										p_edad = localStorage.getItem("p_edad");
+										p_m_idioma1 = localStorage.getItem("p_m_idioma1");
+										p_m_idioma2 = localStorage.getItem("p_m_idioma2");
+										p_m_idioma3 = localStorage.getItem("p_m_idioma3");
+										p_m_idioma4 = localStorage.getItem("p_m_idioma4");
+										p_descripcion = localStorage.getItem("p_descripcion");
+										p_estrellas = localStorage.getItem("p_estrellas");
+										p_ver_hombre = localStorage.getItem("p_ver_hombre");
+										p_ver_mujer = localStorage.getItem("p_ver_mujer");
+										p_pais = localStorage.getItem("p_pais");
+										p_paises = localStorage.getItem("p_paises");
+										p_idioma1 = localStorage.getItem("p_idioma1");
+										p_idioma2 = localStorage.getItem("p_idioma2");
+										p_idioma3 = localStorage.getItem("p_idioma3");
+										p_idioma4 = localStorage.getItem("p_idioma4");
+										p_rango_abajo = localStorage.getItem("p_rango_abajo");
+										p_rango_arriba = localStorage.getItem("p_rango_arriba");
+										p_foto1 = localStorage.getItem("p_foto1");
+										p_foto2 = localStorage.getItem("p_foto2");
+										p_foto3 = localStorage.getItem("p_foto3");
+										p_foto4 = localStorage.getItem("p_foto4");
+										p_foto5 = localStorage.getItem("p_foto5");
+										p_foto6 = localStorage.getItem("p_foto6");
+										p_foto7 = localStorage.getItem("p_foto7");
+										p_foto8 = localStorage.getItem("p_foto8");
+										p_foto9 = localStorage.getItem("p_foto9");
+										p_estatus = localStorage.getItem("p_estatus");
+
+										$('#login').hide()
+										$('#galeria, #menu_inicio').show()
+										$('#bt_menu').show()
+										$('#bt_chat').show()
+										$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
+										window.location.href = '#galeria'
+										llamadas()
+										$('#chat').load('chat.html')
+		}
+    }
+	 
+	 
             $('#photoimg').die('click').live('change', function(){ 
 				
 				//$("#imageform").ajaxForm({url:'server.php', target: '#preview', 
@@ -418,23 +474,44 @@ var foto9 ='a'
 										localStorage.setItem("p_nombre", p_nombre)
 										localStorage.setItem("p_apellido", p_apellido)
 										localStorage.setItem("p_correo", p_correo)
-										localStorage.setItem("p_nickname", p_nombre)
-										localStorage.setItem("p_genero", p_nombre)
-										localStorage.setItem("p_edad", p_nombre)
+										localStorage.setItem("p_nickname", p_nickname)
+										localStorage.setItem("p_genero", p_genero)
+										localStorage.setItem("p_edad", p_edad)
 										localStorage.setItem("p_m_idioma1", p_m_idioma1)
-										localStorage.setItem("p_m_idioma2", p_nombre)
-										localStorage.setItem("p_m_idioma3", p_nombre)
-										localStorage.setItem("p_m_idioma4", p_nombre)
-										localStorage.setItem("p_descripcion", p_nombre)
-										localStorage.setItem("p_estrellas", p_nombre)
-										localStorage.setItem("p_ver_hombre", p_nombre)
-										localStorage.setItem("p_ver_mujer", p_nombre)
-										localStorage.setItem("p_pais", p_nombre)
-										localStorage.setItem("p_paises", p_nombre)
+										localStorage.setItem("p_m_idioma2", p_m_idioma2)
+										localStorage.setItem("p_m_idioma3", p_m_idioma3)
+										localStorage.setItem("p_m_idioma4", p_m_idioma4)
+										localStorage.setItem("p_descripcion", p_descripcion)
+										localStorage.setItem("p_estrellas", p_estrellas)
+										localStorage.setItem("p_ver_hombre", p_ver_hombre)
+										localStorage.setItem("p_ver_mujer", p_ver_mujer)
+										localStorage.setItem("p_pais", p_pais)
+										localStorage.setItem("p_paises", p_paises)
+										localStorage.setItem("p_idioma1", p_idioma1)
+										localStorage.setItem("p_idioma2", p_idioma2)
+										localStorage.setItem("p_idioma3", p_idioma3)
+										localStorage.setItem("p_idioma4", p_idioma4)
+										localStorage.setItem("p_rango_abajo", p_rango_abajo)
+										localStorage.setItem("p_rango_arriba", p_rango_arriba)
+										localStorage.setItem("p_foto1", p_foto1)
+										localStorage.setItem("p_foto2", p_foto2)
+										localStorage.setItem("p_foto3", p_foto3)
+										localStorage.setItem("p_foto4", p_foto4)
+										localStorage.setItem("p_foto5", p_foto5)
+										localStorage.setItem("p_foto6", p_foto6)
+										localStorage.setItem("p_foto7", p_foto7)
+										localStorage.setItem("p_foto8", p_foto8)
+										localStorage.setItem("p_foto9", p_foto9)
+										localStorage.setItem("p_estatus", p_estatus)
+																				
 										
-										localStorage.setItem("correo", p_correo)
-										localStorage.setItem("contrasena", pass)
-										
+										if(rem==1){
+											localStorage.setItem("correo", p_correo)
+											localStorage.setItem("contrasena", pass)
+										}else{
+											localStorage.setItem("correo", "")
+											localStorage.setItem("contrasena", "")	
+										}
 
 										//var rol=campo[1].trim();
 										$('#login').hide()
@@ -3150,6 +3227,10 @@ function abrir_canal(numero){
 			})
 			
 			$('#me8').click(function(){
+				localStorage.setItem("correo", "")
+				localStorage.setItem("contrasena", "")
+				document.getElementById('correo').value = ''
+				document.getElementById('pass').value = ''
 				window.location.href = '#index'
 			})
 			
@@ -3289,7 +3370,7 @@ function abrir_canal(numero){
 				
 				
 				$.ajax({  
-						url:  'https://apps.applozic.com/rest/ws/analytics/message?applicationId=3b66345c921f7a78c8414e15221417cf7&messageType=MessageUnRead&to='+'marlonruo@gmail.com',
+						url:  'https://apps.applozic.com/rest/ws/analytics/message?applicationId=3b66345c921f7a78c8414e15221417cf7&messageType=MessageUnRead&to='+p_correo,
 						type: 'get',      
 						headers : { "Accept" : "application/json",
 									"Content-Type" : "application/json",
@@ -3299,6 +3380,7 @@ function abrir_canal(numero){
 						success: function(data) { 						
 
 							if (data.response.length > totalMensajes ){
+								//alert('audio')
 								document.getElementById('audio_r').play();
 								//$('#audio_r').play();
 							}
