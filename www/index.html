@@ -3199,34 +3199,45 @@ function abrir_canal(numero){
 	
 			$('#me1').click(function(){
 				window.location.href = '#galeria'
-				notificar()
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 				//$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 			})
 			
 			$('#me2').click(function(){
 				window.location.href = '#perfil'
-				notificar()
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			$('#me3').click(function(){
 				window.location.href = '#opciones'
-				notificar()
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			$('#me4').click(function(){
 				window.location.href = '#favoritos'
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			$('#me5').click(function(){
 				window.location.href = '#losmas'
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			$('#me6').click(function(){
 				window.location.href = '#galeria_live'
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			$('#me7').click(function(){
 				window.location.href = '#contacto'
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			$('#me8').click(function(){
@@ -3235,11 +3246,15 @@ function abrir_canal(numero){
 				document.getElementById('correo').value = ''
 				document.getElementById('pass').value = ''
 				window.location.href = '#index'
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 			
 			
 			$('#bt_chat').click(function(){
 				window.location.href = '#chat'
+				$('#oscurese').fadeOut(500)
+				$('#menu').animate({left:'-100%'},500)
 			})
 	
 			
@@ -3431,7 +3446,6 @@ function abrir_canal(numero){
 <script type="text/javascript" src="js/index.js"></script> 
 <script type="text/javascript">
             app.initialize();
-			StatusBar.hide();
         </script>
   
         
@@ -3448,45 +3462,6 @@ function abrir_canal(numero){
     messagingSenderId: "80917608573"
   };
   firebase.initializeApp(config);
-	
-	
-	
-		var nombre_not ="marlon"
-		if(Notification.permission !== "granted"){
-			Notification.requestPermission();
-		}
-		
-		function notificar(){
-			if(Notification.permission !== "granted"){
-				Notification.requestPermission();
-			}else{
-				
-				var notificacion = new Notification("Llamada de "+nombre_not,
-					{
-						icon: "https://conoceme.vip/img/logo2.png",
-						body: "Da click para aceptar la llamada"
-					}
-				);
-				
-				notificacion.onclick = function(){
-								    //event.preventDefault();
-									window.focus();
-									notificacion.close();
-					
-									/*$.ajax({
-											url:   'phps/abrir_canal.php', //archivo que recibe la peticion
-											type:  'post', //método de envio
-											beforeSend: function () {
-													//alert("pp")
-											},
-											success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-												window.location.href = 'canal2.php?id=<?php echo $id?>&el='+el;
-												
-											}
-									}); */
-				}
-			}
-		}	
 		
 </script>
 
