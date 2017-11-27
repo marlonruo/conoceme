@@ -160,7 +160,7 @@ var foto9 ='a'
  $(document).ready(function() { 
 	 		
 	 		if (localStorage.getItem("correo") && localStorage.getItem("contrasena")) {
-        	if(localStorage.getItem("correo")!='' && localStorage.getItem("contrasena")!=''){
+        		if(localStorage.getItem("correo")!='' && localStorage.getItem("contrasena")!=''){
 										id = localStorage.getItem("id");
 										p_nombre = localStorage.getItem("p_nombre");
 										p_apellido = localStorage.getItem("p_apellido");
@@ -203,8 +203,9 @@ var foto9 ='a'
 										window.location.href = '#galeria'
 										llamadas()
 										$('#chat').load('chat.html')
-		}
-    }
+										StatusBar.hide();
+				}
+			}
 	 
 	 
             $('#photoimg').die('click').live('change', function(){ 
@@ -3198,15 +3199,18 @@ function abrir_canal(numero){
 	
 			$('#me1').click(function(){
 				window.location.href = '#galeria'
+				notificar()
 				//$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 			})
 			
 			$('#me2').click(function(){
 				window.location.href = '#perfil'
+				notificar()
 			})
 			
 			$('#me3').click(function(){
 				window.location.href = '#opciones'
+				notificar()
 			})
 			
 			$('#me4').click(function(){
@@ -3379,6 +3383,7 @@ function abrir_canal(numero){
 
 							if (data.response.length > totalMensajes ){
 								//alert('audio')
+								
 								document.getElementById('audio_r').play();
 								//$('#audio_r').play();
 							}
@@ -3443,6 +3448,46 @@ function abrir_canal(numero){
     messagingSenderId: "80917608573"
   };
   firebase.initializeApp(config);
+	
+	
+	
+		var nombre_not ="marlon"
+		if(Notification.permission !== "granted"){
+			Notification.requestPermission();
+		}
+		
+		function notificar(){
+			if(Notification.permission !== "granted"){
+				Notification.requestPermission();
+			}else{
+				
+				var notificacion = new Notification("Llamada de "+nombre_not,
+					{
+						icon: "https://conoceme.vip/img/logo2.png",
+						body: "Da click para aceptar la llamada"
+					}
+				);
+				
+				notificacion.onclick = function(){
+								    //event.preventDefault();
+									window.focus();
+									notificacion.close();
+					
+									/*$.ajax({
+											url:   'phps/abrir_canal.php', //archivo que recibe la peticion
+											type:  'post', //método de envio
+											beforeSend: function () {
+													//alert("pp")
+											},
+											success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+												window.location.href = 'canal2.php?id=<?php echo $id?>&el='+el;
+												
+											}
+									}); */
+				}
+			}
+		}	
+		
 </script>
 
 
