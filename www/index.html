@@ -160,7 +160,7 @@ var foto9 ='a'
  $(document).ready(function() { 
 	 		
 	 		if (localStorage.getItem("correo") && localStorage.getItem("contrasena")) {
-        if(localStorage.getItem("correo")!='' && localStorage.getItem("contrasena")!=''){
+        	if(localStorage.getItem("correo")!='' && localStorage.getItem("contrasena")!=''){
 										id = localStorage.getItem("id");
 										p_nombre = localStorage.getItem("p_nombre");
 										p_apellido = localStorage.getItem("p_apellido");
@@ -3429,6 +3429,25 @@ function abrir_canal(numero){
             app.initialize();
 			
         </script>
+  
+        
+                    
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCGbCsMY2HG2-8kfxqdNi8LgeUGjkk3HqA",
+    authDomain: "conoceme-dd572.firebaseapp.com",
+    databaseURL: "https://conoceme-dd572.firebaseio.com",
+    projectId: "conoceme-dd572",
+    storageBucket: "conoceme-dd572.appspot.com",
+    messagingSenderId: "80917608573"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
 </body>
 <audio id="audio_r" src="img/mensaje.mp3" ></audio>
 </html>
