@@ -24,7 +24,6 @@
     <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="StatusBar"                	value="hide" /> 
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
@@ -53,10 +52,10 @@
     <preference name='phonegap-version' value='cli-7.0.1' />
 	<preference name='pgb-builder-version' value='1' />
     
- 	<platform name="android">
+    <platform name="android">
 	  <resource-file src="google-services.json" target="google-services.json" />
 	</platform>
-   
+
     <!-- Plugins -->
 
     <!-- Core plugins -->
@@ -64,15 +63,13 @@
   	<plugin name ="cordova-plugin-file" version = "4.9.0" />
 	<plugin name ="cordova-plugin-file-transfer" version = "1.6.9" />-->
 	<plugin name="cordova-plugin-statusbar" />
-    <!--<plugin name="cordova-plugin-media-capture" />-->
+    <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-media" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-opentok-android-permissions" source="npm" />
-    
-    <plugin name="phonegap-plugin-push" spec="2.0.0" />
 
 
     <!-- Third party plugins -->
