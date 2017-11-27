@@ -53,7 +53,7 @@
 	<preference name='pgb-builder-version' value='1' />
    
     <platform name="android">
-	  <resource-file src="google-services.json" target="google-services.json" />
+	  <resource-file src="google_services.json" target="google_services.json" />
 	</platform>
    
 
@@ -71,7 +71,6 @@
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
-	<plugin name="cordova-plugin-fcm-config" spec="cordova-plugin-fcm-config"/>
     <plugin name="cordova-opentok-android-permissions" source="npm" />
 	
 
