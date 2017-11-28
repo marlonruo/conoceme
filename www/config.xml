@@ -69,9 +69,7 @@
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-opentok-android-permissions" source="npm" />
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.7.5" />
-
-   	
+ 	
    
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
