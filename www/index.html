@@ -3436,7 +3436,10 @@ function abrir_canal(numero){
 			}
 	
 			
-			
+			cordova.plugins.notification.local.schedule({
+				title: 'Design team meeting',
+				trigger: { in: 1, unit: 'minute' }
+			});
 			
 			
 	
