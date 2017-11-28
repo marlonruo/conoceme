@@ -68,9 +68,11 @@
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
-    <plugin name="cordova-plugin-local-notifications" />
     <plugin name="cordova-opentok-android-permissions" source="npm" />
-	
+    <plugin name="de.appplant.cordova.plugin.local-notification" />
+    
+    <plugin name="de.appplant.cordova.plugin.local-notification2" />
+
 
    	
    
