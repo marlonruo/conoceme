@@ -203,7 +203,6 @@ var foto9 ='a'
 										window.location.href = '#galeria'
 										llamadas()
 										$('#chat').load('chat.html')
-										StatusBar.hide();
 				}
 			}
 	 
@@ -3436,10 +3435,7 @@ function abrir_canal(numero){
 			}
 	
 			
-			cordova.plugins.notification.local.schedule({
-				title: 'Design team meeting',
-				trigger: { in: 1, unit: 'minute' }
-			});
+			
 			
 			
 	
@@ -3453,22 +3449,6 @@ function abrir_canal(numero){
   
         
                     
-
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCEzA-NIrvfa0lRNJBuxQv22KT-gqhiabA",
-    authDomain: "conocemeweb-44533.firebaseapp.com",
-    databaseURL: "https://conocemeweb-44533.firebaseio.com",
-    projectId: "conocemeweb-44533",
-    storageBucket: "",
-    messagingSenderId: "258038768010"
-  };
-  firebase.initializeApp(config);
-</script>
-
-
 
 </body>
 <audio id="audio_r" src="img/mensaje.mp3" ></audio>
