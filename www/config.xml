@@ -60,11 +60,11 @@
     <!--<plugin name ="cordova-plugin-camera" version = "2.9.0" />
   	<plugin name ="cordova-plugin-file" version = "4.9.0" />
 	<plugin name ="cordova-plugin-file-transfer" version = "1.6.9" />-->
-	<plugin name="phonegap-plugin-push" spec="2.0.0" />
+	<!--<plugin name="phonegap-plugin-push" spec="2.0.0" />-->
 	<plugin name="cordova-plugin-statusbar" />
-    <!--<plugin name="cordova-plugin-media-capture" />-->
+    <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-inappbrowser" />
-    <!--<plugin name="cordova-plugin-media" />-->
+    <plugin name="cordova-plugin-media" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
@@ -136,8 +136,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <!--<resource-file src="google_services.json" target="google_services.json"/>-->
         <allow-intent href="market:*" />
-        <resource-file src="google-services.json" target="google-services.json"/>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
