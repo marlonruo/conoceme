@@ -202,6 +202,7 @@ var foto9 ='a'
 										$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 										window.location.href = '#galeria'
 										llamadas()
+										$('#chat').load('chat.html')
 				}
 			}
 	 
@@ -520,6 +521,8 @@ var foto9 ='a'
 										$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 										window.location.href = '#galeria'
 										llamadas()
+										$('#chat').load('chat.html')
+										StatusBar.hide();
 									}
 							}
 						})
@@ -1660,6 +1663,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 						$('#mensajes').show()
 						$('#usuarios').load('https://conoceme.vip/galeria_app.php?id='+id)
 						llamadas()
+						$('#chat').load('chat.html')
 					}
 				})
 				return false;
@@ -1677,9 +1681,7 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 	
 	
 	
-	<div id="perfil_inidvidual" style="position:absolute; top:0%; width:100%; height:100%; background-color:#FCDA3E; overflow:hidden; display: none">
-  		<div id='usuario_individual' style="position:absolute; width: 100%; height: 92%; top: 8%"></div>
-	</div><!--//////////fin galeria-->
+	
 	
 	
 	
@@ -2316,7 +2318,9 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
   </div><!--/////////// fin Chat-->	
  		
   		
-  				
+  <div id="perfil_individual" style="position:absolute; top:0%; width:100%; height:100%; overflow:hidden; display: none">
+  		<div id='usuario_individual' style="position:absolute; width: 100%; height: 92%; top: 8%"></div>
+	</div><!--//////////fin galeria-->		
   
   
   <div id="terminos" style="position: absolute; width: 100%; height: 100%; display: none; background:#FCDA3E; z-index: 3001"> <img class="centrar_h" src="img/logo2.png" style="height: 25%; top: 10%;"/>
@@ -2978,7 +2982,8 @@ function abrir_canal(numero){
 								}
 		
     
-
+			var favos = 0
+			var losma = 0
 			window.onhashchange=function(){
 				if(window.location.hash=='#galeria'){
 					$('#oscurese').fadeOut(500)
@@ -2991,6 +2996,7 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').hide()
+					$('#perfil_individual').hide()
 
 					$('#bt_menu').show()
 					$('#bt_chat').show()
@@ -3009,7 +3015,8 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').hide()
-
+					$('#perfil_individual').hide()
+					
 					$('#perfil_foto').css('background', 'url(https://conoceme.vip/uploads/'+p_foto1+')')
 					$('#perfil_foto').css('background-position', 'center')
 					$('#perfil_foto').css('background-size', 'cover')
@@ -3031,6 +3038,7 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').hide()
+					$('#perfil_individual').hide()
 
 					if(p_ver_hombre==1){
 						$('#op_pal2a').show()
@@ -3105,8 +3113,12 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').hide()
+					$('#perfil_individual').hide()
 
-					$('#favs').load('https://conoceme.vip/favoritos_app.php?id='+id)
+					if(favos==0){
+						$('#favs').load('https://conoceme.vip/favoritos_app.php?id='+id)
+						favos=1
+					}
 					StatusBar.hide();
 				}else if(window.location.hash=='#losmas'){
 					$('#oscurese').fadeOut(500)
@@ -3119,8 +3131,11 @@ function abrir_canal(numero){
 					$('#losmas').show()
 					$('#contacto').hide()
 					$('#chat').hide()
-
-					$('#tren').load('https://conoceme.vip/losmas_app.php?id='+id)
+					$('#perfil_individual').hide()
+					if(losma==0){
+						$('#tren').load('https://conoceme.vip/losmas_app.php?id='+id)
+						losma=1
+					}
 					StatusBar.hide();
 				}else if(window.location.hash=='#galeria_live'){
 					$('#oscurese').fadeOut(500)
@@ -3133,6 +3148,7 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').hide()
+					$('#perfil_individual').hide()
 
 					$('#bt_menu').show()
 					$('#bt_chat').show()
@@ -3150,6 +3166,7 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').show()
 					$('#chat').hide()
+					$('#perfil_individual').hide()
 
 					document.getElementById('contacto_nombre').value=p_nombre+' '+p_apellido;
 					document.getElementById('contacto_correo').value=p_correo;
@@ -3171,6 +3188,8 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').hide()
+					$('#perfil_individual').hide()
+					
 					StatusBar.hide();
 				}else if(window.location.hash=='#chat'){
 					$('#oscurese').fadeOut(500)
@@ -3183,7 +3202,8 @@ function abrir_canal(numero){
 					$('#losmas').hide()
 					$('#contacto').hide()
 					$('#chat').show()
-
+					$('#perfil_individual').hide()
+					
 					$('#bt_menu').show()
 					$('#bt_chat').show()
 					$('#mensajes').show()
@@ -3301,6 +3321,7 @@ function abrir_canal(numero){
 					$('.textos_c').css('font-size', height/55+'px')	
 					$('.textos_cx').css('font-size', height/70+'px')
 					$('.iconitos').css('height', height/42+'px')
+					alto = $window.height();
 					StatusBar.hide();
 					alto = $window.height();
 			}
@@ -3441,7 +3462,7 @@ function abrir_canal(numero){
 			
 			
 			
-			
+			inicio()
 	
 			
 		</script> 
