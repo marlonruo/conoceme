@@ -69,7 +69,6 @@
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-opentok-android-permissions" source="npm" />
- 	<plugin name="com.applozic.phonegap" spec="https://github.com/AppLozic/Applozic-Cordova-Ionic-PhoneGap-Chat-Plugin.git" />
    
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
