@@ -51,7 +51,7 @@
     
     <preference name='phonegap-version' value='cli-7.0.1' />
 	<preference name='pgb-builder-version' value='1' />
-   
+    <engine name="android" spec="^6.3.0" />
 
 
     <!-- Plugins -->
@@ -140,5 +140,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-	<engine name="android" spec="^6.3.0" />
+	
 </widget>
